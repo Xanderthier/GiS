@@ -7,42 +7,36 @@
     <title>Kontakt</title>
 </head>
 <body>
-    <center>
-        
-    <nav class="menu"> 
         <header>
-
-            <hr>
-<ul>
-            <li><a href="index.html">Portfolio</a></li>
+            <h1>Portfolio</h1>
+        </header>
+        <nav class="menu"> 
+    <ul>
+        <li><a href="index.html">Portfolio</a></li>
         <li><a href="AboutMe.html">About Me</a></li>
-        <li><a href="Contact.html">Contact</a></li>
+        <li><a class="used" href="Contact.html">Contact</a></li>
         </ul>
-        <hr>
-    </header>
-    </nav>
+</nav>
     <main>
-    <h1>
+    <h2>
         <b>Meine Kontaktmöglichkeiten</b>
-    </h1>
-    <br>
-    <br>
+    </h2>
+    <form>
+        <label for="Vname">Vorname</label>  <input type="text" id="Fname" name="Fname"><br>
+        <label for="Nname">Nachname</label> <input type="text" id="Nname" name="Vname"><br> 
+        <label for="email">e-Mail:</label> <input type="text" id="eMail" name="eMail"><br>
+        <label for="uGud">How u feelin'?</label> <input type="text" id="uGud" name="uGud"><br>
+        <label for="message">Was ist dein Anliegen?</label> <input type="text" id="message" name="message"><br>
+        <input type="submit" value="Send to OG" id="Send">
+      </form>
     <a href="https://www.twitch.tv/shykar0" target="_blank"><img src="Media\twitch-512.png" width="200" alt="Iam twitch"></a>
     <a href="https://www.youtube.com/channel/UCl59tyHkZlPg-xT8t3qu57A?view_as=subscriber" target="_blank"> <img src="Media\YouTube-icon-full_color.png" width="200" alt="Iam Youtube"> </a>
     <a href="https://www.instagram.com/shykarowastaken/?hl=de" target="_blank"> <img src="Media\Instagram.png" width="200" alt="Iam Instagram"> </a>
-    <br>
-    <br>
     <label>
         <input type="checkbox" name="Kool" value="Kidz" id="Klub">
         wanna be in Kool Kidz Klub?
     </label>
-    <br>
-    <br>
-    <hr>
-    <br>
     <audio src="Happi_Dany_Moving_On.mp3" loop controls></audio>
-    <br>
-    <br>
     </main>
     <footer>
     <button type="button" id="CoolButton" onClick="alert('yes u r'); return true">Click hier wenn du cool bist</button>
