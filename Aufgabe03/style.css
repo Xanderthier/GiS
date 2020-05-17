@@ -94,6 +94,10 @@ form{
     width: 5%;
     margin-left: 20px;
     margin-right: 20px;
+    filter: grayscale(100%);
+}
+.IconLinks:hover{
+    filter: grayscale(0%);
 }
 footer{
     margin-top: 50px;
@@ -103,4 +107,3 @@ audio{
     margin-top: 30px;
     margin-bottom: 30px;
 }
-
