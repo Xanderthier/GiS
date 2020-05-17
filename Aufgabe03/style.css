@@ -7,7 +7,6 @@ body{
     margin-left: auto;
     margin-right: auto;
 }
-
 header{
     width: 800px;
     border: transparent 5px;
@@ -15,12 +14,6 @@ header{
     background-color: #BDBDFD ;
     height: 400px;
 }
-
-#BDBDFD
-#BC75F9
-#535EEB
-#00218A
-
 head{
     text-align: center;
     margin-right: auto;
@@ -37,7 +30,6 @@ h2{
     color: #535EEB;
     margin: 0;
 }
-
 .menu li a:hover{
     background-color: #535EEB;
     opacity: 0.85;
@@ -45,14 +37,6 @@ h2{
 .menu .used{
     opacity: 0.85;
     background-color: #535EEB;
-}
-a{
-    text-align: center;
-    color: white;
-    background: black;
-    font-size: 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    text-decoration: none;
 }
 .menu ul{
     margin-top: 0px;
@@ -66,7 +50,6 @@ a{
     margin-left: 700px;
     width: 280px;
 }
-
 .menu li a{
     float: center;
     color: #101220;
@@ -76,37 +59,48 @@ a{
     background-color: #BDBDFD;
     text-align: center;
 }
-
 video{
     width: 800px;
     margin-top: 50px;
     margin-bottom: 50px;
 }
-
 textarea{
     margin-bottom: 50px;
     
 }
 #Send{
     margin-top: 40px;
-    width: 100px;
+    width: 50px;
     height: 20px;
     
 }
-
 .abstand{
-    height: 400px;
-    margin-left: 200px;
+    align-items: center;
+    height: 30px;
+    width: 300px;
+    margin-bottom: 20px;
 }
 .iclass{
     margin-left: 450px;
     margin-bottom: 20px;
 }
-
 form{
     margin-top: 50px;
-    text-align: left;
+    text-align: center;
     margin-bottom: 20px;
 }
-
+.IconLinks{
+    height: 5%;
+    width: 5%;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+footer{
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+audio{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
 
