@@ -85,12 +85,28 @@ video{
 
 textarea{
     margin-bottom: 50px;
+    
 }
 #Send{
-    width: 200px;
-    height: 30px;
+    margin-top: 40px;
+    width: 100px;
+    height: 20px;
+    
 }
+
 .abstand{
-    margin-top: 20px;
+    height: 400px;
+    margin-left: 200px;
+}
+.iclass{
+    margin-left: 450px;
     margin-bottom: 20px;
 }
+
+form{
+    margin-top: 50px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+
