@@ -80,10 +80,6 @@
     nav a:hover {
         color: #720009;
     }
-    .nav_icons {
-        padding-right: 380px;
-        float: right;
-    }
     img[alt="Cart"] {
         margin-top: 60px;
         padding-right: 40px;
@@ -216,7 +212,7 @@
         color: rgb(71, 71, 71)
     }
     a:hover {
-        color: #e4ab8c;
+        color: #720009;
     }
     .closebtn {
         margin-left: 15px;
@@ -240,42 +236,40 @@
     }
     .top {
         float: center;
+        margin-top: 50px;
         width: 70px;
     }
     img[alt="RoterLotus"] {
-        float: center;
-        margin-top: 30px;
-        margin-left: 400px;
+        float: left;
         width: 200px;
         height: 200px;
     }
     nav {
         float: center;
         line-height: 20px;
-        margin-left: 350px;
-        margin-top: -220px;
+        margin-left: 190px;
+        margin-top: 20px;
     }
     nav a {
         text-decoration: none;
         text-transform: lowercase;
         font: Arial, Helvetica, sans-serif;
-        letter-spacing: .12rem;
-        font-size: 15px;
+        letter-spacing: .1rem;
+        font-size: 20px;
         color: #525252;
         margin-right: 20px;
     }
     nav a:hover {
-        color: #e4ab8c;
+        color: #720009;
     }
     .nav_icons {
-        padding-left: 50px;
-        float: left;
+        float: right;
+        margin-left: 300px;
     }
-    img[alt="icon"] {
-        margin-top: 70px;
-        padding-right: 10px;
-        width: 20px;
-        height: 20px;
+    img[alt="Cart"] {
+        margin-top: 20px;
+        width: 50px;
+        height: 50px;
     }
     .dropdown {
         position: relative;
@@ -292,7 +286,7 @@
     .DDContent {
         display: none;
         position: absolute;
-        background-color: #f9f9f9;
+        background-color: white;
         min-width: 160px;
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         z-index: 1;
@@ -306,7 +300,7 @@
         text-align: left;
     }
     .DDContent a:hover {
-        background-color: #ddd;
+        background-color: white;
     }
     .dropdown:hover .DDContent {
         display: block;
@@ -360,7 +354,7 @@
         height: 35px;
     }
     .button {
-        background-color: #e4ab8c;
+        background-color: #720009;
         color: white;
         padding: 5px 10px;
         border: none;
@@ -458,7 +452,7 @@
         color: darkgray;
     }
     header {
-        height: 150px;
+        height: 135px;
         background: white;
         position: sticky;
         top: 0px;
@@ -467,6 +461,8 @@
     }
     .top {
         float: center;
+        margin-top: 20px;
+        margin-left: 70px;
         width: 70px;
     }
     img[alt="RoterLotus"] {
