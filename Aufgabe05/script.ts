@@ -10,83 +10,84 @@ namespace Aufgabe05 {
         kategorie: true,
         name: "Ben 10",
         video: "Media/Ben10.mp4",
-        preis: 0.00,
+        preis: 10.00,
         beschreibung: "Am Ende warens irgendwie 100"
     };
     let artikel02 = {
         kategorie: true,
         name: "Avatar",
         video: "Media/Avatar.mp4",
-        preis: 19.99,
+        preis: 28.99,
         beschreibung: "Aang hat glaub adhs"
     };
     let artikel03 = {
         kategorie: true,
         name: "Danny Phantom",
         video: "Media/DannyPhantom.mp4",
-        preis: 1.99,
+        preis: 0.00,
         beschreibung: "Ich bin auch ein Geist"
     };
     let artikel04 = {
         kategorie: true,
         name: "Kim Possible",
         video: "Media/KimPossible.mp4",
-        preis: 1.99,
+        preis: 70.00,
         beschreibung: "be honest, u crushed on her as a little turd"
     };
     let artikel05 = {
         kategorie: true,
         name: "Fillmore",
         video: "Media/fillmore-intro-german.mp4",
-        preis: 99.99,
+        preis: 73.99,
         beschreibung: "Black Detective Conan for Kids"
     };
     let artikel06 = {
         kategorie: true,
         name: "Die Gummibaeren",
         video: "Media/Gummibaeren.mp4",
-        preis: 10.00,
+        preis: 13.99,
         beschreibung: "Safe Drogen"
     };
     let artikel07 = {
         kategorie: true,
         name: "Fuenf Freunde",
         video: "Media/FunfFreunde.mp4",
-        preis: 9999999.99,
+        preis: 5.00,
         beschreibung: "White Detective Conan for Kids"
     };
     let artikel08 = {
         kategorie: false,
         name: "Beyblade",
         video: "Media/Beyblade.mp4",
-        preis: 9.99, beschreibung: "Let it RestInPeace"
+        preis: 9.99, 
+        beschreibung: "Let it RestInPeace"
     };
     let artikel09 = {
         kategorie: false,
         name: "Wickie und die starken Männer",
         video: "Media/Wickie.mp4",
-        preis: 4.99,
+        preis: 69.69,
         beschreibung: "Klingt wie ein schlechter Porno Titel"
     };
     let artikel10 = {
         kategorie: false,
         name: "Zoey101",
         video: "Media/Zoey101.mp4",
-        preis: 0.20,
+        preis: 1.01,
         beschreibung: "lol"
     };
     let artikel11 = {
         kategorie: false,
         name: "Disney's grosse Pause",
         video: "Media/GrossePause.mp4",
-        preis: 2.99,
+        preis: 5.99,
         beschreibung: "Jeder liebt grosse Pausen"
     };
     let artikel12 = {
         kategorie: false,
         name: "Chip und Chap",
         video: "Media/ChipChap.mp4",
-        preis: 14.99,
+        preis: 18.99,
         beschreibung: "Remember, just bcuz u smoll doesnt mean u can achieve big things"
     };
 
@@ -94,7 +95,6 @@ namespace Aufgabe05 {
 
     const oneTag: HTMLElement = document.getElementById("one") as HTMLDivElement;
     const twoTag: HTMLElement = document.getElementById("two") as HTMLDivElement;
-    const threeTag: HTMLElement = document.getElementById("three") as HTMLDivElement;
 
     createTags();
     
@@ -123,7 +123,6 @@ namespace Aufgabe05 {
             if (sortiment[index].kategorie) {
     
                 oneTag.appendChild(div);
-
                 div.appendChild(h3).innerHTML = sortiment[index].name;
                 div.appendChild(video);
                 div.appendChild(pPrice).innerHTML = "Preis: " + sortiment[index].preis + "€";
@@ -134,7 +133,6 @@ namespace Aufgabe05 {
             else {
     
                 twoTag.appendChild(div);
-
                 div.appendChild(h3).innerHTML = sortiment[index].name;
                 div.appendChild(video);
                 div.appendChild(pPrice).innerHTML = "Preis: " + sortiment[index].preis + "€";
