@@ -124,7 +124,7 @@ namespace Aufgabe05 {
                 oneTag.appendChild(div);
                 div.appendChild(h3).innerHTML = sortiment[index].name;
                 div.appendChild(video);
-                div.appendChild(pPrice).innerHTML = "Preis: " + sortiment[index].preis + "€";
+
                 div.appendChild(pDescription).innerHTML = sortiment[index].beschreibung;
                 div.appendChild(button).innerHTML = "In den Warenkorb";
 
@@ -134,7 +134,7 @@ namespace Aufgabe05 {
                 twoTag.appendChild(div);
                 div.appendChild(h3).innerHTML = sortiment[index].name;
                 div.appendChild(video);
-                div.appendChild(pPrice).innerHTML = "Preis: " + sortiment[index].preis + "€";
+
                 div.appendChild(pDescription).innerHTML = sortiment[index].beschreibung;
                 div.appendChild(button).innerHTML = "In den Warenkorb";
 
