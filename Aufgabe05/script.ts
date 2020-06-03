@@ -90,7 +90,7 @@ namespace Aufgabe05 {
         preis: 18.99,
         beschreibung: "Remember, just bcuz u smoll doesnt mean u can achieve big things"
     };
-
+    
     const sortiment: ShopArtikel[] = [artikel01, artikel02, artikel03, artikel04, artikel05, artikel06, artikel07, artikel08, artikel09, artikel10, artikel11, artikel12];
 
     const oneTag: HTMLElement = document.getElementById("one") as HTMLDivElement;
