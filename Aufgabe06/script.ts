@@ -154,11 +154,12 @@ namespace Aufgabe05 {
 
 
     function WarenkorbBtn(_event: Event): void {
-        anzArtikel++;
-        console.log(anzArtikel);
 
         preis += parseFloat((<HTMLButtonElement>_event.target)?.getAttribute("preis")!);
         console.log(preis);
+
+        anzArtikel++;
+        console.log(anzArtikel);
 
         if (anzArtikel >= 0) {
             document.getElementById("anzWaren")?.appendChild(anzAnzeige);
@@ -168,14 +169,13 @@ namespace Aufgabe05 {
     }
 
     function handleCategoryClick(this: HTMLElement, _click: MouseEvent): void {
-        switch (this.getAttribute("id")) {
-            case "AlexFbtn":
+        if (this.getAttribute("id") == "AlexFbtn") {
                 AlexVerweis();
-                break;
-            case "FanFavsbtn":
+            }
+            else {
                 FanVerweis();
-                break;
         }
+
         function AlexVerweis(): void {
             (<HTMLElement>document.getElementById("one")).style.display = "inline-flex";
             (<HTMLElement>document.getElementById("two")).style.display = "none";
@@ -191,5 +191,3 @@ namespace Aufgabe05 {
     let fanbutton: HTMLElement = <HTMLElement>document.querySelector("#FanFavsbtn");
     fanbutton.addEventListener("click", handleCategoryClick.bind(fanbutton));
 }
-
-//ich weiß das is hier die organisatorische hölle, besonders in css. Da kümmer ich mich mal drum sobald ich Zeit hab. Sorry!

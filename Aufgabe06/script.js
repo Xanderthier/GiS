@@ -128,10 +128,10 @@ var Aufgabe05;
     let anzAnzeige = document.createElement("div");
     anzAnzeige.id = "anzAnzeige";
     function WarenkorbBtn(_event) {
-        anzArtikel++;
-        console.log(anzArtikel);
         preis += parseFloat(_event.target?.getAttribute("preis"));
         console.log(preis);
+        anzArtikel++;
+        console.log(anzArtikel);
         if (anzArtikel >= 0) {
             document.getElementById("anzWaren")?.appendChild(anzAnzeige);
         }
@@ -139,13 +139,11 @@ var Aufgabe05;
         document.getElementById("anzAnzeige")?.appendChild(anzahlZaehler);
     }
     function handleCategoryClick(_click) {
-        switch (this.getAttribute("id")) {
-            case "AlexFbtn":
-                AlexVerweis();
-                break;
-            case "FanFavsbtn":
-                FanVerweis();
-                break;
+        if (this.getAttribute("id") == "AlexFbtn") {
+            AlexVerweis();
+        }
+        else {
+            FanVerweis();
         }
         function AlexVerweis() {
             document.getElementById("one").style.display = "inline-flex";
@@ -161,5 +159,4 @@ var Aufgabe05;
     let fanbutton = document.querySelector("#FanFavsbtn");
     fanbutton.addEventListener("click", handleCategoryClick.bind(fanbutton));
 })(Aufgabe05 || (Aufgabe05 = {}));
-//ich weiß das is hier die organisatorische hölle, besonders in css. Da kümmer ich mich mal drum sobald ich Zeit hab. Sorry!
 //# sourceMappingURL=script.js.map
