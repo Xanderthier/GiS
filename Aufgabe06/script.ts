@@ -167,10 +167,8 @@ namespace Aufgabe05 {
     let anzArtikel: number = 0;
     let preis: number = 0;
 
-    //Zähler für die Anzahl erstellen
     let anzahlZaehler: HTMLParagraphElement = document.createElement("p");
 
-    //Blase erstellen beim Einkaufswagen
     let anzAnzeige: HTMLDivElement = document.createElement("div");
     anzAnzeige.id = "anzAnzeige";
 
@@ -182,17 +180,13 @@ namespace Aufgabe05 {
         preis += parseFloat((<HTMLButtonElement>_event.target)?.getAttribute("preis")!);
         console.log(preis);
 
-        //Blase erstellen bei min. 1 Artikel
         if (anzArtikel >= 0) {
             document.getElementById("anzWaren")?.appendChild(anzAnzeige);
         }
-
-        //Zahl in Blase anzeigen
         anzahlZaehler.innerHTML = "" + anzArtikel;
         document.getElementById("anzAnzeige")?.appendChild(anzahlZaehler);
     }
 
-    //Kategorien einblenden/ausblenden
     function handleCategoryClick(this: HTMLElement, _click: MouseEvent): void {
         switch (this.getAttribute("id")) {
             case "Alex":
@@ -211,7 +205,6 @@ namespace Aufgabe05 {
             (<HTMLElement>document.getElementById("Alex")).style.display = "none";
         }
     }
-    //Erstellen einer Variable, Buttonverlinkung
     let AlexButton: HTMLElement = <HTMLElement>document.querySelector("#Alexbtn");
     AlexButton.addEventListener("click", handleCategoryClick.bind(AlexButton));
 

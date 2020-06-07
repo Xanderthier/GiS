@@ -142,9 +142,7 @@ var Aufgabe05;
     }
     let anzArtikel = 0;
     let preis = 0;
-    //Zähler für die Anzahl erstellen
     let anzahlZaehler = document.createElement("p");
-    //Blase erstellen beim Einkaufswagen
     let anzAnzeige = document.createElement("div");
     anzAnzeige.id = "anzAnzeige";
     function einkaufenBtn(_event) {
@@ -152,15 +150,12 @@ var Aufgabe05;
         console.log(anzArtikel);
         preis += parseFloat(_event.target?.getAttribute("preis"));
         console.log(preis);
-        //Blase erstellen bei min. 1 Artikel
         if (anzArtikel >= 0) {
             document.getElementById("anzWaren")?.appendChild(anzAnzeige);
         }
-        //Zahl in Blase anzeigen
         anzahlZaehler.innerHTML = "" + anzArtikel;
         document.getElementById("anzAnzeige")?.appendChild(anzahlZaehler);
     }
-    //Kategorien einblenden/ausblenden
     function handleCategoryClick(_click) {
         switch (this.getAttribute("id")) {
             case "Alex":
@@ -179,7 +174,6 @@ var Aufgabe05;
             document.getElementById("Alex").style.display = "none";
         }
     }
-    //Erstellen einer Variable, Buttonverlinkung
     let AlexButton = document.querySelector("#Alexbtn");
     AlexButton.addEventListener("click", handleCategoryClick.bind(AlexButton));
     let FanButton = document.querySelector("#Fanbtn");
