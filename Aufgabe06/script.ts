@@ -177,12 +177,12 @@ namespace Aufgabe05 {
                 break;
         }
         function AlexVerweis(): void {
-            (<HTMLElement>document.getElementById("AlexF")).style.display = "block";
-            (<HTMLElement>document.getElementById("FanFavs")).style.display = "none";
+            (<HTMLElement>document.getElementById("one")).style.display = "inline-flex";
+            (<HTMLElement>document.getElementById("two")).style.display = "none";
         }
         function FanVerweis(): void {
-            (<HTMLElement>document.getElementById("FanFavs")).style.display = "block";
-            (<HTMLElement>document.getElementById("AlexF")).style.display = "none";
+            (<HTMLElement>document.getElementById("two")).style.display = "inline-flex";
+            (<HTMLElement>document.getElementById("one")).style.display = "none";
         }
     }
     let alexbutton: HTMLElement = <HTMLElement>document.querySelector("#AlexFbtn");
@@ -191,3 +191,5 @@ namespace Aufgabe05 {
     let fanbutton: HTMLElement = <HTMLElement>document.querySelector("#FanFavsbtn");
     fanbutton.addEventListener("click", handleCategoryClick.bind(fanbutton));
 }
+
+//ich weiß das is hier die organisatorische hölle, besonders in css. Da kümmer ich mich mal drum sobald ich Zeit hab. Sorry!

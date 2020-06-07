@@ -148,12 +148,12 @@ var Aufgabe05;
                 break;
         }
         function AlexVerweis() {
-            document.getElementById("AlexF").style.display = "block";
-            document.getElementById("FanFavs").style.display = "none";
+            document.getElementById("one").style.display = "inline-flex";
+            document.getElementById("two").style.display = "none";
         }
         function FanVerweis() {
-            document.getElementById("FanFavs").style.display = "block";
-            document.getElementById("AlexF").style.display = "none";
+            document.getElementById("two").style.display = "inline-flex";
+            document.getElementById("one").style.display = "none";
         }
     }
     let alexbutton = document.querySelector("#AlexFbtn");
@@ -161,4 +161,5 @@ var Aufgabe05;
     let fanbutton = document.querySelector("#FanFavsbtn");
     fanbutton.addEventListener("click", handleCategoryClick.bind(fanbutton));
 })(Aufgabe05 || (Aufgabe05 = {}));
+//ich weiß das is hier die organisatorische hölle, besonders in css. Da kümmer ich mich mal drum sobald ich Zeit hab. Sorry!
 //# sourceMappingURL=script.js.map
