@@ -148,10 +148,14 @@ var Aufgabe05;
         function AlexVerweis() {
             document.getElementById("one").style.display = "inline-flex";
             document.getElementById("two").style.display = "none";
+            document.getElementById("FanFavs").style.display = "none";
+            document.getElementById("AlexF").style.display = "inline";
         }
         function FanVerweis() {
             document.getElementById("two").style.display = "inline-flex";
             document.getElementById("one").style.display = "none";
+            document.getElementById("AlexF").style.display = "none";
+            document.getElementById("FanFavs").style.display = "inline";
         }
     }
     let alexbutton = document.querySelector("#AlexFbtn");

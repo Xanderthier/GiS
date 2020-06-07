@@ -59,10 +59,10 @@
         height: 200px;
     }
     img[alt="Roter Lotus"]:hover {
-        width: 220px;
-        height: 220px;
-        margin-left: -90px;
-        margin-top: -10px;
+        width: 210px;
+        height: 210px;
+        margin-left: -105px;
+        margin-top: -25px;
     }
     nav {
         float: left;

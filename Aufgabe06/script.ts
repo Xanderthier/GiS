@@ -179,10 +179,14 @@ namespace Aufgabe05 {
         function AlexVerweis(): void {
             (<HTMLElement>document.getElementById("one")).style.display = "inline-flex";
             (<HTMLElement>document.getElementById("two")).style.display = "none";
+            (<HTMLElement>document.getElementById("FanFavs")).style.display = "none";
+            (<HTMLElement>document.getElementById("AlexF")).style.display = "inline";
         }
         function FanVerweis(): void {
             (<HTMLElement>document.getElementById("two")).style.display = "inline-flex";
             (<HTMLElement>document.getElementById("one")).style.display = "none";
+            (<HTMLElement>document.getElementById("AlexF")).style.display = "none";
+            (<HTMLElement>document.getElementById("FanFavs")).style.display = "inline";
         }
     }
     let alexbutton: HTMLElement = <HTMLElement>document.querySelector("#AlexFbtn");
