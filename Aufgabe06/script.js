@@ -102,26 +102,8 @@ var Aufgabe05;
             let pDescription = document.createElement("p");
             pDescription.setAttribute("class", "beschreibung");
             let button = document.createElement("button");
-            button.addEventListener("click", einkaufenBtn);
+            button.addEventListener("click", WarenkorbBtn);
             button.setAttribute("preis", sortiment[index].preis.toString());
-            switch (sortiment[index].kategorie) {
-                case "Alex":
-                    document.getElementById("Alex")?.appendChild(div);
-                    document.getElementById("produkt" + index)?.appendChild(video);
-                    document.getElementById("produkt" + index)?.appendChild(h3);
-                    document.getElementById("produkt" + index)?.appendChild(pDescription);
-                    document.getElementById("produkt" + index)?.appendChild(pPrice);
-                    document.getElementById("produkt" + index)?.appendChild(button);
-                    break;
-                case "Fan":
-                    document.getElementById("Fan")?.appendChild(div);
-                    document.getElementById("produkt" + index)?.appendChild(video);
-                    document.getElementById("produkt" + index)?.appendChild(h3);
-                    document.getElementById("produkt" + index)?.appendChild(pDescription);
-                    document.getElementById("produkt" + index)?.appendChild(pPrice);
-                    document.getElementById("produkt" + index)?.appendChild(button);
-                    break;
-            }
             if (sortiment[index].kategorie == "Alex") {
                 oneTag.appendChild(div);
                 div.appendChild(h3).innerHTML = sortiment[index].name;
@@ -145,7 +127,7 @@ var Aufgabe05;
     let anzahlZaehler = document.createElement("p");
     let anzAnzeige = document.createElement("div");
     anzAnzeige.id = "anzAnzeige";
-    function einkaufenBtn(_event) {
+    function WarenkorbBtn(_event) {
         anzArtikel++;
         console.log(anzArtikel);
         preis += parseFloat(_event.target?.getAttribute("preis"));

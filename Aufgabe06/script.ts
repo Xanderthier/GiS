@@ -119,28 +119,8 @@ namespace Aufgabe05 {
             pDescription.setAttribute("class", "beschreibung");
 
             let button: HTMLButtonElement = document.createElement("button");
-            button.addEventListener("click", einkaufenBtn);
+            button.addEventListener("click", WarenkorbBtn);
             button.setAttribute("preis", sortiment[index].preis.toString());
-    
-            switch (sortiment[index].kategorie) {
-                case "Alex":
-                    document.getElementById("Alex")?.appendChild(div);
-                    document.getElementById("produkt" + index)?.appendChild(video);
-                    document.getElementById("produkt" + index)?.appendChild(h3);
-                    document.getElementById("produkt" + index)?.appendChild(pDescription);
-                    document.getElementById("produkt" + index)?.appendChild(pPrice);
-                    document.getElementById("produkt" + index)?.appendChild(button);
-                    break;
-    
-                case "Fan":
-                    document.getElementById("Fan")?.appendChild(div);
-                    document.getElementById("produkt" + index)?.appendChild(video);
-                    document.getElementById("produkt" + index)?.appendChild(h3);
-                    document.getElementById("produkt" + index)?.appendChild(pDescription);
-                    document.getElementById("produkt" + index)?.appendChild(pPrice);
-                    document.getElementById("produkt" + index)?.appendChild(button);
-                    break;
-            }
 
             if (sortiment[index].kategorie == "Alex") {
     
@@ -173,7 +153,7 @@ namespace Aufgabe05 {
     anzAnzeige.id = "anzAnzeige";
 
 
-    function einkaufenBtn(_event: Event): void {
+    function WarenkorbBtn(_event: Event): void {
         anzArtikel++;
         console.log(anzArtikel);
 
