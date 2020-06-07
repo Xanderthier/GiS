@@ -96,6 +96,7 @@ var Aufgabe05;
             let h3 = document.createElement("h4");
             let video = document.createElement("video");
             video.setAttribute("src", sortiment[index].video);
+            video.setAttribute("preload", "preload");
             video.setAttribute("controls", "controls");
             let pPrice = document.createElement("p");
             pPrice.setAttribute("class", "price");

@@ -109,7 +109,7 @@ namespace Aufgabe05 {
 
             let video: HTMLVideoElement = document.createElement("video");
             video.setAttribute("src", sortiment[index].video);
-
+            video.setAttribute("preload", "preload");
             video.setAttribute("controls", "controls");
 
             let pPrice: HTMLParagraphElement = document.createElement("p");
@@ -144,6 +144,7 @@ namespace Aufgabe05 {
             }
         }
     }
+
     let anzArtikel: number = 0;
     let preis: number = 0;
 
