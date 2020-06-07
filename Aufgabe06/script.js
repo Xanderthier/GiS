@@ -2,84 +2,84 @@
 var Aufgabe05;
 (function (Aufgabe05) {
     let artikel01 = {
-        kategorie: "Alex",
+        kategorie: "AlexF",
         name: "Ben 10",
         video: "Media/Ben10.mp4",
         preis: 10.00,
         beschreibung: "Am Ende warens irgendwie 100"
     };
     let artikel02 = {
-        kategorie: "Alex",
+        kategorie: "AlexF",
         name: "Avatar",
         video: "Media/Avatar.mp4",
         preis: 28.99,
         beschreibung: "Aang hat glaub adhs"
     };
     let artikel03 = {
-        kategorie: "Alex",
+        kategorie: "AlexF",
         name: "Danny Phantom",
         video: "Media/DannyPhantom.mp4",
         preis: 0.00,
         beschreibung: "Ich bin auch ein Geist"
     };
     let artikel04 = {
-        kategorie: "Alex",
+        kategorie: "AlexF",
         name: "Kim Possible",
         video: "Media/KimPossible.mp4",
         preis: 70.00,
         beschreibung: "be honest, u crushed on her as a little turd"
     };
     let artikel05 = {
-        kategorie: "Alex",
+        kategorie: "AlexF",
         name: "Fillmore",
         video: "Media/fillmore-intro-german.mp4",
         preis: 73.99,
         beschreibung: "Black Detective Conan for Kids"
     };
     let artikel06 = {
-        kategorie: "Alex",
+        kategorie: "AlexF",
         name: "Die Gummibaeren",
         video: "Media/Gummibaeren.mp4",
         preis: 13.99,
         beschreibung: "Safe Drogen"
     };
     let artikel07 = {
-        kategorie: "Alex",
+        kategorie: "AlexF",
         name: "Fuenf Freunde",
         video: "Media/FunfFreunde.mp4",
         preis: 5.00,
         beschreibung: "White Detective Conan for Kids"
     };
     let artikel08 = {
-        kategorie: "New",
+        kategorie: "FanFavs",
         name: "Beyblade",
         video: "Media/Beyblade.mp4",
         preis: 9.99,
         beschreibung: "Let it RestInPeace"
     };
     let artikel09 = {
-        kategorie: "Fan",
+        kategorie: "FanFavs",
         name: "Wickie und die starken Männer",
         video: "Media/Wickie.mp4",
         preis: 69.69,
         beschreibung: "Klingt wie ein schlechter Porno Titel"
     };
     let artikel10 = {
-        kategorie: "Fan",
+        kategorie: "FanFavs",
         name: "Zoey101",
         video: "Media/Zoey101.mp4",
         preis: 1.01,
         beschreibung: "lol"
     };
     let artikel11 = {
-        kategorie: "Fan",
+        kategorie: "FanFavs",
         name: "Disney's grosse Pause",
         video: "Media/GrossePause.mp4",
         preis: 5.99,
         beschreibung: "Jeder liebt grosse Pausen"
     };
     let artikel12 = {
-        kategorie: "Fan",
+        kategorie: "FanFavs",
         name: "Chip und Chap",
         video: "Media/ChipChap.mp4",
         preis: 18.99,
@@ -104,7 +104,7 @@ var Aufgabe05;
             let button = document.createElement("button");
             button.addEventListener("click", WarenkorbBtn);
             button.setAttribute("preis", sortiment[index].preis.toString());
-            if (sortiment[index].kategorie == "Alex") {
+            if (sortiment[index].kategorie == "AlexF") {
                 oneTag.appendChild(div);
                 div.appendChild(h3).innerHTML = sortiment[index].name;
                 div.appendChild(video);
@@ -140,25 +140,25 @@ var Aufgabe05;
     }
     function handleCategoryClick(_click) {
         switch (this.getAttribute("id")) {
-            case "Alex":
+            case "AlexFbtn":
                 AlexVerweis();
                 break;
-            case "Fan":
+            case "FanFavsbtn":
                 FanVerweis();
                 break;
         }
         function AlexVerweis() {
-            document.getElementById("Alex").style.display = "block";
-            document.getElementById("Fan").style.display = "none";
+            document.getElementById("AlexF").style.display = "block";
+            document.getElementById("FanFavs").style.display = "none";
         }
         function FanVerweis() {
-            document.getElementById("Fan").style.display = "block";
-            document.getElementById("Alex").style.display = "none";
+            document.getElementById("FanFavs").style.display = "block";
+            document.getElementById("AlexF").style.display = "none";
         }
     }
-    let AlexButton = document.querySelector("#Alexbtn");
-    AlexButton.addEventListener("click", handleCategoryClick.bind(AlexButton));
-    let FanButton = document.querySelector("#Fanbtn");
-    FanButton.addEventListener("click", handleCategoryClick.bind(FanButton));
+    let alexbutton = document.querySelector("#AlexFbtn");
+    alexbutton.addEventListener("click", handleCategoryClick.bind(alexbutton));
+    let fanbutton = document.querySelector("#FanFavsbtn");
+    fanbutton.addEventListener("click", handleCategoryClick.bind(fanbutton));
 })(Aufgabe05 || (Aufgabe05 = {}));
 //# sourceMappingURL=script.js.map

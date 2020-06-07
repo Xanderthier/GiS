@@ -7,84 +7,84 @@ namespace Aufgabe05 {
         beschreibung: string;
     }
     let artikel01 = {
-        kategorie: "Alex",
+        kategorie: "AlexF",
         name: "Ben 10",
         video: "Media/Ben10.mp4",
         preis: 10.00,
         beschreibung: "Am Ende warens irgendwie 100"
     };
     let artikel02 = {
-        kategorie: "Alex",
+        kategorie: "AlexF",
         name: "Avatar",
         video: "Media/Avatar.mp4",
         preis: 28.99,
         beschreibung: "Aang hat glaub adhs"
     };
     let artikel03 = {
-        kategorie: "Alex",
+        kategorie: "AlexF",
         name: "Danny Phantom",
         video: "Media/DannyPhantom.mp4",
         preis: 0.00,
         beschreibung: "Ich bin auch ein Geist"
     };
     let artikel04 = {
-        kategorie: "Alex",
+        kategorie: "AlexF",
         name: "Kim Possible",
         video: "Media/KimPossible.mp4",
         preis: 70.00,
         beschreibung: "be honest, u crushed on her as a little turd"
     };
     let artikel05 = {
-        kategorie: "Alex",
+        kategorie: "AlexF",
         name: "Fillmore",
         video: "Media/fillmore-intro-german.mp4",
         preis: 73.99,
         beschreibung: "Black Detective Conan for Kids"
     };
     let artikel06 = {
-        kategorie: "Alex",
+        kategorie: "AlexF",
         name: "Die Gummibaeren",
         video: "Media/Gummibaeren.mp4",
         preis: 13.99,
         beschreibung: "Safe Drogen"
     };
     let artikel07 = {
-        kategorie: "Alex",
+        kategorie: "AlexF",
         name: "Fuenf Freunde",
         video: "Media/FunfFreunde.mp4",
         preis: 5.00,
         beschreibung: "White Detective Conan for Kids"
     };
     let artikel08 = {
-        kategorie: "New",
+        kategorie: "FanFavs",
         name: "Beyblade",
         video: "Media/Beyblade.mp4",
         preis: 9.99, 
         beschreibung: "Let it RestInPeace"
     };
     let artikel09 = {
-        kategorie: "Fan",
+        kategorie: "FanFavs",
         name: "Wickie und die starken Männer",
         video: "Media/Wickie.mp4",
         preis: 69.69,
         beschreibung: "Klingt wie ein schlechter Porno Titel"
     };
     let artikel10 = {
-        kategorie: "Fan",
+        kategorie: "FanFavs",
         name: "Zoey101",
         video: "Media/Zoey101.mp4",
         preis: 1.01,
         beschreibung: "lol"
     };
     let artikel11 = {
-        kategorie: "Fan",
+        kategorie: "FanFavs",
         name: "Disney's grosse Pause",
         video: "Media/GrossePause.mp4",
         preis: 5.99,
         beschreibung: "Jeder liebt grosse Pausen"
     };
     let artikel12 = {
-        kategorie: "Fan",
+        kategorie: "FanFavs",
         name: "Chip und Chap",
         video: "Media/ChipChap.mp4",
         preis: 18.99,
@@ -122,7 +122,7 @@ namespace Aufgabe05 {
             button.addEventListener("click", WarenkorbBtn);
             button.setAttribute("preis", sortiment[index].preis.toString());
 
-            if (sortiment[index].kategorie == "Alex") {
+            if (sortiment[index].kategorie == "AlexF") {
     
                 oneTag.appendChild(div);
                 div.appendChild(h3).innerHTML = sortiment[index].name;
@@ -169,25 +169,25 @@ namespace Aufgabe05 {
 
     function handleCategoryClick(this: HTMLElement, _click: MouseEvent): void {
         switch (this.getAttribute("id")) {
-            case "Alex":
+            case "AlexFbtn":
                 AlexVerweis();
                 break;
-            case "Fan":
+            case "FanFavsbtn":
                 FanVerweis();
                 break;
         }
         function AlexVerweis(): void {
-            (<HTMLElement>document.getElementById("Alex")).style.display = "block";
-            (<HTMLElement>document.getElementById("Fan")).style.display = "none";
+            (<HTMLElement>document.getElementById("AlexF")).style.display = "block";
+            (<HTMLElement>document.getElementById("FanFavs")).style.display = "none";
         }
         function FanVerweis(): void {
-            (<HTMLElement>document.getElementById("Fan")).style.display = "block";
-            (<HTMLElement>document.getElementById("Alex")).style.display = "none";
+            (<HTMLElement>document.getElementById("FanFavs")).style.display = "block";
+            (<HTMLElement>document.getElementById("AlexF")).style.display = "none";
         }
     }
-    let AlexButton: HTMLElement = <HTMLElement>document.querySelector("#Alexbtn");
-    AlexButton.addEventListener("click", handleCategoryClick.bind(AlexButton));
+    let alexbutton: HTMLElement = <HTMLElement>document.querySelector("#AlexFbtn");
+    alexbutton.addEventListener("click", handleCategoryClick.bind(alexbutton));
 
-    let FanButton: HTMLElement = <HTMLElement>document.querySelector("#Fanbtn");
-    FanButton.addEventListener("click", handleCategoryClick.bind(FanButton));
+    let fanbutton: HTMLElement = <HTMLElement>document.querySelector("#FanFavsbtn");
+    fanbutton.addEventListener("click", handleCategoryClick.bind(fanbutton));
 }
