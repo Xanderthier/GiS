@@ -141,22 +141,22 @@ var Aufgabe05;
     }
     function handleCategoryClick(_click) {
         if (this.getAttribute("id") == "AlexFbtn") {
-            AlexVerweis();
+            AlexV();
         }
         else {
-            FanVerweis();
+            FanV();
         }
-        function AlexVerweis() {
+        function AlexV() {
             document.getElementById("one").style.display = "inline-flex";
+            document.getElementById("AlexF").style.display = "inline";
             document.getElementById("two").style.display = "none";
             document.getElementById("FanFavs").style.display = "none";
-            document.getElementById("AlexF").style.display = "inline";
         }
-        function FanVerweis() {
+        function FanV() {
             document.getElementById("two").style.display = "inline-flex";
+            document.getElementById("FanFavs").style.display = "inline";
             document.getElementById("one").style.display = "none";
             document.getElementById("AlexF").style.display = "none";
-            document.getElementById("FanFavs").style.display = "inline";
         }
     }
     let alexbutton = document.querySelector("#AlexFbtn");

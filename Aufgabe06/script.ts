@@ -171,23 +171,23 @@ namespace Aufgabe05 {
 
     function handleCategoryClick(this: HTMLElement, _click: MouseEvent): void {
         if (this.getAttribute("id") == "AlexFbtn") {
-                AlexVerweis();
+                AlexV();
             }
             else {
-                FanVerweis();
+                FanV();
         }
 
-        function AlexVerweis(): void {
+        function AlexV(): void {
             (<HTMLElement>document.getElementById("one")).style.display = "inline-flex";
+            (<HTMLElement>document.getElementById("AlexF")).style.display = "inline";
             (<HTMLElement>document.getElementById("two")).style.display = "none";
             (<HTMLElement>document.getElementById("FanFavs")).style.display = "none";
-            (<HTMLElement>document.getElementById("AlexF")).style.display = "inline";
         }
-        function FanVerweis(): void {
+        function FanV(): void {
             (<HTMLElement>document.getElementById("two")).style.display = "inline-flex";
+            (<HTMLElement>document.getElementById("FanFavs")).style.display = "inline";
             (<HTMLElement>document.getElementById("one")).style.display = "none";
             (<HTMLElement>document.getElementById("AlexF")).style.display = "none";
-            (<HTMLElement>document.getElementById("FanFavs")).style.display = "inline";
         }
     }
     let alexbutton: HTMLElement = <HTMLElement>document.querySelector("#AlexFbtn");
