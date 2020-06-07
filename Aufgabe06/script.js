@@ -2,84 +2,84 @@
 var Aufgabe05;
 (function (Aufgabe05) {
     let artikel01 = {
-        kategorie: true,
+        kategorie: "Alex",
         name: "Ben 10",
         video: "Media/Ben10.mp4",
         preis: 10.00,
         beschreibung: "Am Ende warens irgendwie 100"
     };
     let artikel02 = {
-        kategorie: true,
+        kategorie: "Alex",
         name: "Avatar",
         video: "Media/Avatar.mp4",
         preis: 28.99,
         beschreibung: "Aang hat glaub adhs"
     };
     let artikel03 = {
-        kategorie: true,
+        kategorie: "Alex",
         name: "Danny Phantom",
         video: "Media/DannyPhantom.mp4",
         preis: 0.00,
         beschreibung: "Ich bin auch ein Geist"
     };
     let artikel04 = {
-        kategorie: true,
+        kategorie: "Alex",
         name: "Kim Possible",
         video: "Media/KimPossible.mp4",
         preis: 70.00,
         beschreibung: "be honest, u crushed on her as a little turd"
     };
     let artikel05 = {
-        kategorie: true,
+        kategorie: "Alex",
         name: "Fillmore",
         video: "Media/fillmore-intro-german.mp4",
         preis: 73.99,
         beschreibung: "Black Detective Conan for Kids"
     };
     let artikel06 = {
-        kategorie: true,
+        kategorie: "Alex",
         name: "Die Gummibaeren",
         video: "Media/Gummibaeren.mp4",
         preis: 13.99,
         beschreibung: "Safe Drogen"
     };
     let artikel07 = {
-        kategorie: true,
+        kategorie: "Alex",
         name: "Fuenf Freunde",
         video: "Media/FunfFreunde.mp4",
         preis: 5.00,
         beschreibung: "White Detective Conan for Kids"
     };
     let artikel08 = {
-        kategorie: false,
+        kategorie: "New",
         name: "Beyblade",
         video: "Media/Beyblade.mp4",
         preis: 9.99,
         beschreibung: "Let it RestInPeace"
     };
     let artikel09 = {
-        kategorie: false,
+        kategorie: "Fan",
         name: "Wickie und die starken Männer",
         video: "Media/Wickie.mp4",
         preis: 69.69,
         beschreibung: "Klingt wie ein schlechter Porno Titel"
     };
     let artikel10 = {
-        kategorie: false,
+        kategorie: "Fan",
         name: "Zoey101",
         video: "Media/Zoey101.mp4",
         preis: 1.01,
         beschreibung: "lol"
     };
     let artikel11 = {
-        kategorie: false,
+        kategorie: "Fan",
         name: "Disney's grosse Pause",
         video: "Media/GrossePause.mp4",
         preis: 5.99,
         beschreibung: "Jeder liebt grosse Pausen"
     };
     let artikel12 = {
-        kategorie: false,
+        kategorie: "Fan",
         name: "Chip und Chap",
         video: "Media/ChipChap.mp4",
         preis: 18.99,
@@ -102,7 +102,27 @@ var Aufgabe05;
             let pDescription = document.createElement("p");
             pDescription.setAttribute("class", "beschreibung");
             let button = document.createElement("button");
-            if (sortiment[index].kategorie) {
+            button.addEventListener("click", einkaufenBtn);
+            button.setAttribute("preis", sortiment[index].preis.toString());
+            switch (sortiment[index].kategorie) {
+                case "Alex":
+                    document.getElementById("Alex")?.appendChild(div);
+                    document.getElementById("produkt" + index)?.appendChild(video);
+                    document.getElementById("produkt" + index)?.appendChild(h3);
+                    document.getElementById("produkt" + index)?.appendChild(pDescription);
+                    document.getElementById("produkt" + index)?.appendChild(pPrice);
+                    document.getElementById("produkt" + index)?.appendChild(button);
+                    break;
+                case "Fan":
+                    document.getElementById("Fan")?.appendChild(div);
+                    document.getElementById("produkt" + index)?.appendChild(video);
+                    document.getElementById("produkt" + index)?.appendChild(h3);
+                    document.getElementById("produkt" + index)?.appendChild(pDescription);
+                    document.getElementById("produkt" + index)?.appendChild(pPrice);
+                    document.getElementById("produkt" + index)?.appendChild(button);
+                    break;
+            }
+            if (sortiment[index].kategorie == "Alex") {
                 oneTag.appendChild(div);
                 div.appendChild(h3).innerHTML = sortiment[index].name;
                 div.appendChild(video);
@@ -120,5 +140,49 @@ var Aufgabe05;
             }
         }
     }
+    let anzArtikel = 0;
+    let preis = 0;
+    //Zähler für die Anzahl erstellen
+    let anzahlZaehler = document.createElement("p");
+    //Blase erstellen beim Einkaufswagen
+    let anzAnzeige = document.createElement("div");
+    anzAnzeige.id = "anzAnzeige";
+    function einkaufenBtn(_event) {
+        anzArtikel++;
+        console.log(anzArtikel);
+        preis += parseFloat(_event.target?.getAttribute("preis"));
+        console.log(preis);
+        //Blase erstellen bei min. 1 Artikel
+        if (anzArtikel >= 0) {
+            document.getElementById("anzWaren")?.appendChild(anzAnzeige);
+        }
+        //Zahl in Blase anzeigen
+        anzahlZaehler.innerHTML = "" + anzArtikel;
+        document.getElementById("anzAnzeige")?.appendChild(anzahlZaehler);
+    }
+    //Kategorien einblenden/ausblenden
+    function handleCategoryClick(_click) {
+        switch (this.getAttribute("id")) {
+            case "Alex":
+                AlexVerweis();
+                break;
+            case "Fan":
+                FanVerweis();
+                break;
+        }
+        function AlexVerweis() {
+            document.getElementById("Alex").style.display = "block";
+            document.getElementById("Fan").style.display = "none";
+        }
+        function FanVerweis() {
+            document.getElementById("Fan").style.display = "block";
+            document.getElementById("Alex").style.display = "none";
+        }
+    }
+    //Erstellen einer Variable, Buttonverlinkung
+    let AlexButton = document.querySelector("#Alexbtn");
+    AlexButton.addEventListener("click", handleCategoryClick.bind(AlexButton));
+    let FanButton = document.querySelector("#Fanbtn");
+    FanButton.addEventListener("click", handleCategoryClick.bind(FanButton));
 })(Aufgabe05 || (Aufgabe05 = {}));
 //# sourceMappingURL=script.js.map
