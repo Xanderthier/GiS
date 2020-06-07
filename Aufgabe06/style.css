@@ -59,8 +59,10 @@
         height: 200px;
     }
     img[alt="Roter Lotus"]:hover {
-        width: 250px;
-        height: 250px;
+        width: 220px;
+        height: 220px;
+        margin-left: -90px;
+        margin-top: -10px;
     }
     nav {
         float: left;
@@ -449,7 +451,7 @@
         color: rgb(71, 71, 71)
     }
     a:hover {
-        color: #e4ab8c;
+        color: #720009;
     }
     .closebtn {
         margin-left: 15px;
@@ -499,7 +501,7 @@
         margin-right: 20px;
     }
     nav a:hover {
-        color: #e4ab8c;
+        color: #720009;
     }
     .nav_icons {
         padding-left: 20px;
