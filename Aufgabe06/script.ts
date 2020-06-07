@@ -153,7 +153,6 @@ namespace Aufgabe05 {
     let anzAnzeige: HTMLDivElement = document.createElement("div");
     anzAnzeige.id = "anzAnzeige";
 
-
     function WarenkorbBtn(_event: Event): void {
 
         preis += parseFloat((<HTMLButtonElement>_event.target)?.getAttribute("preis")!);
