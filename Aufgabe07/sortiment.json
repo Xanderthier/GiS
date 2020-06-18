@@ -1,0 +1,86 @@
+[
+    {
+        "kategorie": "AlexF",
+        "name": "Ben 10",
+        "video": "Media/Ben10.mp4",
+        "preis": 10.00,
+        "beschreibung": "Am Ende warens irgendwie 100"
+    },
+    {
+        "kategorie": "AlexF",
+        "name": "Avatar",
+        "video": "Media/Avatar.mp4",
+        "preis": 28.99,
+        "beschreibung": "Aang hat glaub adhs"
+    },
+    {
+        "kategorie": "AlexF",
+        "name": "Danny Phantom",
+        "video": "Media/DannyPhantom.mp4",
+        "preis": 0.00,
+        "beschreibung": "Ich bin auch ein Geist"
+    },
+    {
+        "kategorie": "AlexF",
+        "name": "Kim Possible",
+        "video": "Media/KimPossible.mp4",
+        "preis": 70.00,
+        "beschreibung": "be honest, u crushed on her as a little turd"
+    },
+    {
+        "kategorie": "AlexF",
+        "name": "Fillmore",
+        "video": "Media/fillmore-intro-german.mp4",
+        "preis": 73.99,
+        "beschreibung": "Black Detective Conan for Kids"
+    },
+    {
+        "kategorie": "AlexF",
+        "name": "Die Gummibaeren",
+        "video": "Media/Gummibaeren.mp4",
+        "preis": 13.99,
+        "beschreibung": "Safe Drogen"
+    },
+    {
+        "kategorie": "AlexF",
+        "name": "Fuenf Freunde",
+        "video": "Media/FunfFreunde.mp4",
+        "preis": 5.00,
+        "beschreibung": "White Detective Conan for Kids"
+    },
+    {
+        "kategorie": "FanFavs",
+        "name": "Beyblade",
+        "video": "Media/Beyblade.mp4",
+        "preis": 9.99, 
+        "beschreibung": "Let it RestInPeace"
+    },
+    {
+        "kategorie": "FanFavs",
+        "name": "Wickie und die starken Männer",
+        "video": "Media/Wickie.mp4",
+        "preis": 69.69,
+        "beschreibung": "Klingt wie ein schlechter Porno Titel"
+    },
+    {
+        "kategorie": "FanFavs",
+        "name": "Zoey101",
+        "video": "Media/Zoey101.mp4",
+        "preis": 1.01,
+        "beschreibung": "lol"
+    },
+    {
+        "kategorie": "FanFavs",
+        "name": "Disney's grosse Pause",
+        "video": "Media/GrossePause.mp4",
+        "preis": 5.99,
+        "beschreibung": "Jeder liebt grosse Pausen"
+    },
+    {
+        "kategorie": "FanFavs",
+        "name": "Chip und Chap",
+        "video": "Media/ChipChap.mp4",
+        "preis": 18.99,
+        "beschreibung": "Remember, just bcuz u smoll doesnt mean u can achieve big things"
+    }
+    ]

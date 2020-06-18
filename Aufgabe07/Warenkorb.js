@@ -27,8 +27,8 @@ var Nostalgic;
         let newDiv = document.createElement("div");
         newDiv.classList.add("produkt");
         newDiv.innerHTML = `
-            <img src="${aktWarenkorb[index].bild}">
-            <p>${aktWarenkorb[index].name} <b>${aktWarenkorb[index].preis} €</b>, ${aktWarenkorb[index].bezeichnung}</p>
+            <video src="${aktWarenkorb[index].video}">
+            <p>${aktWarenkorb[index].name} <b>${aktWarenkorb[index].preis} €</b>, ${aktWarenkorb[index].beschreibung}</p>
             <button type="button">Artikel entfernen</button>`;
         document.querySelector("#Produkte")?.appendChild(newDiv);
         let selectorButton = newDiv.querySelector("button");

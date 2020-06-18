@@ -6,9 +6,7 @@ namespace Aufgabe07 {
         localStorage.setItem("Warenkorb", "[]");
     }
 
-    let sortimentAR: ShopArtikel[] = [
-
-    ];
+    let sortimentAR: ShopArtikel[] = [artikel01, artikel02, artikel03, artikel04, artikel05, artikel06, artikel07, artikel08, artikel09, artikel10, artikel11, artikel12];
 
     //sortiment in Json, neues Array
     async function communicate(_url: RequestInfo): Promise<void> {
