@@ -1,13 +1,16 @@
 namespace Aufgabe07 {
     
+    let globalPreis: number;
+
     document.querySelector("#ResetButton")?.addEventListener("click", function (): void {
         warenkorbLeeren();
         document.querySelector("#Produkte")!.innerHTML = " ";
-        //warenkorbSummeAnzeigen();
+        warenkorbSummeAnzeigen();
     });
 
     function warenkorbLeeren(): void {
         localStorage.setItem("Warenkorb", "[]");
+        localStorage.setItem("preis", "0");
     }
 
     let aktWarenkorb: ShopArtikel[] = JSON.parse(localStorage.getItem("Warenkorb")!);
@@ -16,7 +19,7 @@ namespace Aufgabe07 {
         let newDiv: HTMLDivElement = document.createElement("div");
         newDiv.classList.add("produkt");
         newDiv.innerHTML = `
-            <video src="${aktWarenkorb[index].video}">
+            <video src="${aktWarenkorb[index].video}"></video>
             <p>${aktWarenkorb[index].name} <b>${aktWarenkorb[index].preis} €</b>, ${aktWarenkorb[index].beschreibung}</p>
             <button type="button">Artikel entfernen</button>`;
 
@@ -26,17 +29,27 @@ namespace Aufgabe07 {
         selectorButton?.addEventListener("click", artDelClick);
         selectorButton?.setAttribute("artId", index.toString());
     }
-    /*warenkorbSummeAnzeigen();
+    warenkorbSummeAnzeigen();
+
+    
 
     function warenkorbSummeAnzeigen(): void {
-        document.querySelector("#preis")!.innerHTML = preis() + "€";
-    } */
+        let preis = parseFloat(localStorage.getItem("preis")!);
+        document.querySelector("#preis")!.innerHTML = preis.toFixed(2) + "€";
+        localStorage.setItem("preis", JSON.stringify(preis));
+        globalPreis = preis;
+    }
 
     function artDelClick(_event: Event): void {
         let target: HTMLElement = <HTMLElement>_event.target;
         let artikelInt: number = parseInt(target.getAttribute("artId")!);
         let artikel: ShopArtikel = aktWarenkorb[artikelInt];
+        
+        let preis = globalPreis;
 
+        preis -= aktWarenkorb[artikelInt].preis;
+        localStorage.setItem("preis", JSON.stringify(preis));
+        
         //Artikel einzeln aus Warenkorb entfernen
         let delId: number = aktWarenkorb.indexOf(artikel);
         if (delId > -1) {

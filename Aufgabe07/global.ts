@@ -19,14 +19,14 @@ namespace Aufgabe07 {
         createTags();
     }
 
-    /* export function preis(): number {
-        let aktWarenkorb: ShopArtikel[] = JSON.parse(localStorage.getItem("warenkorb")!);
+    export function preis(): number {
+        let aktWarenkorb: ShopArtikel[] = JSON.parse(localStorage.getItem("Warenkorb")!);
 
         let preis: number = 0;
         for (let index: number = 0; index < aktWarenkorb.length; index++) {
             preis += aktWarenkorb[index].preis;
         }
         return preis;
-    } */
+    }
 
 }

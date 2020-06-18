@@ -3,7 +3,7 @@ namespace Aufgabe07 {
 
 
     if (!localStorage.getItem("Warenkorb")) {
-        localStorage.setItem("Warenkorb", "[]");
+        localStorage.setItem("Warenkorb", "[]");        
     }
 
     //let sortimentAR: ShopArtikel[] = [artikel01, artikel02, artikel03, artikel04, artikel05, artikel06, artikel07, artikel08, artikel09, artikel10, artikel11, artikel12];
@@ -24,14 +24,14 @@ namespace Aufgabe07 {
 
     const oneTag: HTMLElement = document.getElementById("one") as HTMLDivElement;
     const twoTag: HTMLElement = document.getElementById("two") as HTMLDivElement;
-    
-    let ArtAR: Array<ShopArtikel>;
+
+    let artar: Array<ShopArtikel>;
 
     //async function Kategories(kategorie: string): Promise<void> {
 
-        //document.querySelector("#Produkte")!.innerHTML = " ";
+    //document.querySelector("#Produkte")!.innerHTML = " ";
 
-        //await communicate("https://Xanderthier.github.io/GiS/Aufgabe07/produkte.json");
+    //await communicate("https://Xanderthier.github.io/GiS/Aufgabe07/produkte.json");
 
     export function createTags(): void {
 
@@ -39,7 +39,7 @@ namespace Aufgabe07 {
 
             let div: HTMLDivElement = document.createElement("div");
             div.setAttribute("class", "videocontainer");
-            
+
             let h3: HTMLHeadingElement = document.createElement("h4");
 
             let video: HTMLVideoElement = document.createElement("video");
@@ -56,9 +56,10 @@ namespace Aufgabe07 {
             let button: HTMLButtonElement = document.createElement("button");
             button.addEventListener("click", WarenkorbBtn);
             button.setAttribute("preis", sortimentsa[index].preis.toString());
+            button.setAttribute("index", index.toString());
 
             if (sortimentsa[index].kategorie == "AlexF") {
-    
+
                 oneTag.appendChild(div);
                 div.appendChild(h3).innerHTML = sortimentsa[index].name;
                 div.appendChild(video);
@@ -68,7 +69,7 @@ namespace Aufgabe07 {
 
             }
             else {
-    
+
                 twoTag.appendChild(div);
                 div.appendChild(h3).innerHTML = sortimentsa[index].name;
                 div.appendChild(video);
@@ -78,11 +79,11 @@ namespace Aufgabe07 {
 
             }
         }
-    //}
+        //}
     }
 
 
-    
+
     let anzArtikel: number = 0;
     let preis: number = 0;
 
@@ -93,8 +94,16 @@ namespace Aufgabe07 {
 
     function WarenkorbBtn(_event: Event): void {
 
+        let target: HTMLElement = <HTMLElement>_event.target;
+
+        let produktid: number = parseFloat(target.getAttribute("index")!);
+
+
+        //set get price
+        preis = parseFloat(localStorage.getItem("preis")!);
         preis += parseFloat((<HTMLButtonElement>_event.target)?.getAttribute("preis")!);
         console.log(preis);
+        localStorage.setItem("preis", JSON.stringify(preis));
 
         anzArtikel++;
         console.log(anzArtikel);
@@ -105,23 +114,27 @@ namespace Aufgabe07 {
         anzahlZaehler.innerHTML = "" + anzArtikel;
         document.getElementById("anzAnzeige")?.appendChild(anzahlZaehler);
 
-        ArtAR = JSON.parse(localStorage.getItem("Warenkorb")!);
+        artar = JSON.parse(localStorage.getItem("Warenkorb")!);
 
-        if (!ArtAR) {
-            
+        if (!artar) {
+            artar = [sortimentsa[produktid]];
+        }
+        else{
+            artar.push(sortimentsa[produktid]);
         }
 
-        localStorage.setItem("Warenkorb", JSON.stringify(ArtAR));
+        localStorage.setItem("Warenkorb", JSON.stringify(artar));
     }
+    
 
 
 
     function handleCategoryClick(this: HTMLElement, _click: MouseEvent): void {
         if (this.getAttribute("id") == "AlexFbtn") {
-                AlexV();
-            }
-            else {
-                FanV();
+            AlexV();
+        }
+        else {
+            FanV();
         }
 
         function AlexV(): void {

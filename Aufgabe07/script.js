@@ -14,7 +14,7 @@ var Aufgabe07;
     //const sortiment: ShopArtikel[] = [artikel01, artikel02, artikel03, artikel04, artikel05, artikel06, artikel07, artikel08, artikel09, artikel10, artikel11, artikel12];
     const oneTag = document.getElementById("one");
     const twoTag = document.getElementById("two");
-    let ArtAR;
+    let artar;
     //async function Kategories(kategorie: string): Promise<void> {
     //document.querySelector("#Produkte")!.innerHTML = " ";
     //await communicate("https://Xanderthier.github.io/GiS/Aufgabe07/produkte.json");
@@ -34,6 +34,7 @@ var Aufgabe07;
             let button = document.createElement("button");
             button.addEventListener("click", WarenkorbBtn);
             button.setAttribute("preis", Aufgabe07.sortimentsa[index].preis.toString());
+            button.setAttribute("index", index.toString());
             if (Aufgabe07.sortimentsa[index].kategorie == "AlexF") {
                 oneTag.appendChild(div);
                 div.appendChild(h3).innerHTML = Aufgabe07.sortimentsa[index].name;
@@ -60,8 +61,13 @@ var Aufgabe07;
     let anzAnzeige = document.createElement("div");
     anzAnzeige.id = "anzAnzeige";
     function WarenkorbBtn(_event) {
+        let target = _event.target;
+        let produktid = parseFloat(target.getAttribute("index"));
+        //set get price
+        preis = parseFloat(localStorage.getItem("preis"));
         preis += parseFloat(_event.target?.getAttribute("preis"));
         console.log(preis);
+        localStorage.setItem("preis", JSON.stringify(preis));
         anzArtikel++;
         console.log(anzArtikel);
         if (anzArtikel >= 0) {
@@ -69,10 +75,14 @@ var Aufgabe07;
         }
         anzahlZaehler.innerHTML = "" + anzArtikel;
         document.getElementById("anzAnzeige")?.appendChild(anzahlZaehler);
-        ArtAR = JSON.parse(localStorage.getItem("Warenkorb"));
-        if (!ArtAR) {
+        artar = JSON.parse(localStorage.getItem("Warenkorb"));
+        if (!artar) {
+            artar = [Aufgabe07.sortimentsa[produktid]];
         }
-        localStorage.setItem("Warenkorb", JSON.stringify(ArtAR));
+        else {
+            artar.push(Aufgabe07.sortimentsa[produktid]);
+        }
+        localStorage.setItem("Warenkorb", JSON.stringify(artar));
     }
     function handleCategoryClick(_click) {
         if (this.getAttribute("id") == "AlexFbtn") {
