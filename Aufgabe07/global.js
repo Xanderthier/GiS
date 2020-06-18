@@ -1,18 +1,20 @@
 "use strict";
-var Nostalgic;
-(function (Nostalgic) {
-    for (let index = 0; index < Nostalgic.sortimentsa.length; index++) {
-        let jsonstr = JSON.stringify(Nostalgic.sortimentsa);
-        console.log;
+var Aufgabe07;
+(function (Aufgabe07) {
+    communicate("sortiment.json");
+    async function communicate(_url) {
+        let response = await fetch(_url);
+        Aufgabe07.sortimentsa = await response.json();
+        Aufgabe07.createTags();
     }
-    function preis() {
-        let aktWarenkorb = JSON.parse(localStorage.getItem("warenkorb"));
-        let preis = 0;
-        for (let index = 0; index < aktWarenkorb.length; index++) {
+    /* export function preis(): number {
+        let aktWarenkorb: ShopArtikel[] = JSON.parse(localStorage.getItem("warenkorb")!);
+
+        let preis: number = 0;
+        for (let index: number = 0; index < aktWarenkorb.length; index++) {
             preis += aktWarenkorb[index].preis;
         }
         return preis;
-    }
-    Nostalgic.preis = preis;
-})(Nostalgic || (Nostalgic = {}));
+    } */
+})(Aufgabe07 || (Aufgabe07 = {}));
 //# sourceMappingURL=global.js.map

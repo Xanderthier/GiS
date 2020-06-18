@@ -6,14 +6,9 @@ namespace Aufgabe07 {
         localStorage.setItem("Warenkorb", "[]");
     }
 
-    let sortimentAR: ShopArtikel[] = [artikel01, artikel02, artikel03, artikel04, artikel05, artikel06, artikel07, artikel08, artikel09, artikel10, artikel11, artikel12];
+    //let sortimentAR: ShopArtikel[] = [artikel01, artikel02, artikel03, artikel04, artikel05, artikel06, artikel07, artikel08, artikel09, artikel10, artikel11, artikel12];
 
     //sortiment in Json, neues Array
-    async function communicate(_url: RequestInfo): Promise<void> {
-        let response: Response = await fetch(_url);
-        sortimentAR = await response.json();
-    }
-
 
 
     let alexbutton: HTMLElement = <HTMLElement>document.querySelector("#AlexFbtn");
@@ -30,7 +25,7 @@ namespace Aufgabe07 {
     const oneTag: HTMLElement = document.getElementById("one") as HTMLDivElement;
     const twoTag: HTMLElement = document.getElementById("two") as HTMLDivElement;
     
-
+    let ArtAR: Array<ShopArtikel>;
 
     //async function Kategories(kategorie: string): Promise<void> {
 
@@ -38,13 +33,9 @@ namespace Aufgabe07 {
 
         //await communicate("https://Xanderthier.github.io/GiS/Aufgabe07/produkte.json");
 
-    createTags();
+    export function createTags(): void {
 
-
-
-    function createTags(): void {
-
-        for (let index: number = 0; index < sortimentAR.length; index++) {
+        for (let index: number = 0; index < sortimentsa.length; index++) {
 
             let div: HTMLDivElement = document.createElement("div");
             div.setAttribute("class", "videocontainer");
@@ -52,7 +43,7 @@ namespace Aufgabe07 {
             let h3: HTMLHeadingElement = document.createElement("h4");
 
             let video: HTMLVideoElement = document.createElement("video");
-            video.setAttribute("src", sortimentAR[index].video);
+            video.setAttribute("src", sortimentsa[index].video);
             video.setAttribute("preload", "preload");
             video.setAttribute("controls", "controls");
 
@@ -64,25 +55,25 @@ namespace Aufgabe07 {
 
             let button: HTMLButtonElement = document.createElement("button");
             button.addEventListener("click", WarenkorbBtn);
-            button.setAttribute("preis", sortimentAR[index].preis.toString());
+            button.setAttribute("preis", sortimentsa[index].preis.toString());
 
-            if (sortimentAR[index].kategorie == "AlexF") {
+            if (sortimentsa[index].kategorie == "AlexF") {
     
                 oneTag.appendChild(div);
-                div.appendChild(h3).innerHTML = sortimentAR[index].name;
+                div.appendChild(h3).innerHTML = sortimentsa[index].name;
                 div.appendChild(video);
-                div.appendChild(pPrice).innerHTML = "Preis: " + sortimentAR[index].preis + "€";
-                div.appendChild(pDescription).innerHTML = sortimentAR[index].beschreibung;
+                div.appendChild(pPrice).innerHTML = "Preis: " + sortimentsa[index].preis + "€";
+                div.appendChild(pDescription).innerHTML = sortimentsa[index].beschreibung;
                 div.appendChild(button).innerHTML = "In den Warenkorb";
 
             }
             else {
     
                 twoTag.appendChild(div);
-                div.appendChild(h3).innerHTML = sortimentAR[index].name;
+                div.appendChild(h3).innerHTML = sortimentsa[index].name;
                 div.appendChild(video);
-                div.appendChild(pPrice).innerHTML = "Preis: " + sortimentAR[index].preis + "€";
-                div.appendChild(pDescription).innerHTML = sortimentAR[index].beschreibung;
+                div.appendChild(pPrice).innerHTML = "Preis: " + sortimentsa[index].preis + "€";
+                div.appendChild(pDescription).innerHTML = sortimentsa[index].beschreibung;
                 div.appendChild(button).innerHTML = "In den Warenkorb";
 
             }
@@ -113,6 +104,14 @@ namespace Aufgabe07 {
         }
         anzahlZaehler.innerHTML = "" + anzArtikel;
         document.getElementById("anzAnzeige")?.appendChild(anzahlZaehler);
+
+        ArtAR = JSON.parse(localStorage.getItem("Warenkorb")!);
+
+        if (!ArtAR) {
+            
+        }
+
+        localStorage.setItem("Warenkorb", JSON.stringify(ArtAR));
     }
 
 

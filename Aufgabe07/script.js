@@ -4,12 +4,8 @@ var Aufgabe07;
     if (!localStorage.getItem("Warenkorb")) {
         localStorage.setItem("Warenkorb", "[]");
     }
-    let sortimentAR = [artikel01, artikel02, artikel03, artikel04, artikel05, artikel06, artikel07, artikel08, artikel09, artikel10, artikel11, artikel12];
+    //let sortimentAR: ShopArtikel[] = [artikel01, artikel02, artikel03, artikel04, artikel05, artikel06, artikel07, artikel08, artikel09, artikel10, artikel11, artikel12];
     //sortiment in Json, neues Array
-    async function communicate(_url) {
-        let response = await fetch(_url);
-        sortimentAR = await response.json();
-    }
     let alexbutton = document.querySelector("#AlexFbtn");
     alexbutton.addEventListener("click", handleCategoryClick.bind(alexbutton));
     let fanbutton = document.querySelector("#FanFavsbtn");
@@ -18,17 +14,17 @@ var Aufgabe07;
     //const sortiment: ShopArtikel[] = [artikel01, artikel02, artikel03, artikel04, artikel05, artikel06, artikel07, artikel08, artikel09, artikel10, artikel11, artikel12];
     const oneTag = document.getElementById("one");
     const twoTag = document.getElementById("two");
+    let ArtAR;
     //async function Kategories(kategorie: string): Promise<void> {
     //document.querySelector("#Produkte")!.innerHTML = " ";
     //await communicate("https://Xanderthier.github.io/GiS/Aufgabe07/produkte.json");
-    createTags();
     function createTags() {
-        for (let index = 0; index < sortimentAR.length; index++) {
+        for (let index = 0; index < Aufgabe07.sortimentsa.length; index++) {
             let div = document.createElement("div");
             div.setAttribute("class", "videocontainer");
             let h3 = document.createElement("h4");
             let video = document.createElement("video");
-            video.setAttribute("src", sortimentAR[index].video);
+            video.setAttribute("src", Aufgabe07.sortimentsa[index].video);
             video.setAttribute("preload", "preload");
             video.setAttribute("controls", "controls");
             let pPrice = document.createElement("p");
@@ -37,26 +33,27 @@ var Aufgabe07;
             pDescription.setAttribute("class", "beschreibung");
             let button = document.createElement("button");
             button.addEventListener("click", WarenkorbBtn);
-            button.setAttribute("preis", sortimentAR[index].preis.toString());
-            if (sortimentAR[index].kategorie == "AlexF") {
+            button.setAttribute("preis", Aufgabe07.sortimentsa[index].preis.toString());
+            if (Aufgabe07.sortimentsa[index].kategorie == "AlexF") {
                 oneTag.appendChild(div);
-                div.appendChild(h3).innerHTML = sortimentAR[index].name;
+                div.appendChild(h3).innerHTML = Aufgabe07.sortimentsa[index].name;
                 div.appendChild(video);
-                div.appendChild(pPrice).innerHTML = "Preis: " + sortimentAR[index].preis + "€";
-                div.appendChild(pDescription).innerHTML = sortimentAR[index].beschreibung;
+                div.appendChild(pPrice).innerHTML = "Preis: " + Aufgabe07.sortimentsa[index].preis + "€";
+                div.appendChild(pDescription).innerHTML = Aufgabe07.sortimentsa[index].beschreibung;
                 div.appendChild(button).innerHTML = "In den Warenkorb";
             }
             else {
                 twoTag.appendChild(div);
-                div.appendChild(h3).innerHTML = sortimentAR[index].name;
+                div.appendChild(h3).innerHTML = Aufgabe07.sortimentsa[index].name;
                 div.appendChild(video);
-                div.appendChild(pPrice).innerHTML = "Preis: " + sortimentAR[index].preis + "€";
-                div.appendChild(pDescription).innerHTML = sortimentAR[index].beschreibung;
+                div.appendChild(pPrice).innerHTML = "Preis: " + Aufgabe07.sortimentsa[index].preis + "€";
+                div.appendChild(pDescription).innerHTML = Aufgabe07.sortimentsa[index].beschreibung;
                 div.appendChild(button).innerHTML = "In den Warenkorb";
             }
         }
         //}
     }
+    Aufgabe07.createTags = createTags;
     let anzArtikel = 0;
     let preis = 0;
     let anzahlZaehler = document.createElement("p");
@@ -72,6 +69,10 @@ var Aufgabe07;
         }
         anzahlZaehler.innerHTML = "" + anzArtikel;
         document.getElementById("anzAnzeige")?.appendChild(anzahlZaehler);
+        ArtAR = JSON.parse(localStorage.getItem("Warenkorb"));
+        if (!ArtAR) {
+        }
+        localStorage.setItem("Warenkorb", JSON.stringify(ArtAR));
     }
     function handleCategoryClick(_click) {
         if (this.getAttribute("id") == "AlexFbtn") {

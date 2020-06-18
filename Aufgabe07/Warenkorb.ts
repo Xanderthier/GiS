@@ -1,15 +1,36 @@
-namespace Nostalgic {
+namespace Aufgabe07 {
+    
+    document.querySelector("#ResetButton")?.addEventListener("click", function (): void {
+        warenkorbLeeren();
+        document.querySelector("#Produkte")!.innerHTML = " ";
+        //warenkorbSummeAnzeigen();
+    });
+
     function warenkorbLeeren(): void {
         localStorage.setItem("Warenkorb", "[]");
     }
 
-    document.querySelector("#ResetButton")?.addEventListener("click", function (): void {
-        warenkorbLeeren();
-        document.querySelector("#Produkte")!.innerHTML = " ";
-        warenkorbSummeAnzeigen();
-    });
-
     let aktWarenkorb: ShopArtikel[] = JSON.parse(localStorage.getItem("Warenkorb")!);
+
+    for (let index: number = 0; index < aktWarenkorb.length; index++) {
+        let newDiv: HTMLDivElement = document.createElement("div");
+        newDiv.classList.add("produkt");
+        newDiv.innerHTML = `
+            <video src="${aktWarenkorb[index].video}">
+            <p>${aktWarenkorb[index].name} <b>${aktWarenkorb[index].preis} €</b>, ${aktWarenkorb[index].beschreibung}</p>
+            <button type="button">Artikel entfernen</button>`;
+
+        document.querySelector("#Produkte")?.appendChild(newDiv);
+
+        let selectorButton: HTMLButtonElement = <HTMLButtonElement>newDiv.querySelector("button");
+        selectorButton?.addEventListener("click", artDelClick);
+        selectorButton?.setAttribute("artId", index.toString());
+    }
+    /*warenkorbSummeAnzeigen();
+
+    function warenkorbSummeAnzeigen(): void {
+        document.querySelector("#preis")!.innerHTML = preis() + "€";
+    } */
 
     function artDelClick(_event: Event): void {
         let target: HTMLElement = <HTMLElement>_event.target;
@@ -26,25 +47,5 @@ namespace Nostalgic {
 
         //Kann ich das anders lösen?
         location.reload();
-    }
-
-    for (let index: number = 0; index < aktWarenkorb.length; index++) {
-        let newDiv: HTMLDivElement = document.createElement("div");
-        newDiv.classList.add("produkt");
-        newDiv.innerHTML = `
-            <video src="${aktWarenkorb[index].video}">
-            <p>${aktWarenkorb[index].name} <b>${aktWarenkorb[index].preis} €</b>, ${aktWarenkorb[index].beschreibung}</p>
-            <button type="button">Artikel entfernen</button>`;
-
-        document.querySelector("#Produkte")?.appendChild(newDiv);
-
-        let selectorButton: HTMLButtonElement = <HTMLButtonElement>newDiv.querySelector("button");
-        selectorButton?.addEventListener("click", artDelClick);
-        selectorButton?.setAttribute("artId", index.toString());
-    }
-    warenkorbSummeAnzeigen();
-
-    function warenkorbSummeAnzeigen(): void {
-        document.querySelector("#preis")!.innerHTML = preis() + "€";
     }
 }

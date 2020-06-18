@@ -1,4 +1,4 @@
-namespace Nostalgic {
+namespace Aufgabe07 {
 
     export interface ShopArtikel {
         kategorie: string;
@@ -9,16 +9,17 @@ namespace Nostalgic {
 
     }
 
+    communicate("sortiment.json");
+
     export let sortimentsa: ShopArtikel[];
 
-    for (let index: number = 0; index < sortimentsa.length; index++) {
-
-        let jsonstr: String = JSON.stringify(sortimentsa);
-        console.log
-
+    async function communicate(_url: RequestInfo): Promise<void> {
+        let response: Response = await fetch(_url);
+        sortimentsa = await response.json();
+        createTags();
     }
 
-    export function preis(): number {
+    /* export function preis(): number {
         let aktWarenkorb: ShopArtikel[] = JSON.parse(localStorage.getItem("warenkorb")!);
 
         let preis: number = 0;
@@ -26,6 +27,6 @@ namespace Nostalgic {
             preis += aktWarenkorb[index].preis;
         }
         return preis;
-    }
+    } */
 
 }
