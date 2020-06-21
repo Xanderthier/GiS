@@ -5,14 +5,14 @@ var Aufgabe08;
     button.addEventListener("click", communicate);
     async function communicate() {
         let formData = new FormData(document.forms[0]);
-        let url = "https://gis20sw.herokuapp.com/";
+        let url = "https://gis-example.herokuapp.com";
         let query = new URLSearchParams(formData);
         url = url + "?" + query.toString();
         await fetch(url);
         for (let entry of query) {
             console.log(entry);
             console.log("value: " + entry[1]);
-            console.log("name: " + entry[0]);
+            console.log("Type: " + entry[0]);
         }
     }
 })(Aufgabe08 || (Aufgabe08 = {}));

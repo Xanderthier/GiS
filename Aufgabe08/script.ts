@@ -7,7 +7,7 @@ namespace Aufgabe08 {
     async function communicate(): Promise<void> {
 
         let formData: FormData = new FormData(document.forms[0]);
-        let url: string = "https://gis20sw.herokuapp.com/";
+        let url: string = "https://gis-example.herokuapp.com";
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url = url + "?" + query.toString();
         await fetch(url);
@@ -15,7 +15,7 @@ namespace Aufgabe08 {
         for (let entry of query) {
             console.log(entry);
             console.log("value: " + entry[1]);
-            console.log("name: " + entry[0]);
+            console.log("Type: " + entry[0]);
         }
     }
 
