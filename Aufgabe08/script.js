@@ -11,8 +11,8 @@ var Aufgabe08;
         await fetch(url);
         for (let entry of query) {
             console.log(entry);
-            console.log("name: " + entry[0]);
             console.log("value: " + entry[1]);
+            console.log("name: " + entry[0]);
         }
     }
 })(Aufgabe08 || (Aufgabe08 = {}));
