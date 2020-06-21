@@ -5,6 +5,7 @@ var Aufgabe08;
     button.addEventListener("click", communicate);
     async function communicate() {
         let formData = new FormData(document.forms[0]);
+        //platzhalter :^)
         let url = "https://gis-example.herokuapp.com";
         let query = new URLSearchParams(formData);
         url = url + "?" + query.toString();
