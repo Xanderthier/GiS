@@ -1,0 +1,23 @@
+{
+  "name": "sosetestoalext",
+  "version": "1.0.0",
+  "description": "Das L in Studium steht für Lernen",
+  "main": "index.js",
+  "dependencies": {
+    "@types/node": "^14.0.13"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node Aufgabe08/testo.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Xanderthier/GiS.git"
+  },
+  "author": "AlexanderThier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Xanderthier/GiS/issues"
+  },
+  "homepage": "https://github.com/Xanderthier/GiS#readme"
+}
