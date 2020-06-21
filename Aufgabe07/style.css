@@ -135,6 +135,9 @@
         margin: auto;
         padding: 100px;
     }
+    #ResetButton{
+        margin-top: -200px;
+    }
     main{
         position: inherit;
     }
@@ -148,6 +151,17 @@
     .flexproducts{
         display: flex;
         justify-content: center;
+    }
+
+    #Produkte{
+        display: flex;
+        justify-content: center;
+        display: flex;
+        flex-direction: row;
+        flex-flow: wrap;
+        text-align: center;
+        align-content: center;
+        }
     }
     h1>em {
         color: rgb(88, 88, 88);

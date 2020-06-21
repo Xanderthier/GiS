@@ -17,9 +17,9 @@ namespace Aufgabe07 {
 
     for (let index: number = 0; index < aktWarenkorb.length; index++) {
         let newDiv: HTMLDivElement = document.createElement("div");
-        newDiv.classList.add("produkt");
+        newDiv.classList.add("videocontainer");
         newDiv.innerHTML = `
-            <video src="${aktWarenkorb[index].video}"></video>
+            <video src="${aktWarenkorb[index].video}" controls preload></video>
             <p>${aktWarenkorb[index].name} <b>${aktWarenkorb[index].preis} €</b>, ${aktWarenkorb[index].beschreibung}</p>
             <button type="button">Artikel entfernen</button>`;
 
