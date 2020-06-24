@@ -2,11 +2,11 @@
   "name": "soseeasypass",
   "version": "1.0.0",
   "description": "Ein server von mir",
-  "main": "Aufgabe08/script.js",
+  "main": "Aufgabe08/testo.js",
   "dependencies": {},
   "devDependencies": {},
   "scripts": {
-    "start": "node Aufgabe08/script.js"
+    "start": "node Aufgabe08/testo.js"
   },
   "repository": {
     "type": "git",
