@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Aufgabe09 = void 0;
+exports.A08Server = void 0;
 const Http = require("http");
 const url = require("url");
-var Aufgabe09;
-(function (Aufgabe09) {
+var A08Server;
+(function (A08Server) {
     console.log("Starting server");
     let port = Number(process.env.PORT);
     if (!port)
@@ -35,5 +35,5 @@ var Aufgabe09;
             _response.end();
         }
     }
-})(Aufgabe09 = exports.Aufgabe09 || (exports.Aufgabe09 = {}));
+})(A08Server = exports.A08Server || (exports.A08Server = {}));
 //# sourceMappingURL=testo.js.map
