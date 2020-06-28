@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.A08Server = void 0;
+exports.Aufgabe09 = void 0;
 const Http = require("http");
 // export namespace um für allgemeinheit zugriff zu gewähren/Sichtbar zu machen
-var A08Server;
-(function (A08Server) {
+var Aufgabe09;
+(function (Aufgabe09) {
     //Console log gibt starting server aus
     console.log("Starting server");
     //Port wird festgelegt
@@ -31,5 +31,5 @@ var A08Server;
         _response.write(_request.url);
         _response.end();
     }
-})(A08Server = exports.A08Server || (exports.A08Server = {}));
+})(Aufgabe09 = exports.Aufgabe09 || (exports.Aufgabe09 = {}));
 //# sourceMappingURL=testo.js.map

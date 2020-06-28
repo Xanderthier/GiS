@@ -2,7 +2,7 @@
 import * as Http from "http";
 
 // export namespace um für allgemeinheit zugriff zu gewähren/Sichtbar zu machen
-export namespace A08Server {
+export namespace Aufgabe09 {
   //Console log gibt starting server aus
   console.log("Starting server");
   //Port wird festgelegt
