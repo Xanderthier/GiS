@@ -2,7 +2,7 @@ import * as Http from "http";
 import * as url from "url";
 
 export namespace A08Server {
-  console.log("Starting server");
+  console.log("It's showtime");
   let port: number = Number(process.env.PORT);
   if (!port)
     port = 8100;

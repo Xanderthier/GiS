@@ -5,7 +5,7 @@ const Http = require("http");
 const url = require("url");
 var A08Server;
 (function (A08Server) {
-    console.log("Starting server");
+    console.log("It's showtime");
     let port = Number(process.env.PORT);
     if (!port)
         port = 8100;
