@@ -33,7 +33,7 @@ export namespace Aufgabe09 {
 
         }
       }
-      
+
       if (pfad == "/json") {
         let jsonString: string = JSON.stringify(q.query);
         _response.write(jsonString);
@@ -41,4 +41,4 @@ export namespace Aufgabe09 {
       _response.end();
     }
   }
-  }
+}
