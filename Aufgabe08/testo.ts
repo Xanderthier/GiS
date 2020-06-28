@@ -11,7 +11,7 @@ export namespace A08Server {
   if (!port)
     port = 8100;
 
-    //"erstelle server"
+  //"erstelle server"
   let server: Http.Server = Http.createServer();
   //fragt den port, request und listener ab
   server.addListener("request", handleRequest);
