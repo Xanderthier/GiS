@@ -1,8 +1,8 @@
 namespace Aufgabe11 {
     
-    let buttonSignInJson: HTMLButtonElement = document.getElementById("show") as HTMLButtonElement;
+    let buttonSignInJson: HTMLButtonElement = document.getElementById("ausgeben") as HTMLButtonElement;
     buttonSignInJson.addEventListener("click", handleClickRetrieve);
-    let buttonSignInHtml: HTMLButtonElement = document.getElementById("send") as HTMLButtonElement;
+    let buttonSignInHtml: HTMLButtonElement = document.getElementById("absenden") as HTMLButtonElement;
     buttonSignInHtml.addEventListener("click", handleClickStore);
 
 

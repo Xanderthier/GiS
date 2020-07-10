@@ -1,9 +1,9 @@
 "use strict";
 var Aufgabe11;
 (function (Aufgabe11) {
-    let buttonSignInJson = document.getElementById("show");
+    let buttonSignInJson = document.getElementById("ausgeben");
     buttonSignInJson.addEventListener("click", handleClickRetrieve);
-    let buttonSignInHtml = document.getElementById("send");
+    let buttonSignInHtml = document.getElementById("absenden");
     buttonSignInHtml.addEventListener("click", handleClickStore);
     let ausgabe = document.getElementById("Ausgabefeld");
     //let formular: HTMLFormElement = <HTMLFormElement>document.getElementById("formular")!;
