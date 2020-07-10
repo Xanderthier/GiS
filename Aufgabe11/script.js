@@ -34,7 +34,7 @@ var Aufgabe11;
         let query = new URLSearchParams(formData);
         url += "?" + query.toString();
         //let formular: HTMLFormElement = <HTMLFormElement>document.getElementById("formular")!;
-        //formular.reset(); aaaa
+        //formular.reset(); aaaabb
         await fetch(url);
     }
     console.log("Fertig geladen");
