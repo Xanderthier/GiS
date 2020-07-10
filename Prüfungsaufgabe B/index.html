@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="script.js" defer></script>
+
+</head>
+
+<body>
+<main>
+    <div id="FormSignIn" ></div>
+    <form id="formular" action="https://soseeasypass.herokuapp.com" method="GET">
+        <fieldset>
+            <legend>Log In</legend>
+            <input type="text" name="Name">Name<br>
+            <input type="text" name="Vorname">Vorname<br>
+            <input type="text" name="Email">Email<br>
+
+            <button type="button" id="ausgeben">Show</button>
+            <button type="button" id="absenden">Send</button>
+        </fieldset>
+    </form>
+
+    <div id="Ausgabefeld"></div>
+</main>
+</body>
+
+</html>
