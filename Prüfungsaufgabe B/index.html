@@ -5,27 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+    <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 
 </head>
 
 <body>
-<main>
-    <div id="FormSignIn" ></div>
-    <form id="formular" action="https://soseeasypass.herokuapp.com" method="GET">
-        <fieldset>
-            <legend>Log In</legend>
-            <input type="text" name="Name">Name<br>
-            <input type="text" name="Vorname">Vorname<br>
-            <input type="text" name="Email">Email<br>
+    <main>
+        <header>
+            <h1>Cool Minecraft Chat</h1>
+            <div id="ChatType"></div>
+        </header>
+        <div id="FormSignIn"></div>
+        <form id="formular" action="https://soseeasypass.herokuapp.com" method="GET">
+            <fieldset>
+                <legend>Log In</legend>
+                <br>
+                <input type="text" name="Username" placeholder="Username">
+                <br>
+                <input type="text" name="Passwort" placeholder="Passwort">
+                <br>
+                <br>
+                <label for="Cool">Cool Kidz</label>
+                <input type="radio" id="coolkidz" name="chattype" value="0">
+                <label for="notCool">not so Cool Kidz</label>
+                <input type="radio" id="nsckidz" name="chattype" value="1">
+                <br>
+                <br>
+                <a href="chatbox.html"><button type="button" id="login" href >Log in</button></a>
+            </fieldset>
+        </form>
 
-            <button type="button" id="ausgeben">Show</button>
-            <button type="button" id="absenden">Send</button>
-        </fieldset>
-    </form>
-
-    <div id="Ausgabefeld"></div>
-</main>
+        <div id="Ads"></div>
+    </main>
 </body>
 
 </html>
