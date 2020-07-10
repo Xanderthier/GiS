@@ -2,7 +2,7 @@
   "name": "soseeasypass",
   "version": "1.0.0",
   "description": "Ein server von mir",
-  "main": "Aufgabe08/testo.js",
+  "main": "Aufgabe11/testo.js",
   "dependencies": {
     "@types/mongodb": "^3.5.25",
     "mongodb": "^3.5.9"
