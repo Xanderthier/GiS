@@ -1,56 +1,159 @@
+
 import * as Http from "http";
-import * as url from "url";
+import * as Url from "url";
 import * as Mongo from "mongodb";
 
-// export namespace um für allgemeinheit zugriff zu gewähren/Sichtbar zu machen
-export namespace A08Server {
-  //Console log gibt It's showtime aus
-  console.log("It's showtime");
-  //Port wird festgelegt
+export namespace Aufgabe11 {
+  let mongoDaten: Mongo.Collection;
+  let databaseUrl: string;
+
+  //databaseUrl = "mongodb://localhost:27017";
+  databaseUrl = "mongodb+srv://Xanderthier:<password>@clusterschlag.xsm2c.mongodb.net/<dbname>?retryWrites=true&w=majority";
+
+  // mongodb+srv://dbUser:1234@spacy-nobwa.mongodb.net/Aufgabe11?retryWrites=true&w=majority
+
+  connectToDatabase(databaseUrl);
+
   let port: number = Number(process.env.PORT);
-  //Wenn port nicht richtig wird Port auf richtigen Port zugewiesen
   if (!port)
     port = 8100;
 
-  //"erstelle server"
   let server: Http.Server = Http.createServer();
-  //fragt den port, request und listener ab
   server.addListener("request", handleRequest);
-  server.addListener("listening", handleListen);
   server.listen(port);
 
-  //gibt "listening" aus wenn handleListen() aktiv ist
-  function handleListen(): void {
-    console.log("Listening");
-  }
+  async function connectToDatabase(_url: string): Promise<void> {
+    let options: Mongo.MongoClientOptions = {useNewUrlParser: true, useUnifiedTopology: true};
+    let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(_url, options);
+    await mongoClient.connect();
+    mongoDaten = mongoClient.db("Aufgabe11").collection("Daten");
+  } 
 
-  //gibt "I hear voices!" aus wenn handleRequest aufgerufen wird. Als parameter Request und Response.
   function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
-    console.log("I hear voices!");
 
-    //baut html seite auf
-    _response.setHeader("content-type", "text/html; charset=utf-8");
     _response.setHeader("Access-Control-Allow-Origin", "*");
+    _response.setHeader("content-type", "text/html; charset=utf-8");
 
-    //random abfrage ob URL vorhanden, wieso auch immer das sein muss
     if (_request.url) {
-      let q: url.UrlWithParsedQuery = url.parse(_request.url, true);
-      let pfad: string | null = q.pathname;
-
-      //wenn /html gib in key format wieder
-      if (pfad == "/html") {
-        for (let key in q.query) {
-          _response.write(key + ": " + q.query[key] + "<br/>");
-
+      let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
+      let path: string | null = url.pathname;
+      if (path == "/retrieve") {
+        mongoDaten.find({}).toArray(function(exception: Mongo.MongoError, result: string[]): void {
+        if (exception)
+          throw exception;
+        
+        let resultString: string = "";
+        for (let i: number = 0; i < result.length; i++) {
+          resultString += JSON.stringify(result[i]) + " <br>";
         }
-      }
 
-      //wenn /json stringify es und gib aus
-      if (pfad == "/json") {
-        let jsonString: string = JSON.stringify(q.query);
-        _response.write(jsonString);
-      }
-      _response.end();
+        console.log(resultString);
+        _response.write(JSON.stringify(resultString));
+        _response.end();
+        });
+        }
+        
+      else if (path == "/store")
+        mongoDaten.insertOne(url.query);
     }
   }
 }
+
+
+
+
+
+
+
+
+
+/*import * as Http from "http";
+import * as Url from "url";
+import * as Mongo from "mongodb";
+
+export namespace A11Server { // export namespace um für allgemeinheit zugriff zu gewähren/Sichtbar zu machen
+
+  interface Order {
+    [type: string]: string | string[] | undefined;
+  }
+  let orders: Mongo.Collection;
+
+  let port: number = Number(process.env.PORT); //Port wird festgelegt
+  if (!port) //Wenn port nicht richtig wird Port auf richtigen Port zugewiesen
+    port = 8100;
+
+  let datenbankURL: string = "mongodb://localhost:27017";
+
+  startServer(port);
+  connectToDatabase(datenbankURL);
+
+  function startServer(_port: number | string): void {
+
+    console.log("It's showtime"); //Console log gibt It's showtime aus
+
+    let server: Http.Server = Http.createServer(); //"erstelle server"
+    server.addListener("request", handleRequest); //fragt den port, request und listener ab
+    server.addListener("listening", handleListen);
+    server.listen(port);
+  }
+
+  async function connectToDatabase(_url: string): Promise<void> {
+    let options: Mongo.MongoClientOptions = { useNewUrlParser: true, useUnifiedTopology: true };
+    let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(_url, options);
+    await mongoClient.connect();
+    orders = mongoClient.db("test1").collection("Students");
+    console.log("Datenbank connection", orders != undefined);
+  }
+
+  function handleListen(): void { //gibt "listening" aus wenn handleListen() aktiv ist
+    console.log("Listening");
+  }
+
+  function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void { //gibt "I hear voices!" aus wenn handleRequest aufgerufen wird. Als parameter Request und Response.
+    console.log("I hear voices!");
+
+    _response.setHeader("content-type", "text/html; charset=utf-8"); //baut html seite auf
+    _response.setHeader("Access-Control-Allow-Origin", "*");
+
+    if (_request.url) { //random abfrage ob URL vorhanden, wieso auch immer das sein muss
+      let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
+      for (let key in url.query) {
+        _response.write(key + ":" + url.query[key] + "<br/>");
+      }
+
+      let jsonString: string = JSON.stringify(url.query);
+      _response.write(jsonString);
+
+      storeOrder(url.query);
+
+    }
+
+    /*let pfad: string | null = url.pathname;
+    if (pfad == "/html") { //wenn /html gib in key format wieder
+      for (let key in url.query) {
+        _response.write(key + ": " + url.query[key] + "<br/>");
+
+      }
+    }
+
+    if (pfad == "/json") { //wenn /json stringify es und gib aus
+      let jsonString: string = JSON.stringify(url.query);
+      _response.write(jsonString);
+
+      storeOrder(url.query);
+    } *//*
+    _response.end();
+
+  }
+
+  function storeOrder(_order: Order): void {
+    orders.insert(_order);
+  }
+
+  //let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(_url, options);
+  //await mongoClient.connect();
+
+  //let orders: Mongo.Collection = mongoClient.db("Test").collection("Students");
+  //orders.insert({...});
+
+}*/
