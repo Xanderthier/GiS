@@ -10,8 +10,6 @@ export namespace Aufgabe11 {
   //databaseUrl = "mongodb://localhost:27017";
   databaseUrl = "mongodb+srv://Xanderthier:<password>@clusterschlag.xsm2c.mongodb.net/<dbname>?retryWrites=true&w=majority";
 
-  // mongodb+srv://dbUser:1234@spacy-nobwa.mongodb.net/Aufgabe11?retryWrites=true&w=majority
-
   connectToDatabase(databaseUrl);
 
   let port: number = Number(process.env.PORT);
@@ -26,7 +24,7 @@ export namespace Aufgabe11 {
     let options: Mongo.MongoClientOptions = {useNewUrlParser: true, useUnifiedTopology: true};
     let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(_url, options);
     await mongoClient.connect();
-    mongoDaten = mongoClient.db("Aufgabe11").collection("Daten");
+    mongoDaten = mongoClient.db("test").collection("Students");
   } 
 
   function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
@@ -37,7 +35,7 @@ export namespace Aufgabe11 {
     if (_request.url) {
       let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
       let path: string | null = url.pathname;
-      if (path == "/retrieve") {
+      if (path == "/output") {
         mongoDaten.find({}).toArray(function(exception: Mongo.MongoError, result: string[]): void {
         if (exception)
           throw exception;
@@ -53,7 +51,7 @@ export namespace Aufgabe11 {
         });
         }
         
-      else if (path == "/store")
+      else if (path == "/json")
         mongoDaten.insertOne(url.query);
     }
   }

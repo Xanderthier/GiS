@@ -1,22 +1,22 @@
 "use strict";
 var Aufgabe11;
 (function (Aufgabe11) {
-    let buttonSignInJson = document.getElementById("ausgeben");
+    let buttonSignInJson = document.getElementById("show");
     buttonSignInJson.addEventListener("click", handleClickRetrieve);
-    let buttonSignInHtml = document.getElementById("absenden");
+    let buttonSignInHtml = document.getElementById("send");
     buttonSignInHtml.addEventListener("click", handleClickStore);
     let ausgabe = document.getElementById("Ausgabefeld");
     //let formular: HTMLFormElement = <HTMLFormElement>document.getElementById("formular")!;
     ausgabe.setAttribute("style", "display: none");
     let formData;
-    /* let buttonActionHtml: HTMLButtonElement = <HTMLButtonElement>document.getElementById("store");
+    /* let buttonActionHtml: HTMLButtonElement = <HTMLButtonElement>document.getElementById("send");
     buttonActionHtml.addEventListener("click", handleClickStore);
-    let buttonActionJson: HTMLButtonElement = <HTMLButtonElement>document.getElementById("retrieve");
+    let buttonActionJson: HTMLButtonElement = <HTMLButtonElement>document.getElementById("show");
     buttonActionJson.addEventListener("click", handleClickRetrieve); */
     async function handleClickRetrieve() {
         //let url: string = "http://localhost:8100/" + _format;
         let url = "https://soseeasypass.herokuapp.com";
-        url += "/retrieve";
+        url += "/output";
         let response = await fetch(url);
         console.log(response);
         let responseText = await response.json();

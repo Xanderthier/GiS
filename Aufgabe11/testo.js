@@ -10,7 +10,6 @@ var Aufgabe11;
     let databaseUrl;
     //databaseUrl = "mongodb://localhost:27017";
     databaseUrl = "mongodb+srv://Xanderthier:<password>@clusterschlag.xsm2c.mongodb.net/<dbname>?retryWrites=true&w=majority";
-    // mongodb+srv://dbUser:1234@spacy-nobwa.mongodb.net/Aufgabe11?retryWrites=true&w=majority
     connectToDatabase(databaseUrl);
     let port = Number(process.env.PORT);
     if (!port)
@@ -22,7 +21,7 @@ var Aufgabe11;
         let options = { useNewUrlParser: true, useUnifiedTopology: true };
         let mongoClient = new Mongo.MongoClient(_url, options);
         await mongoClient.connect();
-        mongoDaten = mongoClient.db("Aufgabe11").collection("Daten");
+        mongoDaten = mongoClient.db("test").collection("Students");
     }
     function handleRequest(_request, _response) {
         _response.setHeader("Access-Control-Allow-Origin", "*");
@@ -30,7 +29,7 @@ var Aufgabe11;
         if (_request.url) {
             let url = Url.parse(_request.url, true);
             let path = url.pathname;
-            if (path == "/retrieve") {
+            if (path == "/output") {
                 mongoDaten.find({}).toArray(function (exception, result) {
                     if (exception)
                         throw exception;
@@ -43,7 +42,7 @@ var Aufgabe11;
                     _response.end();
                 });
             }
-            else if (path == "/store")
+            else if (path == "/json")
                 mongoDaten.insertOne(url.query);
         }
     }

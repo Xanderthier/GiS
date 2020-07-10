@@ -1,8 +1,8 @@
 namespace Aufgabe11 {
     
-    let buttonSignInJson: HTMLButtonElement = document.getElementById("ausgeben") as HTMLButtonElement;
+    let buttonSignInJson: HTMLButtonElement = document.getElementById("show") as HTMLButtonElement;
     buttonSignInJson.addEventListener("click", handleClickRetrieve);
-    let buttonSignInHtml: HTMLButtonElement = document.getElementById("absenden") as HTMLButtonElement;
+    let buttonSignInHtml: HTMLButtonElement = document.getElementById("send") as HTMLButtonElement;
     buttonSignInHtml.addEventListener("click", handleClickStore);
 
 
@@ -14,16 +14,16 @@ namespace Aufgabe11 {
 
 
     let formData: FormData;
-    /* let buttonActionHtml: HTMLButtonElement = <HTMLButtonElement>document.getElementById("store");
+    /* let buttonActionHtml: HTMLButtonElement = <HTMLButtonElement>document.getElementById("send");
     buttonActionHtml.addEventListener("click", handleClickStore);
-    let buttonActionJson: HTMLButtonElement = <HTMLButtonElement>document.getElementById("retrieve");
+    let buttonActionJson: HTMLButtonElement = <HTMLButtonElement>document.getElementById("show");
     buttonActionJson.addEventListener("click", handleClickRetrieve); */
 
     async function handleClickRetrieve(): Promise<void> {
         //let url: string = "http://localhost:8100/" + _format;
         let url: string = "https://soseeasypass.herokuapp.com";
 
-        url += "/retrieve";
+        url += "/output";
 
         let response: Response = await fetch(url);
         console.log(response);
