@@ -9,7 +9,7 @@ var Aufgabe11;
     let mongoDaten;
     let databaseUrl;
     //databaseUrl = "mongodb://localhost:27017";
-    databaseUrl = "mongodb+srv://Xanderthier:13371243clusterschlag.xsm2c.mongodb.net/test?retryWrites=true&w=majority";
+    databaseUrl = "mongodb+srv://Xanderthier:13371243@clusterschlag.xsm2c.mongodb.net/test?retryWrites=true&w=majority";
     connectToDatabase(databaseUrl);
     let port = Number(process.env.PORT);
     if (!port)
