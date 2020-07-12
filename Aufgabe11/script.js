@@ -33,8 +33,8 @@ var Aufgabe11;
         // tslint:disable-next-line: no-any
         let query = new URLSearchParams(formData);
         url += "?" + query.toString();
-        //let formular: HTMLFormElement = <HTMLFormElement>document.getElementById("formular")!;
-        //formular.reset();
+        let formular = document.getElementById("formular");
+        formular.reset();
         await fetch(url);
     }
     console.log("Fertig geladen");

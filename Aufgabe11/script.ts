@@ -45,8 +45,8 @@ namespace Aufgabe11 {
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         url += "?" + query.toString();
 
-        //let formular: HTMLFormElement = <HTMLFormElement>document.getElementById("formular")!;
-        //formular.reset();
+        let formular: HTMLFormElement = <HTMLFormElement>document.getElementById("formular")!;
+        formular.reset();
 
         await fetch(url);
     }
