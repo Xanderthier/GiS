@@ -46,7 +46,7 @@ namespace Aufgabe11 {
         url += "?" + query.toString();
 
         //let formular: HTMLFormElement = <HTMLFormElement>document.getElementById("formular")!;
-        //formular.reset(); aaaabb
+        //formular.reset();
 
         await fetch(url);
     }
