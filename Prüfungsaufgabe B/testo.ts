@@ -1,4 +1,3 @@
-
 import * as Http from "http";
 import * as Url from "url";
 import * as Mongo from "mongodb";
@@ -8,7 +7,8 @@ export namespace Aufgabe11 {
   let databaseUrl: string;
 
   //databaseUrl = "mongodb://localhost:27017";
-  databaseUrl = "mongodb+srv://Xanderthier:<password>@clusterschlag.xsm2c.mongodb.net/<dbname>?retryWrites=true&w=majority";
+  databaseUrl = "mongodb+srv://Xanderthier:13371243@clusterschlag.xsm2c.mongodb.net/test?retryWrites=true&w=majority";
+  //             mongodb+srv://Xanderthier:<password>@clusterschlag.xsm2c.mongodb.net/<dbname>?retryWrites=true&w=majority
 
   connectToDatabase(databaseUrl);
 
