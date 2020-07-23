@@ -20,12 +20,20 @@ var AufgabeB;
         let splittedString = responseString.split("},");
         for (let i = 0; i == splittedString.length - 2; i++) { //.split erschafft unnötiges extra obj.
             splittedString[i] += "}";
-            let splitJson = JSON.parse(splittedString[i]); //möglicherweise any
+            let splitJson = JSON.parse(splittedString[i]); //möglicherweise any oder json, jeweils ob .name fehler wirft
+            let txtBubble = document.createElement("div");
+            txtBubble.setAttribute("class", "TxtBubble");
+            let txtName = document.createElement("div");
+            txtName.setAttribute("class", "TxtName");
+            txtName.innerHTML = splitJson.Name;
+            let txtMes = document.createElement("div");
+            txtMes.setAttribute("class", "TxtMes");
+            txtName.innerHTML = splitJson.Msg;
+            let divMessageContainer = document.getElementById("flexMessages");
+            divMessageContainer.appendChild(txtBubble);
+            txtBubble.appendChild(txtName);
+            txtBubble.appendChild(txtMes);
         }
-        let divTextMes = document.createElement("div");
-        divTextMes.setAttribute("class", "TxtMes");
-        let divMessageContainer = document.getElementById("flexMessages");
-        divMessageContainer.appendChild(divTextMes);
     }
     let formData;
     /* let buttonActionHtml: HTMLButtonElement = <HTMLButtonElement>document.getElementById("send");

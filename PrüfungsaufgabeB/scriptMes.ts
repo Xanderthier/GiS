@@ -29,17 +29,24 @@ namespace AufgabeB {
 
         for(let i: number = 0; i == splittedString.length-2; i++){      //.split erschafft unnötiges extra obj.
             splittedString[i] += "}";
-            let splitJson: JSON = JSON.parse(splittedString[i]); //möglicherweise any
+            let splitJson: any = JSON.parse(splittedString[i]); //möglicherweise any oder json, jeweils ob .name fehler wirft
+
+            let txtBubble: HTMLElement = document.createElement("div");
+            txtBubble.setAttribute("class", "TxtBubble");
+
+            let txtName: HTMLElement = document.createElement("div");
+            txtName.setAttribute("class", "TxtName");
+            txtName.innerHTML = splitJson.Name;
+
+            let txtMes: HTMLElement = document.createElement("div");
+            txtMes.setAttribute("class", "TxtMes");
+            txtName.innerHTML = splitJson.Msg;
+
+            let divMessageContainer: HTMLElement = <HTMLElement>document.getElementById("flexMessages");
+            divMessageContainer.appendChild(txtBubble);
+            txtBubble.appendChild(txtName);
+            txtBubble.appendChild(txtMes);
         }
-
-        let divTextMes: HTMLElement = document.createElement("div");
-        divTextMes.setAttribute("class", "TxtMes");
-
-
-        let divMessageContainer: HTMLElement = <HTMLElement>document.getElementById("flexMessages");
-        divMessageContainer.appendChild(divTextMes);
-
-
     }
 
 
