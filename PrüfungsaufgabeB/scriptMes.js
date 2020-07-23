@@ -13,9 +13,11 @@ var AufgabeB;
         if (localStorage.getItem("Chat") == "2") {
             url += "/chatroom2";
         }
+        console.log("fetch: " + url);
         let response = await fetch(url); //js objekt block zurückgekommen
         let responseString = await response.json();
         let splittedString = responseString.split("},");
+        console.log(response);
         for (let i = 0; i == splittedString.length - 2; i++) { //.split erschafft unnötiges extra obj.
             splittedString[i] += "}";
             let splitJson = JSON.parse(splittedString[i]); //möglicherweise any oder json, jeweils ob .name fehler wirft

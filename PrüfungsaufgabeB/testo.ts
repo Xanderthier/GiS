@@ -49,7 +49,7 @@ export namespace AufgabeB {
         }
 
         case "/chatroom1": {
-          mongoDaten = mongoClient.db("Chat").collection("Chatroom");
+          mongoDaten = mongoClient.db("Chat").collection("Chatroom1");
           mongoDaten.find({}).toArray(function (exception: Mongo.MongoError, result: string[]): void {
             if (exception)
               throw exception;

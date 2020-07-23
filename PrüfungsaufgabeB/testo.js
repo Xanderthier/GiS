@@ -37,7 +37,7 @@ var AufgabeB;
                     break;
                 }
                 case "/chatroom1": {
-                    mongoDaten = mongoClient.db("Chat").collection("Chatroom");
+                    mongoDaten = mongoClient.db("Chat").collection("Chatroom1");
                     mongoDaten.find({}).toArray(function (exception, result) {
                         if (exception)
                             throw exception;

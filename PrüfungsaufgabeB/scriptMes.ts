@@ -21,11 +21,13 @@ namespace AufgabeB {
             url += "/chatroom2";
         }
 
+        console.log("fetch: " + url);
         let response: Response = await fetch(url);  //js objekt block zurückgekommen
         let responseString: string = await response.json();
         let splittedString: string[] = responseString.split("},");
+        console.log(response);
 
-        for(let i: number = 0; i == splittedString.length-2; i++){      //.split erschafft unnötiges extra obj.
+        for (let i: number = 0; i == splittedString.length - 2; i++) {      //.split erschafft unnötiges extra obj.
             splittedString[i] += "}";
             let splitJson: any = JSON.parse(splittedString[i]); //möglicherweise any oder json, jeweils ob .name fehler wirft
 
