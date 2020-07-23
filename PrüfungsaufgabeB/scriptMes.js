@@ -1,8 +1,6 @@
 "use strict";
 var AufgabeB;
 (function (AufgabeB) {
-    let btnChoiceCool = document.getElementById("coolkidz");
-    btnChoiceCool.addEventListener("click", handleBtn);
     //let ausgabe: HTMLElement = document.getElementById("Ausgabefeld")!;
     //let formular: HTMLFormElement = <HTMLFormElement>document.getElementById("formular")!;
     //ausgabe.setAttribute("style", "display: none");
@@ -35,8 +33,9 @@ var AufgabeB;
             txtBubble.appendChild(txtMes);
         }
     }
-    let formData;
-    /* let buttonActionHtml: HTMLButtonElement = <HTMLButtonElement>document.getElementById("send");
+    genMessages();
+    /*let formData: FormData;
+     let buttonActionHtml: HTMLButtonElement = <HTMLButtonElement>document.getElementById("send");
     buttonActionHtml.addEventListener("click", handleClickStore);
     let buttonActionJson: HTMLButtonElement = <HTMLButtonElement>document.getElementById("show");
     buttonActionJson.addEventListener("click", handleClickRetrieve); */
@@ -55,23 +54,6 @@ var AufgabeB;
         ausgabe.innerHTML = responseText;
         console.log(responseText);
     }*/
-    async function handleBtn(_event) {
-        let target = _event.target;
-        if (target.getAttribute("id") == "coolkidz") {
-            localStorage.setItem("Chat", "1");
-        }
-        formData = new FormData(document.forms[0]);
-        //let url: string = "http://localhost:8100/";
-        let url = "https://soseeasypass.herokuapp.com";
-        url += "/json";
-        // tslint:disable-next-line: no-any
-        let query = new URLSearchParams(formData);
-        url += "?" + query.toString();
-        let formular = document.getElementById("formular");
-        formular.reset();
-        await fetch(url);
-    }
-    console.log("Fertig geladen");
     /*let html: HTMLButtonElement = <HTMLButtonElement>document.getElementById("html");
     html.addEventListener("click", server);
 

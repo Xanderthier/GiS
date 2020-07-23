@@ -5,8 +5,9 @@ import * as Mongo from "mongodb";
 export namespace AufgabeB {
   let mongoDaten: Mongo.Collection;
   let databaseUrl: string;
+  let mongoClient: Mongo.MongoClient;
 
-  databaseUrl = "mongodb+srv://Xanderthier:13371243@clusterschlag.xsm2c.mongodb.net/test?retryWrites=true&w=majority";
+  databaseUrl = "mongodb+srv://Xanderthier:13371243@clusterschlag.xsm2c.mongodb.net/Chat?retryWrites=true&w=majority";
 
   connectToDatabase(databaseUrl);
 
@@ -17,8 +18,6 @@ export namespace AufgabeB {
   let server: Http.Server = Http.createServer();
   server.addListener("request", handleRequest);
   server.listen(port);
-
-  let mongoClient: Mongo.MongoClient;
 
   async function connectToDatabase(_url: string): Promise<void> {
     let options: Mongo.MongoClientOptions = { useNewUrlParser: true, useUnifiedTopology: true };

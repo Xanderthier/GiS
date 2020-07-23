@@ -8,7 +8,8 @@ var AufgabeB;
 (function (AufgabeB) {
     let mongoDaten;
     let databaseUrl;
-    databaseUrl = "mongodb+srv://Xanderthier:13371243@clusterschlag.xsm2c.mongodb.net/test?retryWrites=true&w=majority";
+    let mongoClient;
+    databaseUrl = "mongodb+srv://Xanderthier:13371243@clusterschlag.xsm2c.mongodb.net/Chat?retryWrites=true&w=majority";
     connectToDatabase(databaseUrl);
     let port = Number(process.env.PORT);
     if (!port)
@@ -16,7 +17,6 @@ var AufgabeB;
     let server = Http.createServer();
     server.addListener("request", handleRequest);
     server.listen(port);
-    let mongoClient;
     async function connectToDatabase(_url) {
         let options = { useNewUrlParser: true, useUnifiedTopology: true };
         mongoClient = new Mongo.MongoClient(_url, options);

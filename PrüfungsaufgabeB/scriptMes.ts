@@ -1,7 +1,5 @@
 namespace AufgabeB {
 
-    let btnChoiceCool: HTMLButtonElement = document.getElementById("coolkidz") as HTMLButtonElement;
-    btnChoiceCool.addEventListener("click", handleBtn);
 
 
 
@@ -49,10 +47,10 @@ namespace AufgabeB {
         }
     }
 
+    genMessages();
 
-
-    let formData: FormData;
-    /* let buttonActionHtml: HTMLButtonElement = <HTMLButtonElement>document.getElementById("send");
+    /*let formData: FormData;
+     let buttonActionHtml: HTMLButtonElement = <HTMLButtonElement>document.getElementById("send");
     buttonActionHtml.addEventListener("click", handleClickStore);
     let buttonActionJson: HTMLButtonElement = <HTMLButtonElement>document.getElementById("show");
     buttonActionJson.addEventListener("click", handleClickRetrieve); */
@@ -72,32 +70,6 @@ namespace AufgabeB {
         ausgabe.innerHTML = responseText;
         console.log(responseText);
     }*/
-
-    async function handleBtn(_event: Event): Promise<void> {
-
-        let target: HTMLElement = <HTMLElement>_event.target;
-
-
-        if (target.getAttribute("id") == "coolkidz") {
-            localStorage.setItem("Chat", "1");
-        }
-
-        formData = new FormData(document.forms[0]);
-        //let url: string = "http://localhost:8100/";
-        let url: string = "https://soseeasypass.herokuapp.com";
-        url += "/json";
-
-        // tslint:disable-next-line: no-any
-        let query: URLSearchParams = new URLSearchParams(<any>formData);
-        url += "?" + query.toString();
-
-        let formular: HTMLFormElement = <HTMLFormElement>document.getElementById("formular")!;
-        formular.reset();
-
-        await fetch(url);
-    }
-
-    console.log("Fertig geladen");
 
 
 
