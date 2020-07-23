@@ -39,8 +39,9 @@ export namespace AufgabeB {
       console.log("path: " + path);
       switch (path) {
 
-        case "/storeMsg":{
-          mongoDaten.insertOne(url.query);
+        case "/storeMsg": {
+          mongoDaten.insert(url.query);
+          break;
         }
 
         case "/signin": {
