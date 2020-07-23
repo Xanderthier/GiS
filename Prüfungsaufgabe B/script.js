@@ -8,6 +8,12 @@ var Aufgabe11;
     let ausgabe = document.getElementById("Ausgabefeld");
     //let formular: HTMLFormElement = <HTMLFormElement>document.getElementById("formular")!;
     ausgabe.setAttribute("style", "display: none");
+    function genMessages() {
+        let divTextMes = document.createElement("div");
+        divTextMes.setAttribute("class", "TxtMes");
+        let divMessageContainer = document.getElementById("flexMessages");
+        divMessageContainer.appendChild(divTextMes);
+    }
     let formData;
     /* let buttonActionHtml: HTMLButtonElement = <HTMLButtonElement>document.getElementById("send");
     buttonActionHtml.addEventListener("click", handleClickStore);

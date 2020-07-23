@@ -1,5 +1,5 @@
 namespace Aufgabe11 {
-    
+
     let buttonSignInJson: HTMLButtonElement = document.getElementById("ausgeben") as HTMLButtonElement;
     buttonSignInJson.addEventListener("click", handleClickRetrieve);
     let buttonSignInHtml: HTMLButtonElement = document.getElementById("absenden") as HTMLButtonElement;
@@ -10,6 +10,16 @@ namespace Aufgabe11 {
     //let formular: HTMLFormElement = <HTMLFormElement>document.getElementById("formular")!;
     ausgabe.setAttribute("style", "display: none");
 
+
+    function genMessages(): void {
+
+        let divTextMes: HTMLElement = document.createElement("div");
+        divTextMes.setAttribute("class", "TxtMes");
+
+
+        let divMessageContainer: HTMLElement = <HTMLElement>document.getElementById("flexMessages");
+        divMessageContainer.appendChild(divTextMes);
+    }
 
 
 
@@ -52,9 +62,9 @@ namespace Aufgabe11 {
     }
 
     console.log("Fertig geladen");
-    
 
-    
+
+
     /*let html: HTMLButtonElement = <HTMLButtonElement>document.getElementById("html");
     html.addEventListener("click", server);
 
