@@ -1,7 +1,7 @@
 namespace AufgabeB {
 
-    let RadioChoiceCool: HTMLButtonElement = document.getElementById("coolkidz") as HTMLButtonElement;
-    RadioChoiceCool.addEventListener("click", handleChoice);
+    let btnChoiceCool: HTMLButtonElement = document.getElementById("coolkidz") as HTMLButtonElement;
+    btnChoiceCool.addEventListener("click", handleBtn);
 
 
 
@@ -10,14 +10,36 @@ namespace AufgabeB {
     //ausgabe.setAttribute("style", "display: none");
 
 
-    function genMessages(): void {
+    async function genMessages(): Promise<void> {
+
+        //let url: string = "http://localhost:8100/";
+        let url: string = "https://soseeasypass.herokuapp.com";
+
+        if (localStorage.getItem("Chat") == "1") {
+            url += "/chatroom1";
+        }
+
+        if (localStorage.getItem("Chat") == "2") {
+            url += "/chatroom2";
+        }
+
+        let response: Response = await fetch(url);  //js objekt block zurückgekommen
+        let responseString: string = await response.json();
+        let splittedString: string[] = responseString.split("},");
+
+        for(let i: number = 0; i == splittedString.length-2; i++){      //.split erschafft unnötiges extra obj.
+            splittedString[i] += "}";
+            let splitJson: JSON = JSON.parse(splittedString[i]); //möglicherweise any
+        }
 
         let divTextMes: HTMLElement = document.createElement("div");
         divTextMes.setAttribute("class", "TxtMes");
+
+
         let divMessageContainer: HTMLElement = <HTMLElement>document.getElementById("flexMessages");
         divMessageContainer.appendChild(divTextMes);
 
-        
+
     }
 
 
@@ -28,7 +50,7 @@ namespace AufgabeB {
     let buttonActionJson: HTMLButtonElement = <HTMLButtonElement>document.getElementById("show");
     buttonActionJson.addEventListener("click", handleClickRetrieve); */
 
-    async function handleClickRetrieve(): Promise<void> {
+    /*async function handleClickRetrieve(): Promise<void> {
         //let url: string = "http://localhost:8100/" + _format;
         let url: string = "https://soseeasypass.herokuapp.com";
 
@@ -42,10 +64,17 @@ namespace AufgabeB {
         ausgabe.setAttribute("style", "display: block");
         ausgabe.innerHTML = responseText;
         console.log(responseText);
-    }
+    }*/
 
-    async function handleChoice(): Promise<void> {
-        
+    async function handleBtn(_event: Event): Promise<void> {
+
+        let target: HTMLElement = <HTMLElement>_event.target;
+
+
+        if (target.getAttribute("id") == "coolkidz") {
+            localStorage.setItem("Chat", "1");
+        }
+
         formData = new FormData(document.forms[0]);
         //let url: string = "http://localhost:8100/";
         let url: string = "https://soseeasypass.herokuapp.com";

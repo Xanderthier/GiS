@@ -1,12 +1,27 @@
 "use strict";
 var AufgabeB;
 (function (AufgabeB) {
-    let RadioChoiceCool = document.getElementById("coolkidz");
-    RadioChoiceCool.addEventListener("click", handleChoice);
+    let btnChoiceCool = document.getElementById("coolkidz");
+    btnChoiceCool.addEventListener("click", handleBtn);
     //let ausgabe: HTMLElement = document.getElementById("Ausgabefeld")!;
     //let formular: HTMLFormElement = <HTMLFormElement>document.getElementById("formular")!;
     //ausgabe.setAttribute("style", "display: none");
-    function genMessages() {
+    async function genMessages() {
+        //let url: string = "http://localhost:8100/";
+        let url = "https://soseeasypass.herokuapp.com";
+        if (localStorage.getItem("Chat") == "1") {
+            url += "/chatroom1";
+        }
+        if (localStorage.getItem("Chat") == "2") {
+            url += "/chatroom2";
+        }
+        let response = await fetch(url); //js objekt block zurückgekommen
+        let responseString = await response.json();
+        let splittedString = responseString.split("},");
+        for (let i = 0; i == splittedString.length - 2; i++) { //.split erschafft unnötiges extra obj.
+            splittedString[i] += "}";
+            let splitJson = JSON.parse(splittedString[i]); //möglicherweise any
+        }
         let divTextMes = document.createElement("div");
         divTextMes.setAttribute("class", "TxtMes");
         let divMessageContainer = document.getElementById("flexMessages");
@@ -17,19 +32,26 @@ var AufgabeB;
     buttonActionHtml.addEventListener("click", handleClickStore);
     let buttonActionJson: HTMLButtonElement = <HTMLButtonElement>document.getElementById("show");
     buttonActionJson.addEventListener("click", handleClickRetrieve); */
-    async function handleClickRetrieve() {
+    /*async function handleClickRetrieve(): Promise<void> {
         //let url: string = "http://localhost:8100/" + _format;
-        let url = "https://soseeasypass.herokuapp.com";
+        let url: string = "https://soseeasypass.herokuapp.com";
+
         url += "/output";
-        let response = await fetch(url);
+
+        let response: Response = await fetch(url);
         console.log(response);
-        let responseText = await response.json();
-        let ausgabe = document.getElementById("Ausgabefeld");
+        let responseText: string = await response.json();
+
+        let ausgabe: HTMLElement = document.getElementById("Ausgabefeld")!;
         ausgabe.setAttribute("style", "display: block");
         ausgabe.innerHTML = responseText;
         console.log(responseText);
-    }
-    async function handleChoice() {
+    }*/
+    async function handleBtn(_event) {
+        let target = _event.target;
+        if (target.getAttribute("id") == "coolkidz") {
+            localStorage.setItem("Chat", "1");
+        }
         formData = new FormData(document.forms[0]);
         //let url: string = "http://localhost:8100/";
         let url = "https://soseeasypass.herokuapp.com";
@@ -78,4 +100,4 @@ var AufgabeB;
         console.log(responseText);
     }*/
 })(AufgabeB || (AufgabeB = {}));
-//# sourceMappingURL=script1.js.map
+//# sourceMappingURL=scriptMes.js.map
