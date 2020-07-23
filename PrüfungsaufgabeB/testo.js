@@ -29,6 +29,7 @@ var AufgabeB;
         if (_request.url) {
             let url = Url.parse(_request.url, true);
             let path = url.pathname;
+            console.log("path: " + path);
             switch (path) {
                 case "/signin": {
                     break;

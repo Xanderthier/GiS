@@ -18,6 +18,7 @@ var AufgabeB;
         let responseString = await response.json();
         let splittedString = responseString.split("},");
         console.log(response);
+        console.log(responseString);
         for (let i = 0; i == splittedString.length - 2; i++) { //.split erschafft unnötiges extra obj.
             splittedString[i] += "}";
             let splitJson = JSON.parse(splittedString[i]); //möglicherweise any oder json, jeweils ob .name fehler wirft

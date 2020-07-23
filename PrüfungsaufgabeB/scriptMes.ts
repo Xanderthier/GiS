@@ -26,6 +26,7 @@ namespace AufgabeB {
         let responseString: string = await response.json();
         let splittedString: string[] = responseString.split("},");
         console.log(response);
+        console.log(responseString);
 
         for (let i: number = 0; i == splittedString.length - 2; i++) {      //.split erschafft unnötiges extra obj.
             splittedString[i] += "}";

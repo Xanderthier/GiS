@@ -36,6 +36,7 @@ export namespace AufgabeB {
       let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
       let path: string | null = url.pathname;
 
+      console.log("path: " + path);
       switch (path) {
 
         case "/signin": {
@@ -86,7 +87,7 @@ export namespace AufgabeB {
         }
 
 
-        default: { 
+        default: {
           _response.write("Du bist dumm");
           break;
         }
