@@ -1,13 +1,11 @@
 "use strict";
-var Aufgabe11;
-(function (Aufgabe11) {
-    let buttonSignInJson = document.getElementById("ausgeben");
-    buttonSignInJson.addEventListener("click", handleClickRetrieve);
-    let buttonSignInHtml = document.getElementById("absenden");
-    buttonSignInHtml.addEventListener("click", handleClickStore);
-    let ausgabe = document.getElementById("Ausgabefeld");
+var AufgabeB;
+(function (AufgabeB) {
+    let RadioChoiceCool = document.getElementById("coolkidz");
+    RadioChoiceCool.addEventListener("click", handleChoice);
+    //let ausgabe: HTMLElement = document.getElementById("Ausgabefeld")!;
     //let formular: HTMLFormElement = <HTMLFormElement>document.getElementById("formular")!;
-    ausgabe.setAttribute("style", "display: none");
+    //ausgabe.setAttribute("style", "display: none");
     function genMessages() {
         let divTextMes = document.createElement("div");
         divTextMes.setAttribute("class", "TxtMes");
@@ -31,7 +29,7 @@ var Aufgabe11;
         ausgabe.innerHTML = responseText;
         console.log(responseText);
     }
-    async function handleClickStore() {
+    async function handleChoice() {
         formData = new FormData(document.forms[0]);
         //let url: string = "http://localhost:8100/";
         let url = "https://soseeasypass.herokuapp.com";
@@ -79,5 +77,5 @@ var Aufgabe11;
         let responseText: string = await response.json();
         console.log(responseText);
     }*/
-})(Aufgabe11 || (Aufgabe11 = {}));
+})(AufgabeB || (AufgabeB = {}));
 //# sourceMappingURL=script1.js.map

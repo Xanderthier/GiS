@@ -1,14 +1,14 @@
-namespace Aufgabe11 {
+namespace AufgabeB {
 
-    let buttonSignInJson: HTMLButtonElement = document.getElementById("ausgeben") as HTMLButtonElement;
-    buttonSignInJson.addEventListener("click", handleClickRetrieve);
-    let buttonSignInHtml: HTMLButtonElement = document.getElementById("absenden") as HTMLButtonElement;
-    buttonSignInHtml.addEventListener("click", handleClickStore);
+    //let buttonSignInJson: HTMLButtonElement = document.getElementById("ausgeben") as HTMLButtonElement;
+    //buttonSignInJson.addEventListener("click", handleClickRetrieve);
+    let radioChoiceNotCool: HTMLButtonElement = document.getElementById("nsckidz") as HTMLButtonElement;
+    radioChoiceNotCool.addEventListener("click", handleClickStore);
 
 
-    let ausgabe: HTMLElement = document.getElementById("Ausgabefeld")!;
+    //let ausgabe: HTMLElement = document.getElementById("Ausgabefeld")!;
     //let formular: HTMLFormElement = <HTMLFormElement>document.getElementById("formular")!;
-    ausgabe.setAttribute("style", "display: none");
+    //ausgabe.setAttribute("style", "display: none");
 
 
     function genMessages(): void {

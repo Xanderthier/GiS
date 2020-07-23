@@ -1,13 +1,13 @@
 "use strict";
-var Aufgabe11;
-(function (Aufgabe11) {
-    let buttonSignInJson = document.getElementById("ausgeben");
-    buttonSignInJson.addEventListener("click", handleClickRetrieve);
-    let buttonSignInHtml = document.getElementById("absenden");
-    buttonSignInHtml.addEventListener("click", handleClickStore);
-    let ausgabe = document.getElementById("Ausgabefeld");
+var AufgabeB;
+(function (AufgabeB) {
+    //let buttonSignInJson: HTMLButtonElement = document.getElementById("ausgeben") as HTMLButtonElement;
+    //buttonSignInJson.addEventListener("click", handleClickRetrieve);
+    let radioChoiceNotCool = document.getElementById("nsckidz");
+    radioChoiceNotCool.addEventListener("click", handleClickStore);
+    //let ausgabe: HTMLElement = document.getElementById("Ausgabefeld")!;
     //let formular: HTMLFormElement = <HTMLFormElement>document.getElementById("formular")!;
-    ausgabe.setAttribute("style", "display: none");
+    //ausgabe.setAttribute("style", "display: none");
     function genMessages() {
         let divTextMes = document.createElement("div");
         divTextMes.setAttribute("class", "TxtMes");
@@ -79,5 +79,5 @@ var Aufgabe11;
         let responseText: string = await response.json();
         console.log(responseText);
     }*/
-})(Aufgabe11 || (Aufgabe11 = {}));
+})(AufgabeB || (AufgabeB = {}));
 //# sourceMappingURL=script2.js.map

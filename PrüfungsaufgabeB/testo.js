@@ -1,11 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Aufgabe11 = void 0;
+exports.AufgabeB = void 0;
 const Http = require("http");
 const Url = require("url");
 const Mongo = require("mongodb");
-var Aufgabe11;
-(function (Aufgabe11) {
+var AufgabeB;
+(function (AufgabeB) {
     let mongoDaten;
     let databaseUrl;
     databaseUrl = "mongodb+srv://Xanderthier:13371243@clusterschlag.xsm2c.mongodb.net/test?retryWrites=true&w=majority";
@@ -91,7 +91,7 @@ var Aufgabe11;
                 mongoDaten.insertOne(url.query); */
         }
     }
-})(Aufgabe11 = exports.Aufgabe11 || (exports.Aufgabe11 = {}));
+})(AufgabeB = exports.AufgabeB || (exports.AufgabeB = {}));
 /*import * as Http from "http";
 import * as Url from "url";
 import * as Mongo from "mongodb";

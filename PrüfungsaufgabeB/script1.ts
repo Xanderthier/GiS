@@ -1,14 +1,13 @@
-namespace Aufgabe11 {
+namespace AufgabeB {
 
-    let buttonSignInJson: HTMLButtonElement = document.getElementById("ausgeben") as HTMLButtonElement;
-    buttonSignInJson.addEventListener("click", handleClickRetrieve);
-    let buttonSignInHtml: HTMLButtonElement = document.getElementById("absenden") as HTMLButtonElement;
-    buttonSignInHtml.addEventListener("click", handleClickStore);
+    let RadioChoiceCool: HTMLButtonElement = document.getElementById("coolkidz") as HTMLButtonElement;
+    RadioChoiceCool.addEventListener("click", handleChoice);
 
 
-    let ausgabe: HTMLElement = document.getElementById("Ausgabefeld")!;
+
+    //let ausgabe: HTMLElement = document.getElementById("Ausgabefeld")!;
     //let formular: HTMLFormElement = <HTMLFormElement>document.getElementById("formular")!;
-    ausgabe.setAttribute("style", "display: none");
+    //ausgabe.setAttribute("style", "display: none");
 
 
     function genMessages(): void {
@@ -45,7 +44,7 @@ namespace Aufgabe11 {
         console.log(responseText);
     }
 
-    async function handleClickStore(): Promise<void> {
+    async function handleChoice(): Promise<void> {
         
         formData = new FormData(document.forms[0]);
         //let url: string = "http://localhost:8100/";

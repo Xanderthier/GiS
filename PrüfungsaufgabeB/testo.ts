@@ -2,7 +2,7 @@ import * as Http from "http";
 import * as Url from "url";
 import * as Mongo from "mongodb";
 
-export namespace Aufgabe11 {
+export namespace AufgabeB {
   let mongoDaten: Mongo.Collection;
   let databaseUrl: string;
 
