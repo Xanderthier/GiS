@@ -46,6 +46,7 @@ namespace Aufgabe11 {
     }
 
     async function handleClickStore(): Promise<void> {
+        
         formData = new FormData(document.forms[0]);
         //let url: string = "http://localhost:8100/";
         let url: string = "https://soseeasypass.herokuapp.com";
