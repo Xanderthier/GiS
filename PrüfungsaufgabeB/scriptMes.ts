@@ -13,11 +13,11 @@ namespace AufgabeB {
     async function handleClickRetrieve(): Promise<void> {
         //textarea auslesen
         let formText: FormData = new FormData(<HTMLFormElement>document.getElementById("formText")); //HTML form in formdata umwandeln
-        let message: String = <String>formText.get("text");
+        let message: String = <String>formText.get("text");     // lese text input ein
 
         //var textAreaText = document.getElementById("textarea")!;
         //User Auslesen
-        var User = localStorage.getItem("User");
+        var User = localStorage.getItem("User");                //lese User von localstorage ein
         
         //auslese in Datenbank schreiben
         let url: string = "https://soseeasypass.herokuapp.com";

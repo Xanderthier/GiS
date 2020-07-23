@@ -36,6 +36,7 @@ var AufgabeB;
                     break;
                 }
                 case "/signin": {
+                    mongoDaten = mongoClient.db("Chat").collection("User");
                     mongoDaten.insertOne(url.query);
                     break;
                 }

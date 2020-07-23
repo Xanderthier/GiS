@@ -45,12 +45,13 @@ export namespace AufgabeB {
         }
 
         case "/signin": {
+          mongoDaten = mongoClient.db("Chat").collection("User");
           mongoDaten.insertOne(url.query);
           break;
         }
 
         case "/login": {
-
+          
           break;
         }
 

@@ -9,10 +9,10 @@ var AufgabeB;
     async function handleClickRetrieve() {
         //textarea auslesen
         let formText = new FormData(document.getElementById("formText")); //HTML form in formdata umwandeln
-        let message = formText.get("text");
+        let message = formText.get("text"); // lese text input ein
         //var textAreaText = document.getElementById("textarea")!;
         //User Auslesen
-        var User = localStorage.getItem("User");
+        var User = localStorage.getItem("User"); //lese User von localstorage ein
         //auslese in Datenbank schreiben
         let url = "https://soseeasypass.herokuapp.com";
         url += "/storeMsg";

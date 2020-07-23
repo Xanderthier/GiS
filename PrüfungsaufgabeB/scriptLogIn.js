@@ -5,10 +5,21 @@ var AufgabeB;
     //buttonSignInJson.addEventListener("click", handleClickRetrieve);
     //let radioChoiceNotCool: HTMLButtonElement = document.getElementById("nsckidz") as HTMLButtonElement;
     //radioChoiceNotCool.addEventListener("click", handleClickStore);
-    let formData;
     let buttonSignIn = document.getElementById("signin");
-    buttonSignIn.addEventListener("click", handleClickRetrieve);
-    async function handleClickRetrieve() {
+    buttonSignIn.addEventListener("click", handleClickSignIn);
+    let buttonLogIn = document.getElementById("login");
+    buttonLogIn.addEventListener("click", handleClickLogIn);
+    let buttonCoolKidz = document.getElementById("coolkidz");
+    buttonCoolKidz.addEventListener("click", handleChatroombutton1);
+    let buttonnscKidz = document.getElementById("nsckidz");
+    buttonnscKidz.addEventListener("click", handleChatroombutton2);
+    function handleChatroombutton1() {
+        localStorage.setItem("Chat", "1");
+    }
+    function handleChatroombutton2() {
+        localStorage.setItem("Chat", "2");
+    }
+    async function handleClickSignIn() {
         let formular = new FormData(document.getElementById("formular"));
         //let url: string = "http://localhost:8100/" + _format;
         let url = "https://soseeasypass.herokuapp.com";
@@ -17,17 +28,12 @@ var AufgabeB;
         url += "?" + query.toString(); //Username fehlt noch für den Datenbankeintrag
         await fetch(url);
     }
-    async function handleClickStore() {
-        formData = new FormData(document.forms[0]);
-        //let url: string = "http://localhost:8100/";
-        let url = "https://soseeasypass.herokuapp.com";
-        url += "/json";
-        // tslint:disable-next-line: no-any
-        let query = new URLSearchParams(formData);
-        url += "?" + query.toString();
-        let formular = document.getElementById("formular");
-        formular.reset();
-        await fetch(url);
+    async function handleClickLogIn() {
+        let formular = new FormData(document.getElementById("formular"));
+        let username = formular.get("Username");
+        let password = formular.get("Password");
+        localStorage.setItem("Username", username);
+        localStorage.setItem("Password", password);
     }
     console.log("Fertig geladen");
     /*let html: HTMLButtonElement = <HTMLButtonElement>document.getElementById("html");
