@@ -2,14 +2,14 @@
   "name": "soseeasypass",
   "version": "1.0.0",
   "description": "Ein server von mir",
-  "main": "Aufgabe11/testo.js",
+  "main": "PrüfungsaufgabeB/testo.js",
   "dependencies": {
     "@types/mongodb": "^3.5.25",
     "mongodb": "^3.5.9"
   },
   "devDependencies": {},
   "scripts": {
-    "start": "node Aufgabe11/testo.js"
+    "start": "node PrüfungsaufgabeB/testo.js"
   },
   "repository": {
     "type": "git",
