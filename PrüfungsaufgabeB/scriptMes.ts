@@ -6,31 +6,44 @@ namespace AufgabeB {
     //let ausgabe: HTMLElement = document.getElementById("Ausgabefeld")!;
     //let formular: HTMLFormElement = <HTMLFormElement>document.getElementById("formular")!;
     //ausgabe.setAttribute("style", "display: none");
-    
+
     let buttonSend: HTMLElement = document.getElementById("sendbtn")!;
     buttonSend.addEventListener("click", handleClickRetrieve);
 
+
+    (<HTMLInputElement>document.getElementById("Name")).value = localStorage.getItem("Username")!; //in value von Name Inputtag den username schreiben, Name inputtag hat "hidden" damit man nicht auf falsche ideen kommt :^)
+
+
     async function handleClickRetrieve(): Promise<void> {
         //textarea auslesen
-        let formText: FormData = new FormData(<HTMLFormElement>document.getElementById("formText")); //HTML form in formdata umwandeln
-        let message: String = <String>formText.get("text");     // lese text input ein
-
+        let form: FormData = new FormData(<HTMLFormElement>document.getElementById("form"));
+        //let formUsername: FormData = new FormData(<HTMLFormElement>document.getElementById("formUsername"));
+        //let formText: FormData = new FormData(<HTMLFormElement>document.getElementById("formText")); //HTML form in formdata umwandeln
+        //let message: String = <String>formText.get("text");     // lese text input ein
+        //let user: String = <String>formUsername.get("username");
         //var textAreaText = document.getElementById("textarea")!;
         //User Auslesen
-        var User = localStorage.getItem("User");                //lese User von localstorage ein
+        //let user: String = <String>localStorage.getItem("Username"); alles schrott hier
+        //let user: String = '"Name":"';
+        //user += localStorage.getItem("Username")!;                //lese User von localstorage ein
+        //user += '"';
+        //console.log(user);
         
         //auslese in Datenbank schreiben
         let url: string = "https://soseeasypass.herokuapp.com";
         url += "/storeMsg";
-        let queryName: URLSearchParams = new URLSearchParams(<any>User);
-        let queryMsg: URLSearchParams = new URLSearchParams(<any>formText);
-        console.log("Query msg: " + queryMsg);
-        
+        let query: URLSearchParams = new URLSearchParams(<any>form);
+        //let queryName: URLSearchParams = new URLSearchParams(<any>formUsername); //maybe unsichtbares username feld machen und daraus die info snacken und weiterverarbeiten?
+        //let queryMsg: URLSearchParams = new URLSearchParams(<any>formText);
+        //console.log("Query msg: " + queryMsg);
+        //console.log("Query Name: " + queryName);
+
+        url += "?" + query.toString();  //ich bin ein genius mit dem hidden Username inputtag, call me maximus schlauikus
         //url += "?" + queryName.toString();
-        url += "?" + queryMsg.toString(); //Username fehlt noch für den Datenbankeintrag
+       // url += "?" + queryMsg.toString(); //Username fehlt noch für den Datenbankeintrag
 
         await fetch(url);
-    } 
+    }
 
 
     async function genMessages(): Promise<void> {
@@ -53,11 +66,13 @@ namespace AufgabeB {
         /* console.log(response);
         console.log("Response String: " + responseString);
         console.log("Splitted String length: " + splittedString.length); */
+        console.log("Splittedstring: " + splittedString);
 
         for (let i: number = 0; i < splittedString.length - 1; i++) {      //.split erschafft unnötiges extra obj.
             splittedString[i] += "}";
+            //splittedString[i] = splittedString[i] + "," + '"Name":"' + localStorage.getItem("Username")! + '"' + "}"; //Brainfuck aber generiert einfach n künstlichen Json abteil im stringified Json lol
+            console.log("Splittedstring2: " + splittedString);
             let splitJson: any = JSON.parse(splittedString[i]); //möglicherweise any oder json, jeweils ob .name fehler wirft
-
             //hängt divs an flexMessages an
             let txtBubble: HTMLElement = document.createElement("div");
             txtBubble.setAttribute("class", "TxtBubble");

@@ -6,21 +6,32 @@ var AufgabeB;
     //ausgabe.setAttribute("style", "display: none");
     let buttonSend = document.getElementById("sendbtn");
     buttonSend.addEventListener("click", handleClickRetrieve);
+    document.getElementById("Name").value = localStorage.getItem("Username"); //in value von Name Inputtag den username schreiben, Name inputtag hat "hidden" damit man nicht auf falsche ideen kommt :^)
     async function handleClickRetrieve() {
         //textarea auslesen
-        let formText = new FormData(document.getElementById("formText")); //HTML form in formdata umwandeln
-        let message = formText.get("text"); // lese text input ein
+        let form = new FormData(document.getElementById("form"));
+        //let formUsername: FormData = new FormData(<HTMLFormElement>document.getElementById("formUsername"));
+        //let formText: FormData = new FormData(<HTMLFormElement>document.getElementById("formText")); //HTML form in formdata umwandeln
+        //let message: String = <String>formText.get("text");     // lese text input ein
+        //let user: String = <String>formUsername.get("username");
         //var textAreaText = document.getElementById("textarea")!;
         //User Auslesen
-        var User = localStorage.getItem("User"); //lese User von localstorage ein
+        //let user: String = <String>localStorage.getItem("Username"); alles schrott hier
+        //let user: String = '"Name":"';
+        //user += localStorage.getItem("Username")!;                //lese User von localstorage ein
+        //user += '"';
+        //console.log(user);
         //auslese in Datenbank schreiben
         let url = "https://soseeasypass.herokuapp.com";
         url += "/storeMsg";
-        let queryName = new URLSearchParams(User);
-        let queryMsg = new URLSearchParams(formText);
-        console.log("Query msg: " + queryMsg);
+        let query = new URLSearchParams(form);
+        //let queryName: URLSearchParams = new URLSearchParams(<any>formUsername); //maybe unsichtbares username feld machen und daraus die info snacken und weiterverarbeiten?
+        //let queryMsg: URLSearchParams = new URLSearchParams(<any>formText);
+        //console.log("Query msg: " + queryMsg);
+        //console.log("Query Name: " + queryName);
+        url += "?" + query.toString(); //ich bin ein genius mit dem hidden Username inputtag, call me maximus schlauikus
         //url += "?" + queryName.toString();
-        url += "?" + queryMsg.toString(); //Username fehlt noch für den Datenbankeintrag
+        // url += "?" + queryMsg.toString(); //Username fehlt noch für den Datenbankeintrag
         await fetch(url);
     }
     async function genMessages() {
@@ -39,8 +50,11 @@ var AufgabeB;
         /* console.log(response);
         console.log("Response String: " + responseString);
         console.log("Splitted String length: " + splittedString.length); */
+        console.log("Splittedstring: " + splittedString);
         for (let i = 0; i < splittedString.length - 1; i++) { //.split erschafft unnötiges extra obj.
             splittedString[i] += "}";
+            //splittedString[i] = splittedString[i] + "," + '"Name":"' + localStorage.getItem("Username")! + '"' + "}"; //Brainfuck aber generiert einfach n künstlichen Json abteil im stringified Json lol
+            console.log("Splittedstring2: " + splittedString);
             let splitJson = JSON.parse(splittedString[i]); //möglicherweise any oder json, jeweils ob .name fehler wirft
             //hängt divs an flexMessages an
             let txtBubble = document.createElement("div");
