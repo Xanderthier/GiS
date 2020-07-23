@@ -44,7 +44,7 @@ export namespace AufgabeB {
         }
 
         case "/signin": {
-
+          mongoDaten.insertOne(url.query);
           break;
         }
 

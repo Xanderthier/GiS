@@ -16,8 +16,11 @@ var AufgabeB;
         //auslese in Datenbank schreiben
         let url = "https://soseeasypass.herokuapp.com";
         url += "/storeMsg";
-        let query = new URLSearchParams(formText);
-        url += "?" + query.toString();
+        let queryName = new URLSearchParams(User);
+        let queryMsg = new URLSearchParams(formText);
+        console.log("Query msg: " + queryMsg);
+        //url += "?" + queryName.toString();
+        url += "?" + queryMsg.toString(); //Username fehlt noch für den Datenbankeintrag
         await fetch(url);
     }
     async function genMessages() {
@@ -39,7 +42,6 @@ var AufgabeB;
         for (let i = 0; i < splittedString.length - 1; i++) { //.split erschafft unnötiges extra obj.
             splittedString[i] += "}";
             let splitJson = JSON.parse(splittedString[i]); //möglicherweise any oder json, jeweils ob .name fehler wirft
-            console.log("Hi");
             //hängt divs an flexMessages an
             let txtBubble = document.createElement("div");
             txtBubble.setAttribute("class", "TxtBubble");

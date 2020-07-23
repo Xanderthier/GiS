@@ -2,35 +2,23 @@ namespace AufgabeB {
 
     //let buttonSignInJson: HTMLButtonElement = document.getElementById("coolkidz") as HTMLButtonElement;
     //buttonSignInJson.addEventListener("click", handleClickRetrieve);
-    let radioChoiceNotCool: HTMLButtonElement = document.getElementById("nsckidz") as HTMLButtonElement;
-    radioChoiceNotCool.addEventListener("click", handleClickStore);
-
-
-    //let ausgabe: HTMLElement = document.getElementById("Ausgabefeld")!;
-    //let formular: HTMLFormElement = <HTMLFormElement>document.getElementById("formular")!;
-    //ausgabe.setAttribute("style", "display: none");
-
+    //let radioChoiceNotCool: HTMLButtonElement = document.getElementById("nsckidz") as HTMLButtonElement;
+    //radioChoiceNotCool.addEventListener("click", handleClickStore);
 
     let formData: FormData;
-    /* let buttonActionHtml: HTMLButtonElement = <HTMLButtonElement>document.getElementById("send");
-    buttonActionHtml.addEventListener("click", handleClickStore);
-    let buttonActionJson: HTMLButtonElement = <HTMLButtonElement>document.getElementById("show");
-    buttonActionJson.addEventListener("click", handleClickRetrieve); */
+    let buttonSignIn: HTMLElement = document.getElementById("signin")!;
+    buttonSignIn.addEventListener("click", handleClickRetrieve);
 
     async function handleClickRetrieve(): Promise<void> {
+
+        let formular: FormData = new FormData(<HTMLFormElement>document.getElementById("formular"));
+        
         //let url: string = "http://localhost:8100/" + _format;
         let url: string = "https://soseeasypass.herokuapp.com";
-
-        url += "/output";
-
-        let response: Response = await fetch(url);
-        console.log(response);
-        let responseText: string = await response.json();
-
-        let ausgabe: HTMLElement = document.getElementById("Ausgabefeld")!;
-        ausgabe.setAttribute("style", "display: block");
-        ausgabe.innerHTML = responseText;
-        console.log(responseText);
+        url += "/signin";
+        let query: URLSearchParams = new URLSearchParams(<any>formular);
+        url += "?" + query.toString(); //Username fehlt noch für den Datenbankeintrag
+        await fetch(url);
     }
 
     async function handleClickStore(): Promise<void> {

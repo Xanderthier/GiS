@@ -35,6 +35,7 @@ var AufgabeB;
                     mongoDaten.insertOne(url.query);
                 }
                 case "/signin": {
+                    mongoDaten.insertOne(url.query);
                     break;
                 }
                 case "/login": {

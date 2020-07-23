@@ -6,6 +6,7 @@ namespace AufgabeB {
     //let ausgabe: HTMLElement = document.getElementById("Ausgabefeld")!;
     //let formular: HTMLFormElement = <HTMLFormElement>document.getElementById("formular")!;
     //ausgabe.setAttribute("style", "display: none");
+    
     let buttonSend: HTMLElement = document.getElementById("sendbtn")!;
     buttonSend.addEventListener("click", handleClickRetrieve);
 
@@ -21,11 +22,15 @@ namespace AufgabeB {
         //auslese in Datenbank schreiben
         let url: string = "https://soseeasypass.herokuapp.com";
         url += "/storeMsg";
-        let query: URLSearchParams = new URLSearchParams(<any>formText);
-        url += "?" + query.toString();
+        let queryName: URLSearchParams = new URLSearchParams(<any>User);
+        let queryMsg: URLSearchParams = new URLSearchParams(<any>formText);
+        console.log("Query msg: " + queryMsg);
+        
+        //url += "?" + queryName.toString();
+        url += "?" + queryMsg.toString(); //Username fehlt noch für den Datenbankeintrag
 
         await fetch(url);
-    }
+    } 
 
 
     async function genMessages(): Promise<void> {
@@ -53,7 +58,6 @@ namespace AufgabeB {
             splittedString[i] += "}";
             let splitJson: any = JSON.parse(splittedString[i]); //möglicherweise any oder json, jeweils ob .name fehler wirft
 
-            console.log("Hi");
             //hängt divs an flexMessages an
             let txtBubble: HTMLElement = document.createElement("div");
             txtBubble.setAttribute("class", "TxtBubble");
