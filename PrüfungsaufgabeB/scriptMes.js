@@ -18,10 +18,12 @@ var AufgabeB;
         let responseString = await response.json();
         let splittedString = responseString.split("},");
         console.log(response);
-        console.log(responseString);
-        for (let i = 0; i == splittedString.length - 2; i++) { //.split erschafft unnötiges extra obj.
+        console.log("Response String: " + responseString);
+        console.log("Splitted String length: " + splittedString.length);
+        for (let i = 0; i < splittedString.length - 1; i++) { //.split erschafft unnötiges extra obj.
             splittedString[i] += "}";
             let splitJson = JSON.parse(splittedString[i]); //möglicherweise any oder json, jeweils ob .name fehler wirft
+            console.log("Hi");
             let txtBubble = document.createElement("div");
             txtBubble.setAttribute("class", "TxtBubble");
             let txtName = document.createElement("div");
@@ -29,8 +31,9 @@ var AufgabeB;
             txtName.innerHTML = splitJson.Name;
             let txtMes = document.createElement("div");
             txtMes.setAttribute("class", "TxtMes");
-            txtName.innerHTML = splitJson.Msg;
+            txtMes.innerHTML = splitJson.Msg;
             let divMessageContainer = document.getElementById("flexMessages");
+            document.getElementById("flexMessages")?.appendChild(txtBubble);
             divMessageContainer.appendChild(txtBubble);
             txtBubble.appendChild(txtName);
             txtBubble.appendChild(txtMes);

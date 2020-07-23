@@ -26,12 +26,15 @@ namespace AufgabeB {
         let responseString: string = await response.json();
         let splittedString: string[] = responseString.split("},");
         console.log(response);
-        console.log(responseString);
+        console.log("Response String: " + responseString);
 
-        for (let i: number = 0; i == splittedString.length - 2; i++) {      //.split erschafft unnötiges extra obj.
+        console.log("Splitted String length: " + splittedString.length);
+
+        for (let i: number = 0; i < splittedString.length - 1; i++) {      //.split erschafft unnötiges extra obj.
             splittedString[i] += "}";
             let splitJson: any = JSON.parse(splittedString[i]); //möglicherweise any oder json, jeweils ob .name fehler wirft
 
+            console.log("Hi");
             let txtBubble: HTMLElement = document.createElement("div");
             txtBubble.setAttribute("class", "TxtBubble");
 
@@ -41,9 +44,10 @@ namespace AufgabeB {
 
             let txtMes: HTMLElement = document.createElement("div");
             txtMes.setAttribute("class", "TxtMes");
-            txtName.innerHTML = splitJson.Msg;
+            txtMes.innerHTML = splitJson.Msg;
 
             let divMessageContainer: HTMLElement = <HTMLElement>document.getElementById("flexMessages");
+            document.getElementById("flexMessages")?.appendChild(txtBubble);
             divMessageContainer.appendChild(txtBubble);
             txtBubble.appendChild(txtName);
             txtBubble.appendChild(txtMes);
