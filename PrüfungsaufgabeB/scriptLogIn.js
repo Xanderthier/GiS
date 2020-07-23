@@ -1,19 +1,13 @@
 "use strict";
 var AufgabeB;
 (function (AufgabeB) {
-    //let buttonSignInJson: HTMLButtonElement = document.getElementById("ausgeben") as HTMLButtonElement;
+    //let buttonSignInJson: HTMLButtonElement = document.getElementById("coolkidz") as HTMLButtonElement;
     //buttonSignInJson.addEventListener("click", handleClickRetrieve);
     let radioChoiceNotCool = document.getElementById("nsckidz");
     radioChoiceNotCool.addEventListener("click", handleClickStore);
     //let ausgabe: HTMLElement = document.getElementById("Ausgabefeld")!;
     //let formular: HTMLFormElement = <HTMLFormElement>document.getElementById("formular")!;
     //ausgabe.setAttribute("style", "display: none");
-    function genMessages() {
-        let divTextMes = document.createElement("div");
-        divTextMes.setAttribute("class", "TxtMes");
-        let divMessageContainer = document.getElementById("flexMessages");
-        divMessageContainer.appendChild(divTextMes);
-    }
     let formData;
     /* let buttonActionHtml: HTMLButtonElement = <HTMLButtonElement>document.getElementById("send");
     buttonActionHtml.addEventListener("click", handleClickStore);

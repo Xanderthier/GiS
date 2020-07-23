@@ -4,6 +4,22 @@ var AufgabeB;
     //let ausgabe: HTMLElement = document.getElementById("Ausgabefeld")!;
     //let formular: HTMLFormElement = <HTMLFormElement>document.getElementById("formular")!;
     //ausgabe.setAttribute("style", "display: none");
+    let buttonSend = document.getElementById("sendbtn");
+    buttonSend.addEventListener("click", handleClickRetrieve);
+    async function handleClickRetrieve() {
+        //textarea auslesen
+        let formText = new FormData(document.getElementById("formText")); //HTML form in formdata umwandeln
+        let message = formText.get("text");
+        //var textAreaText = document.getElementById("textarea")!;
+        //User Auslesen
+        var User = localStorage.getItem("User");
+        //auslese in Datenbank schreiben
+        let url = "https://soseeasypass.herokuapp.com";
+        url += "/storeMsg";
+        let query = new URLSearchParams(formText);
+        url += "?" + query.toString();
+        await fetch(url);
+    }
     async function genMessages() {
         //let url: string = "http://localhost:8100/";
         let url = "https://soseeasypass.herokuapp.com";
@@ -13,17 +29,18 @@ var AufgabeB;
         if (localStorage.getItem("Chat") == "2") {
             url += "/chatroom2";
         }
-        console.log("fetch: " + url);
+        // console.log("fetch: " + url);
         let response = await fetch(url); //js objekt block zurückgekommen
         let responseString = await response.json();
         let splittedString = responseString.split("},");
-        console.log(response);
+        /* console.log(response);
         console.log("Response String: " + responseString);
-        console.log("Splitted String length: " + splittedString.length);
+        console.log("Splitted String length: " + splittedString.length); */
         for (let i = 0; i < splittedString.length - 1; i++) { //.split erschafft unnötiges extra obj.
             splittedString[i] += "}";
             let splitJson = JSON.parse(splittedString[i]); //möglicherweise any oder json, jeweils ob .name fehler wirft
             console.log("Hi");
+            //hängt divs an flexMessages an
             let txtBubble = document.createElement("div");
             txtBubble.setAttribute("class", "TxtBubble");
             let txtName = document.createElement("div");
@@ -37,6 +54,7 @@ var AufgabeB;
             divMessageContainer.appendChild(txtBubble);
             txtBubble.appendChild(txtName);
             txtBubble.appendChild(txtMes);
+            //bis hierhin
         }
     }
     genMessages();

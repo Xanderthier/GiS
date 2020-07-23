@@ -6,6 +6,26 @@ namespace AufgabeB {
     //let ausgabe: HTMLElement = document.getElementById("Ausgabefeld")!;
     //let formular: HTMLFormElement = <HTMLFormElement>document.getElementById("formular")!;
     //ausgabe.setAttribute("style", "display: none");
+    let buttonSend: HTMLElement = document.getElementById("sendbtn")!;
+    buttonSend.addEventListener("click", handleClickRetrieve);
+
+    async function handleClickRetrieve(): Promise<void> {
+        //textarea auslesen
+        let formText: FormData = new FormData(<HTMLFormElement>document.getElementById("formText")); //HTML form in formdata umwandeln
+        let message: String = <String>formText.get("text");
+
+        //var textAreaText = document.getElementById("textarea")!;
+        //User Auslesen
+        var User = localStorage.getItem("User");
+        
+        //auslese in Datenbank schreiben
+        let url: string = "https://soseeasypass.herokuapp.com";
+        url += "/storeMsg";
+        let query: URLSearchParams = new URLSearchParams(<any>formText);
+        url += "?" + query.toString();
+
+        await fetch(url);
+    }
 
 
     async function genMessages(): Promise<void> {
@@ -21,20 +41,20 @@ namespace AufgabeB {
             url += "/chatroom2";
         }
 
-        console.log("fetch: " + url);
+        // console.log("fetch: " + url);
         let response: Response = await fetch(url);  //js objekt block zurückgekommen
         let responseString: string = await response.json();
         let splittedString: string[] = responseString.split("},");
-        console.log(response);
+        /* console.log(response);
         console.log("Response String: " + responseString);
-
-        console.log("Splitted String length: " + splittedString.length);
+        console.log("Splitted String length: " + splittedString.length); */
 
         for (let i: number = 0; i < splittedString.length - 1; i++) {      //.split erschafft unnötiges extra obj.
             splittedString[i] += "}";
             let splitJson: any = JSON.parse(splittedString[i]); //möglicherweise any oder json, jeweils ob .name fehler wirft
 
             console.log("Hi");
+            //hängt divs an flexMessages an
             let txtBubble: HTMLElement = document.createElement("div");
             txtBubble.setAttribute("class", "TxtBubble");
 
@@ -51,6 +71,9 @@ namespace AufgabeB {
             divMessageContainer.appendChild(txtBubble);
             txtBubble.appendChild(txtName);
             txtBubble.appendChild(txtMes);
+            //bis hierhin
+
+
         }
     }
 

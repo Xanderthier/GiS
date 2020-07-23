@@ -31,6 +31,9 @@ var AufgabeB;
             let path = url.pathname;
             console.log("path: " + path);
             switch (path) {
+                case "/storeMsg": {
+                    mongoDaten.insertOne(url.query);
+                }
                 case "/signin": {
                     break;
                 }

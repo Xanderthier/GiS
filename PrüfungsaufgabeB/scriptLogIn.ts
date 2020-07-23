@@ -1,6 +1,6 @@
 namespace AufgabeB {
 
-    //let buttonSignInJson: HTMLButtonElement = document.getElementById("ausgeben") as HTMLButtonElement;
+    //let buttonSignInJson: HTMLButtonElement = document.getElementById("coolkidz") as HTMLButtonElement;
     //buttonSignInJson.addEventListener("click", handleClickRetrieve);
     let radioChoiceNotCool: HTMLButtonElement = document.getElementById("nsckidz") as HTMLButtonElement;
     radioChoiceNotCool.addEventListener("click", handleClickStore);
@@ -9,18 +9,6 @@ namespace AufgabeB {
     //let ausgabe: HTMLElement = document.getElementById("Ausgabefeld")!;
     //let formular: HTMLFormElement = <HTMLFormElement>document.getElementById("formular")!;
     //ausgabe.setAttribute("style", "display: none");
-
-
-    function genMessages(): void {
-
-        let divTextMes: HTMLElement = document.createElement("div");
-        divTextMes.setAttribute("class", "TxtMes");
-        let divMessageContainer: HTMLElement = <HTMLElement>document.getElementById("flexMessages");
-        divMessageContainer.appendChild(divTextMes);
-
-        
-    }
-
 
 
     let formData: FormData;
