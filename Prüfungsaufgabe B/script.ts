@@ -15,10 +15,10 @@ namespace Aufgabe11 {
 
         let divTextMes: HTMLElement = document.createElement("div");
         divTextMes.setAttribute("class", "TxtMes");
-
-
         let divMessageContainer: HTMLElement = <HTMLElement>document.getElementById("flexMessages");
         divMessageContainer.appendChild(divTextMes);
+
+        
     }
 
 

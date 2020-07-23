@@ -18,12 +18,15 @@ export namespace Aufgabe11 {
   server.addListener("request", handleRequest);
   server.listen(port);
 
+  let mongoClient: Mongo.MongoClient;
+
   async function connectToDatabase(_url: string): Promise<void> {
-    let options: Mongo.MongoClientOptions = {useNewUrlParser: true, useUnifiedTopology: true};
-    let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(_url, options);
+    let options: Mongo.MongoClientOptions = { useNewUrlParser: true, useUnifiedTopology: true };
+    mongoClient = new Mongo.MongoClient(_url, options);
     await mongoClient.connect();
-    mongoDaten = mongoClient.db("test").collection("Students");
-  } 
+    mongoDaten = mongoClient.db("Chat").collection("User");
+
+  }
 
   function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
 
@@ -33,24 +36,82 @@ export namespace Aufgabe11 {
     if (_request.url) {
       let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
       let path: string | null = url.pathname;
-      if (path == "/output") {
-        mongoDaten.find({}).toArray(function(exception: Mongo.MongoError, result: string[]): void {
-        if (exception)
-          throw exception;
-        
-        let resultString: string = "";
-        for (let i: number = 0; i < result.length; i++) {
-          resultString += JSON.stringify(result[i]) + " <br>";
+
+      switch (path) {
+
+        case "/signin": {
+
+          break;
         }
 
-        console.log(resultString);
-        _response.write(JSON.stringify(resultString));
-        _response.end();
-        });
+        case "/login": {
+
+          break;
         }
-        
-      else if (path == "/json")
-        mongoDaten.insertOne(url.query);
+
+        case "/chatroom1": {
+          mongoDaten = mongoClient.db("Chat").collection("Chatroom");
+          mongoDaten.find({}).toArray(function (exception: Mongo.MongoError, result: string[]): void {
+            if (exception)
+              throw exception;
+            let resultString: string = "";
+            for (let i: number = 0; i < result.length; i++) {
+              resultString += JSON.stringify(result[i]) + ",";
+            }
+
+            console.log(resultString);
+            _response.write(JSON.stringify(resultString));
+            _response.end();
+          });
+
+          break;
+        }
+
+
+        case "/chatroom2": {
+          mongoDaten = mongoClient.db("Chat").collection("Chatroom2");
+          mongoDaten.find({}).toArray(function (exception: Mongo.MongoError, result: string[]): void {
+            if (exception)
+              throw exception;
+            let resultString: string = "";
+            for (let i: number = 0; i < result.length; i++) {
+              resultString += JSON.stringify(result[i]) + ",";
+            }
+
+            console.log(resultString);
+            _response.write(JSON.stringify(resultString));
+            _response.end();
+          });
+
+          break;
+        }
+
+
+        default: { 
+          _response.write("Du bist dumm");
+          break;
+        }
+
+      }
+
+      /*  if (path == "/output") {
+          mongoDaten.find({}).toArray(function(exception: Mongo.MongoError, result: string[]): void {
+          if (exception)
+            throw exception;
+          
+          let resultString: string = "";
+          for (let i: number = 0; i < result.length; i++) {
+            resultString += JSON.stringify(result[i]) + " <br>";
+          }
+  
+          console.log(resultString);
+          _response.write(JSON.stringify(resultString));
+          _response.end();
+          });
+          }
+          
+        else if (path == "/json")
+          mongoDaten.insertOne(url.query); */
     }
   }
 }
@@ -138,18 +199,18 @@ export namespace A11Server { // export namespace um für allgemeinheit zugriff z
 
       storeOrder(url.query);
     } *//*
-    _response.end();
+_response.end();
 
-  }
+}
 
-  function storeOrder(_order: Order): void {
-    orders.insert(_order);
-  }
+function storeOrder(_order: Order): void {
+orders.insert(_order);
+}
 
-  //let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(_url, options);
-  //await mongoClient.connect();
+//let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(_url, options);
+//await mongoClient.connect();
 
-  //let orders: Mongo.Collection = mongoClient.db("Test").collection("Students");
-  //orders.insert({...});
+//let orders: Mongo.Collection = mongoClient.db("Test").collection("Students");
+//orders.insert({...});
 
 }*/

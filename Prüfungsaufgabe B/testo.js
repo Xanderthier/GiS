@@ -16,11 +16,12 @@ var Aufgabe11;
     let server = Http.createServer();
     server.addListener("request", handleRequest);
     server.listen(port);
+    let mongoClient;
     async function connectToDatabase(_url) {
         let options = { useNewUrlParser: true, useUnifiedTopology: true };
-        let mongoClient = new Mongo.MongoClient(_url, options);
+        mongoClient = new Mongo.MongoClient(_url, options);
         await mongoClient.connect();
-        mongoDaten = mongoClient.db("test").collection("Students");
+        mongoDaten = mongoClient.db("Chat").collection("User");
     }
     function handleRequest(_request, _response) {
         _response.setHeader("Access-Control-Allow-Origin", "*");
@@ -28,21 +29,66 @@ var Aufgabe11;
         if (_request.url) {
             let url = Url.parse(_request.url, true);
             let path = url.pathname;
-            if (path == "/output") {
-                mongoDaten.find({}).toArray(function (exception, result) {
-                    if (exception)
-                        throw exception;
-                    let resultString = "";
-                    for (let i = 0; i < result.length; i++) {
-                        resultString += JSON.stringify(result[i]) + " <br>";
-                    }
-                    console.log(resultString);
-                    _response.write(JSON.stringify(resultString));
-                    _response.end();
-                });
+            switch (path) {
+                case "/signin": {
+                    break;
+                }
+                case "/login": {
+                    break;
+                }
+                case "/chatroom1": {
+                    mongoDaten = mongoClient.db("Chat").collection("Chatroom");
+                    mongoDaten.find({}).toArray(function (exception, result) {
+                        if (exception)
+                            throw exception;
+                        let resultString = "";
+                        for (let i = 0; i < result.length; i++) {
+                            resultString += JSON.stringify(result[i]) + ",";
+                        }
+                        console.log(resultString);
+                        _response.write(JSON.stringify(resultString));
+                        _response.end();
+                    });
+                    break;
+                }
+                case "/chatroom2": {
+                    mongoDaten = mongoClient.db("Chat").collection("Chatroom2");
+                    mongoDaten.find({}).toArray(function (exception, result) {
+                        if (exception)
+                            throw exception;
+                        let resultString = "";
+                        for (let i = 0; i < result.length; i++) {
+                            resultString += JSON.stringify(result[i]) + ",";
+                        }
+                        console.log(resultString);
+                        _response.write(JSON.stringify(resultString));
+                        _response.end();
+                    });
+                    break;
+                }
+                default: {
+                    _response.write("Du bist dumm");
+                    break;
+                }
             }
-            else if (path == "/json")
-                mongoDaten.insertOne(url.query);
+            /*  if (path == "/output") {
+                mongoDaten.find({}).toArray(function(exception: Mongo.MongoError, result: string[]): void {
+                if (exception)
+                  throw exception;
+                
+                let resultString: string = "";
+                for (let i: number = 0; i < result.length; i++) {
+                  resultString += JSON.stringify(result[i]) + " <br>";
+                }
+        
+                console.log(resultString);
+                _response.write(JSON.stringify(resultString));
+                _response.end();
+                });
+                }
+                
+              else if (path == "/json")
+                mongoDaten.insertOne(url.query); */
         }
     }
 })(Aufgabe11 = exports.Aufgabe11 || (exports.Aufgabe11 = {}));
