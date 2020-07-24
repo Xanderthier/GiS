@@ -23,7 +23,7 @@ var AufgabeB;
         await mongoClient.connect();
         mongoDaten = mongoClient.db("Chat").collection("User");
     }
-    function handleRequest(_request, _response) {
+    async function handleRequest(_request, _response) {
         _response.setHeader("Access-Control-Allow-Origin", "*");
         _response.setHeader("content-type", "text/html; charset=utf-8");
         if (_request.url) {
@@ -41,6 +41,16 @@ var AufgabeB;
                     break;
                 }
                 case "/login": {
+                    mongoDaten = mongoClient.db("Chat").collection("User");
+                    if (await mongoDaten.findOne(url.query)) { //auslesen ob LogIn daten in der 
+                        _response.write("true");
+                        console.log("LogIn Vorhanden");
+                    }
+                    else {
+                        _response.write("false");
+                        console.log("Kein LogIn vorhanden");
+                    }
+                    _response.end();
                     break;
                 }
                 case "/chatroom1": {

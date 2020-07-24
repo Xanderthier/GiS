@@ -27,7 +27,7 @@ export namespace AufgabeB {
 
   }
 
-  function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
+  async function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): Promise<void> {
 
     _response.setHeader("Access-Control-Allow-Origin", "*");
     _response.setHeader("content-type", "text/html; charset=utf-8");
@@ -51,7 +51,18 @@ export namespace AufgabeB {
         }
 
         case "/login": {
+          mongoDaten = mongoClient.db("Chat").collection("User");
           
+          if (await mongoDaten.findOne(url.query)) {    //auslesen ob LogIn daten in der 
+            _response.write("true");
+            console.log("LogIn Vorhanden");
+          }
+
+          else {
+            _response.write("false");
+            console.log("Kein LogIn vorhanden");
+          }
+          _response.end();
           break;
         }
 

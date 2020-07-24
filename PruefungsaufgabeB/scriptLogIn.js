@@ -29,6 +29,15 @@ var AufgabeB;
         await fetch(url);
     }
     async function handleClickLogIn() {
+        //Formdaten bekommen
+        let formularLogIn = new FormData(document.getElementById("formular"));
+        let url = "https://soseeasypass.herokuapp.com";
+        url += "/login";
+        let query = new URLSearchParams(formularLogIn);
+        url += "?" + query.toString();
+        await fetch(url);
+        let response = await fetch(url);
+        let responseText = await response.text();
         let formular = new FormData(document.getElementById("formular"));
         let username = formular.get("Username");
         let password = formular.get("Password");

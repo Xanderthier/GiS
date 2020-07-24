@@ -35,10 +35,23 @@ namespace AufgabeB {
     }
 
     async function handleClickLogIn(): Promise<void> {
+
+        //Formdaten bekommen
+        let formularLogIn: FormData = new FormData(<HTMLFormElement>document.getElementById("formular"));
         
+        let url: string = "https://soseeasypass.herokuapp.com";
+        url += "/login";
+        let query: URLSearchParams = new URLSearchParams(<any>formularLogIn);
+        url += "?" + query.toString(); 
+        await fetch(url);
+        
+        let response: Response = await fetch(url);
+        let responseText: string = await response.text();
+
         let formular: FormData = new FormData(<HTMLFormElement>document.getElementById("formular"));
         let username: string = <string>formular.get("Username");
         let password: string = <string>formular.get("Password");
+
         localStorage.setItem("Username", username);
         localStorage.setItem("Password", password);
         
