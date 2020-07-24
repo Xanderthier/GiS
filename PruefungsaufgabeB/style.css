@@ -2,3 +2,73 @@ html{
     display: table;
     margin: auto;
 }
+
+header{
+    margin-top: 100%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    text-align: center;    
+}
+
+fieldset{
+    background-color: wheat;
+    text-align: center;
+    width: 300px;
+    height: 250px;
+}
+
+legend{
+    width: 100px;
+    height: 20px;
+    background-color: whitesmoke;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding-top: 3px;
+    
+}
+
+input{
+    margin: 8px;
+}
+
+#Write {
+    padding-left: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+#video_background {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -1000;
+    overflow: hidden;
+    margin-bottom: -143px;
+}
+
+#video_pattern {
+
+	position: fixed;
+	opacity: 0.5;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+    z-index: -1;
+}
+
+footer{
+    margin-top: 18px;
+    text-align: center;
+    background-color: white;
+    box-sizing: border-box;
+    border-radius: 3px 3px 100px 100px;
+    background: white;
+    border: black solid 1px;
+    padding: 3px;
+}

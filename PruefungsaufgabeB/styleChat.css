@@ -27,6 +27,7 @@ body {
     display:table-cell; 
     text-align:center; 
     vertical-align:middle;
+    z-index: 6;
 }
 
 #Chat{
@@ -37,6 +38,7 @@ body {
     border: 1px solid black;
     background-color:white;
     margin-top: 10px;
+    z-index: 5;
 
 }
 
@@ -45,6 +47,8 @@ body {
     height: 680px;
     margin: 20px;
     border: 2px solid black;
+    z-index: 4;
+    border: 10px solid wheat;
 }
 
 
@@ -55,8 +59,18 @@ body {
     text-align: left;
 }
 
-.TxtMes {
-    
+.TxtBubble {
+    padding-top: 10px;
+    clear:both;
+    z-index: 3;
+}
+
+.TxTName {
+    z-index: 2;
+}
+
+.TxtMes{
+    z-index: 1;
 }
 
 textarea{
