@@ -10,8 +10,8 @@ var AufgabeB;
     buttonLogOut.addEventListener("click", handleClickLogOut);
     document.getElementById("Name").value = localStorage.getItem("Username"); //in value von Name Inputtag den username schreiben, Name inputtag hat "hidden" damit man nicht auf falsche ideen kommt :^)
     function handleClickLogOut() {
-        localStorage.removeItem("Username");
-        localStorage.removeItem("Password");
+        //localStorage.removeItem("Username");
+        //localStorage.removeItem("Password");
         window.location.href = "index.html";
     }
     async function handleClickRetrieve() {
