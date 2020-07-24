@@ -32,6 +32,7 @@ namespace AufgabeB {
         let query: URLSearchParams = new URLSearchParams(<any>formular);
         url += "?" + query.toString(); //Username fehlt noch für den Datenbankeintrag
         await fetch(url);
+        alert("Du hast dich erfolgreich Registriert! Logge dich nun ein! :)");
     }
 
     async function handleClickLogIn(): Promise<void> {
@@ -62,7 +63,6 @@ namespace AufgabeB {
         else {
             alert("Du hast entweder keinen Account auf dieser Seite oder keinen Chatroom ausgewählt!");
             console.log("Nicht Eingeloggt oder Chatroom ausgewählt");
-
         }
     }
 

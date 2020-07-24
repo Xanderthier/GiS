@@ -27,6 +27,7 @@ var AufgabeB;
         let query = new URLSearchParams(formular);
         url += "?" + query.toString(); //Username fehlt noch für den Datenbankeintrag
         await fetch(url);
+        alert("Du hast dich erfolgreich Registriert! Logge dich nun ein! :)");
     }
     async function handleClickLogIn() {
         //Formdaten bekommen
