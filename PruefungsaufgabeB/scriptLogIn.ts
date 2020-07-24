@@ -51,14 +51,16 @@ namespace AufgabeB {
         let formular: FormData = new FormData(<HTMLFormElement>document.getElementById("formular"));
         let username: string = <string>formular.get("Username");
         let password: string = <string>formular.get("Password");
+        console.log("ResponseText: " + responseText);
+
         if (responseText == "true") {
             localStorage.setItem("Username", username);
             localStorage.setItem("Password", password);
             window.location.href = "chatbox.html";
         }
-        else{
+        else {
             console.log("Nicht Eingeloggt");
-            
+
         }
     }
 

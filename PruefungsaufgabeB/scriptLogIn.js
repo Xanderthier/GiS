@@ -41,6 +41,7 @@ var AufgabeB;
         let formular = new FormData(document.getElementById("formular"));
         let username = formular.get("Username");
         let password = formular.get("Password");
+        console.log("ResponseText: " + responseText);
         if (responseText == "true") {
             localStorage.setItem("Username", username);
             localStorage.setItem("Password", password);
