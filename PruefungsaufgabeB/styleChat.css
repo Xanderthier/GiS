@@ -79,7 +79,7 @@ textarea{
 }
 
 #video_pattern {
-	background-image: url(./pattern.png);
+
 	position: fixed;
 	opacity: 0.5;
 	left: 0px;
