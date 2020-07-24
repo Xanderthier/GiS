@@ -48,13 +48,14 @@ namespace AufgabeB {
         let response: Response = await fetch(url);
         let responseText: string = await response.text();
 
-        let formular: FormData = new FormData(<HTMLFormElement>document.getElementById("formular"));
-        let username: string = <string>formular.get("Username");
-        let password: string = <string>formular.get("Password");
+
 
         console.log("ResponseText: " + responseText); //OMG ES FUNKTIONIERRRRRTTTT JAAAAAA
 
         if (responseText == "true" && localStorage.getItem("Chat") == "1" && localStorage.getItem("Chat") == "2") {
+            let formular: FormData = new FormData(<HTMLFormElement>document.getElementById("formular"));
+            let username: string = <string>formular.get("Username");
+            let password: string = <string>formular.get("Password");
             localStorage.setItem("Username", username);
             localStorage.setItem("Password", password);
             window.location.href = "chatbox.html";
