@@ -71,6 +71,7 @@ namespace AufgabeB {
         for (let i: number = 0; i < splittedString.length - 1; i++) {      //.split erschafft unnötiges extra obj.
             splittedString[i] += "}";
             //splittedString[i] = splittedString[i] + "," + '"Name":"' + localStorage.getItem("Username")! + '"' + "}"; //Brainfuck aber generiert einfach n künstlichen Json abteil im stringified Json lol
+            
             console.log("Splittedstring2: " + splittedString);
             let splitJson: any = JSON.parse(splittedString[i]); //möglicherweise any oder json, jeweils ob .name fehler wirft
             //hängt divs an flexMessages an

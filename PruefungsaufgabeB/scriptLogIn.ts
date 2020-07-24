@@ -25,7 +25,7 @@ namespace AufgabeB {
     async function handleClickSignIn(): Promise<void> {
 
         let formular: FormData = new FormData(<HTMLFormElement>document.getElementById("formular"));
-        
+
         //let url: string = "http://localhost:8100/" + _format;
         let url: string = "https://soseeasypass.herokuapp.com";
         url += "/signin";
@@ -38,23 +38,28 @@ namespace AufgabeB {
 
         //Formdaten bekommen
         let formularLogIn: FormData = new FormData(<HTMLFormElement>document.getElementById("formular"));
-        
+
         let url: string = "https://soseeasypass.herokuapp.com";
         url += "/login";
         let query: URLSearchParams = new URLSearchParams(<any>formularLogIn);
-        url += "?" + query.toString(); 
+        url += "?" + query.toString();
         await fetch(url);
-        
+
         let response: Response = await fetch(url);
         let responseText: string = await response.text();
 
         let formular: FormData = new FormData(<HTMLFormElement>document.getElementById("formular"));
         let username: string = <string>formular.get("Username");
         let password: string = <string>formular.get("Password");
-
-        localStorage.setItem("Username", username);
-        localStorage.setItem("Password", password);
-        
+        if (responseText == "true") {
+            localStorage.setItem("Username", username);
+            localStorage.setItem("Password", password);
+            window.location.href = "chatbox.html";
+        }
+        else{
+            console.log("Nicht Eingeloggt");
+            
+        }
     }
 
     console.log("Fertig geladen");

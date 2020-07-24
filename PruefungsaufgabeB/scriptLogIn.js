@@ -41,8 +41,14 @@ var AufgabeB;
         let formular = new FormData(document.getElementById("formular"));
         let username = formular.get("Username");
         let password = formular.get("Password");
-        localStorage.setItem("Username", username);
-        localStorage.setItem("Password", password);
+        if (responseText == "true") {
+            localStorage.setItem("Username", username);
+            localStorage.setItem("Password", password);
+            window.location.href = "chatbox.html";
+        }
+        else {
+            console.log("Nicht Eingeloggt");
+        }
     }
     console.log("Fertig geladen");
     /*let html: HTMLButtonElement = <HTMLButtonElement>document.getElementById("html");
