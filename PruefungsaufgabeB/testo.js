@@ -42,7 +42,7 @@ var AufgabeB;
                 }
                 case "/login": {
                     mongoDaten = mongoClient.db("Chat").collection("User");
-                    if (await mongoDaten.findOne(url.query)) { //auslesen ob LogIn daten in der 
+                    if (await mongoDaten.findOne(url.query)) { //Query auslesen
                         _response.write("true");
                         console.log("LogIn Vorhanden");
                     }
@@ -50,7 +50,7 @@ var AufgabeB;
                         _response.write("false");
                         console.log("Kein LogIn vorhanden");
                     }
-                    _response.end();
+                    _response.end(); //OMG ES FUNKTIONIERT EINFACH OMG WIE NICE
                     break;
                 }
                 case "/chatroom1": {

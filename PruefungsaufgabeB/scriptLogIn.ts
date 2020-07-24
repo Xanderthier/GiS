@@ -51,15 +51,17 @@ namespace AufgabeB {
         let formular: FormData = new FormData(<HTMLFormElement>document.getElementById("formular"));
         let username: string = <string>formular.get("Username");
         let password: string = <string>formular.get("Password");
-        console.log("ResponseText: " + responseText);
 
-        if (responseText == "true") {
+        console.log("ResponseText: " + responseText); //OMG ES FUNKTIONIERRRRRTTTT JAAAAAA
+
+        if (responseText == "true" && localStorage.getItem("Chat") == "1" && localStorage.getItem("Chat") == "2") {
             localStorage.setItem("Username", username);
             localStorage.setItem("Password", password);
             window.location.href = "chatbox.html";
         }
         else {
-            console.log("Nicht Eingeloggt");
+            alert("Du hast entweder keinen Account auf dieser Seite oder keinen Chatroom ausgewählt!");
+            console.log("Nicht Eingeloggt oder Chatroom ausgewählt");
 
         }
     }
