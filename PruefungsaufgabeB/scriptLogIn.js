@@ -21,13 +21,13 @@ var AufgabeB;
     }
     async function handleClickSignIn() {
         let formular = new FormData(document.getElementById("formular"));
+        alert("Du hast dich erfolgreich Registriert! Logge dich nun ein! :)");
         //let url: string = "http://localhost:8100/" + _format;
         let url = "https://soseeasypass.herokuapp.com";
         url += "/signin";
         let query = new URLSearchParams(formular);
         url += "?" + query.toString(); //Username fehlt noch für den Datenbankeintrag
         await fetch(url);
-        alert("Du hast dich erfolgreich Registriert! Logge dich nun ein! :)");
     }
     async function handleClickLogIn() {
         //Formdaten bekommen

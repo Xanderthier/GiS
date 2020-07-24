@@ -25,14 +25,13 @@ namespace AufgabeB {
     async function handleClickSignIn(): Promise<void> {
 
         let formular: FormData = new FormData(<HTMLFormElement>document.getElementById("formular"));
-
+        alert("Du hast dich erfolgreich Registriert! Logge dich nun ein! :)");
         //let url: string = "http://localhost:8100/" + _format;
         let url: string = "https://soseeasypass.herokuapp.com";
         url += "/signin";
         let query: URLSearchParams = new URLSearchParams(<any>formular);
         url += "?" + query.toString(); //Username fehlt noch für den Datenbankeintrag
         await fetch(url);
-        alert("Du hast dich erfolgreich Registriert! Logge dich nun ein! :)");
     }
 
     async function handleClickLogIn(): Promise<void> {
