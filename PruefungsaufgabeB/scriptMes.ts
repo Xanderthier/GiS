@@ -18,8 +18,8 @@ namespace AufgabeB {
 
 
     function handleClickLogOut(): void {
-        //localStorage.removeItem("Username");
-        //localStorage.removeItem("Password");
+        localStorage.removeItem("Username");
+        localStorage.removeItem("Password");
         window.location.href = "index.html";
     }
 

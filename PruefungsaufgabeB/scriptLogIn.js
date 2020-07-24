@@ -40,7 +40,7 @@ var AufgabeB;
         let response = await fetch(url);
         let responseText = await response.text();
         console.log("ResponseText: " + responseText); //OMG ES FUNKTIONIERRRRRTTTT JAAAAAA
-        if (responseText == "true" && localStorage.getItem("Chat") == "1" && localStorage.getItem("Chat") == "2") {
+        if (responseText == "true" && localStorage.getItem("Chat") == "1" || localStorage.getItem("Chat") == "2") {
             let formular = new FormData(document.getElementById("formular"));
             let username = formular.get("Username");
             let password = formular.get("Password");

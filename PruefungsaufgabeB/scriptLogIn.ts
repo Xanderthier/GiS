@@ -52,7 +52,7 @@ namespace AufgabeB {
 
         console.log("ResponseText: " + responseText); //OMG ES FUNKTIONIERRRRRTTTT JAAAAAA
 
-        if (responseText == "true" && localStorage.getItem("Chat") == "1" && localStorage.getItem("Chat") == "2") {
+        if (responseText == "true" && localStorage.getItem("Chat") == "1" || localStorage.getItem("Chat") == "2") {
             let formular: FormData = new FormData(<HTMLFormElement>document.getElementById("formular"));
             let username: string = <string>formular.get("Username");
             let password: string = <string>formular.get("Password");
