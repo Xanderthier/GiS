@@ -19,6 +19,9 @@ h1{
     background-size: 50px;
     background-repeat: repeat-x;
 }
+h1:hover{
+    cursor: context-menu;
+}
 
 body { 
     display: inline-block;
@@ -87,6 +90,10 @@ body {
     text-shadow: 0 0 5px black;
 }
 
+.TxtBubble:hover{
+    cursor: context-menu;
+}
+
 
 #Write {
     padding-left: 20px;
@@ -103,10 +110,59 @@ body {
     z-index: 1;
 }
 
-textarea{
-    width: 500px;
+p{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    color: whitesmoke;
+    text-shadow: 0 0 5px black;
+    width: 150px;
     height: 50px;
-    resize: none;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 0px;
+    float: left;
+}
+
+p:hover{
+    cursor: context-menu;
+}
+
+#dText{
+    width: 100px;
+}
+
+input{
+    text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    margin: 10px;
+    margin-right: 30px;
+    width: 200px;
+    float: left;
+}
+
+#Name{
+    background-color: rgba(155, 118, 83, 0.0);
+    color: white;
+    text-shadow: 0 0 5px black;
+    font-size: 20px;
+    border-style: hidden;
+    margin: 5px;
+}
+
+#Name::selection{
+    border-style: hidden;
+}
+#Name:focus{
+    outline: none;
+}
+#Name:hover{
+    cursor: context-menu;
+}
+
+#text{
+    width: 400px;
 }
 
 #video_background {
@@ -148,4 +204,8 @@ footer{
     background-repeat: repeat-x;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-weight: bolder;
+}
+
+footer:hover{
+    cursor: context-menu;
 }
