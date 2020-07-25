@@ -16,6 +16,11 @@ namespace AufgabeB {
 
     (<HTMLInputElement>document.getElementById("Name")).value = localStorage.getItem("Username")!; //in value von Name Inputtag den username schreiben, Name inputtag hat "hidden" damit man nicht auf falsche ideen kommt :^)
 
+    window.setInterval(function () {
+        genMessages();//Autorefresh für aktualisierung anderer nachrichten
+        var elem = document.getElementById("flexMessages")!;
+        elem.scrollTop = elem.scrollHeight; // Autoscrolldown, 
+    }, 30000);
 
     function handleClickLogOut(): void {
         localStorage.removeItem("Username");
@@ -25,7 +30,7 @@ namespace AufgabeB {
 
     async function handleClickRetrieve(): Promise<void> {
         //textarea auslesen
-        let form: FormData = new FormData(<HTMLFormElement>document.getElementById("form"));        
+        let form: FormData = new FormData(<HTMLFormElement>document.getElementById("form"));
         //auslese in Datenbank schreiben
         let url: string = "https://soseeasypass.herokuapp.com";
         url += "/storeMsg";
@@ -56,10 +61,13 @@ namespace AufgabeB {
 
         console.log("Splittedstring: " + splittedString);
 
+        let divMessageContainer: HTMLElement = <HTMLElement>document.getElementById("flexMessages");
+        divMessageContainer.innerHTML = "";
+
         for (let i: number = 0; i < splittedString.length - 1; i++) {      //.split erschafft unnötiges extra obj.
             splittedString[i] += "}";
             //splittedString[i] = splittedString[i] + "," + '"Name":"' + localStorage.getItem("Username")! + '"' + "}"; //Brainfuck aber generiert einfach n künstlichen Json abteil im stringified Json lol
-            
+
             console.log("Splittedstring2: " + splittedString);
             let splitJson: any = JSON.parse(splittedString[i]); //möglicherweise any oder json, jeweils ob .name fehler wirft
             //hängt divs an flexMessages an
@@ -74,7 +82,6 @@ namespace AufgabeB {
             txtMes.setAttribute("class", "TxtMes");
             txtMes.innerHTML = splitJson.Msg;
 
-            let divMessageContainer: HTMLElement = <HTMLElement>document.getElementById("flexMessages");
             document.getElementById("flexMessages")?.appendChild(txtBubble);
             divMessageContainer.appendChild(txtBubble);
             txtBubble.appendChild(txtName);

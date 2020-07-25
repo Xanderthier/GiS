@@ -49,6 +49,7 @@ body {
     border: 2px solid black;
     z-index: 4;
     border: 10px solid wheat;
+    overflow: scroll;
 }
 
 

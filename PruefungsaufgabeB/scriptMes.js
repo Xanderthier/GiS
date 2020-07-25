@@ -9,6 +9,11 @@ var AufgabeB;
     let buttonLogOut = document.getElementById("logOut");
     buttonLogOut.addEventListener("click", handleClickLogOut);
     document.getElementById("Name").value = localStorage.getItem("Username"); //in value von Name Inputtag den username schreiben, Name inputtag hat "hidden" damit man nicht auf falsche ideen kommt :^)
+    window.setInterval(function () {
+        genMessages(); //Autorefresh für aktualisierung anderer nachrichten
+        var elem = document.getElementById("flexMessages");
+        elem.scrollTop = elem.scrollHeight; // Autoscrolldown, 
+    }, 30000);
     function handleClickLogOut() {
         localStorage.removeItem("Username");
         localStorage.removeItem("Password");
@@ -37,6 +42,8 @@ var AufgabeB;
         let responseString = await response.json();
         let splittedString = responseString.split("},");
         console.log("Splittedstring: " + splittedString);
+        let divMessageContainer = document.getElementById("flexMessages");
+        divMessageContainer.innerHTML = "";
         for (let i = 0; i < splittedString.length - 1; i++) { //.split erschafft unnötiges extra obj.
             splittedString[i] += "}";
             //splittedString[i] = splittedString[i] + "," + '"Name":"' + localStorage.getItem("Username")! + '"' + "}"; //Brainfuck aber generiert einfach n künstlichen Json abteil im stringified Json lol
@@ -51,7 +58,6 @@ var AufgabeB;
             let txtMes = document.createElement("div");
             txtMes.setAttribute("class", "TxtMes");
             txtMes.innerHTML = splitJson.Msg;
-            let divMessageContainer = document.getElementById("flexMessages");
             document.getElementById("flexMessages")?.appendChild(txtBubble);
             divMessageContainer.appendChild(txtBubble);
             txtBubble.appendChild(txtName);
