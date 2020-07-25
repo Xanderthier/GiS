@@ -1,3 +1,4 @@
+@media screen and (min-width: 1024px){
 html{
     display: table;
     margin: auto;
@@ -64,19 +65,15 @@ body {
     font-weight: bolder;
 }
 
-
 ::-webkit-scrollbar {
     width: 10px;
   }
-  
   ::-webkit-scrollbar-track {
     background: #9b7653; 
   }
-   
   ::-webkit-scrollbar-thumb {
     background: rgb(100, 100, 100); 
   }
-  
   ::-webkit-scrollbar-thumb:hover {
     background: rgb(41, 41, 41); 
   }
@@ -165,6 +162,46 @@ input{
     width: 400px;
 }
 
+button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: rgba(155, 118, 83, 0.8);
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    width: 100px;
+    height: 25px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    vertical-align:middle
+  }
+  
+  button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  button:hover span {
+    padding-right: 15px;
+  }
+  
+  button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
 #video_background {
 	position: absolute;
 	top: 0px;
@@ -208,4 +245,13 @@ footer{
 
 footer:hover{
     cursor: context-menu;
+}
+}
+@media screen and (max-width: 1024px){
+    
+
+}
+
+@media screen and (max-width: 600px) {
+
 }

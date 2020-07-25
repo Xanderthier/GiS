@@ -17,7 +17,6 @@ var AufgabeB;
     }
     async function handleClickSignIn() {
         let formular = new FormData(document.getElementById("formular"));
-        alert("Du hast dich erfolgreich Registriert! Logge dich nun ein! :)");
         let url = "https://soseeasypass.herokuapp.com";
         url += "/signin";
         let query = new URLSearchParams(formular);

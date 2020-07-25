@@ -20,7 +20,7 @@ namespace AufgabeB {
     async function handleClickSignIn(): Promise<void> {
 
         let formular: FormData = new FormData(<HTMLFormElement>document.getElementById("formular"));
-        alert("Du hast dich erfolgreich Registriert! Logge dich nun ein! :)");
+        
         let url: string = "https://soseeasypass.herokuapp.com";
         url += "/signin";
         let query: URLSearchParams = new URLSearchParams(<any>formular);
