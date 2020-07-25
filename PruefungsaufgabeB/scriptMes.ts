@@ -69,14 +69,14 @@ namespace AufgabeB {
             //splittedString[i] = splittedString[i] + "," + '"Name":"' + localStorage.getItem("Username")! + '"' + "}"; //Brainfuck aber generiert einfach n künstlichen Json abteil im stringified Json lol
 
             console.log("Splittedstring2: " + splittedString);
-            let splitJson: any = JSON.parse(splittedString[i]); //möglicherweise any oder json, jeweils ob .name fehler wirft
+            let splitJson: any = JSON.parse(splittedString[i]); //möglicherweise any oder json, jeweils ob .name fehler wirft, wirft fehler
             //hängt divs an flexMessages an
             let txtBubble: HTMLElement = document.createElement("div");
             txtBubble.setAttribute("class", "TxtBubble");
 
             let txtName: HTMLElement = document.createElement("div");
             txtName.setAttribute("class", "TxtName");
-            txtName.innerHTML = splitJson.Name;
+            txtName.innerHTML = splitJson.Name + ":";
 
             let txtMes: HTMLElement = document.createElement("div");
             txtMes.setAttribute("class", "TxtMes");

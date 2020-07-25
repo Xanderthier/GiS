@@ -48,13 +48,13 @@ var AufgabeB;
             splittedString[i] += "}";
             //splittedString[i] = splittedString[i] + "," + '"Name":"' + localStorage.getItem("Username")! + '"' + "}"; //Brainfuck aber generiert einfach n künstlichen Json abteil im stringified Json lol
             console.log("Splittedstring2: " + splittedString);
-            let splitJson = JSON.parse(splittedString[i]); //möglicherweise any oder json, jeweils ob .name fehler wirft
+            let splitJson = JSON.parse(splittedString[i]); //möglicherweise any oder json, jeweils ob .name fehler wirft, wirft fehler
             //hängt divs an flexMessages an
             let txtBubble = document.createElement("div");
             txtBubble.setAttribute("class", "TxtBubble");
             let txtName = document.createElement("div");
             txtName.setAttribute("class", "TxtName");
-            txtName.innerHTML = splitJson.Name;
+            txtName.innerHTML = splitJson.Name + ":";
             let txtMes = document.createElement("div");
             txtMes.setAttribute("class", "TxtMes");
             txtMes.innerHTML = splitJson.Msg;

@@ -3,20 +3,21 @@ html{
     margin: auto;
 }
 
-#Logo{
-    
-}
-
 h1{
     text-align: center;
-    background-color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    text-shadow: 0 0 5px black;
+    color: whitesmoke;
     box-sizing: border-box;
-    border-radius: 50px 50px 3px 3px;
-    background: white;
+    border-radius: 3px 3px 3px 3px;
     border: black solid 1px;
     padding: 3px;
     margin-top: 13px;
     margin-bottom: 20px;
+    background-image: url("Media/DirtGrass.jpg");
+    background-size: 50px;
+    background-repeat: repeat-x;
 }
 
 body { 
@@ -36,11 +37,15 @@ body {
     margin-right: auto;
     height: 800px;
     border: 1px solid black;
+    border-radius: 3px;
     background-color:white;
     margin-top: 10px;
     z-index: 5;
+    background-image: url("Media/DirtGrass.jpg"), url("Media/DirtBlank.jpg");
+    background-size: 50px, 50px;
+    background-repeat: repeat-x, repeat;
 
-}
+} 
 
 #flexMessages{
     align-content: center;
@@ -48,8 +53,38 @@ body {
     margin: 20px;
     border: 2px solid black;
     z-index: 4;
-    border: 10px solid wheat;
+    border: 1px solid black;
     overflow: scroll;
+    overflow-x: hidden;
+    background: rgba(155, 118, 83, 0.6);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+}
+
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #9b7653; 
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: rgb(100, 100, 100); 
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(41, 41, 41); 
+  }
+
+.TxtBubble{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    clear:both;
+    z-index: 3;
+    color: whitesmoke;
+    text-shadow: 0 0 5px black;
 }
 
 
@@ -58,12 +93,6 @@ body {
     padding-bottom: 20px;
     margin-bottom: 20px;
     text-align: left;
-}
-
-.TxtBubble {
-    padding-top: 10px;
-    clear:both;
-    z-index: 3;
 }
 
 .TxTName {
@@ -94,7 +123,6 @@ textarea{
 }
 
 #video_pattern {
-
 	position: fixed;
 	opacity: 0.5;
 	left: 0px;
@@ -107,10 +135,17 @@ textarea{
 footer{
     margin-top: 18px;
     text-align: center;
+    color: whitesmoke;
+    text-shadow: 0 0 5px black;
     background-color: white;
     box-sizing: border-box;
     border-radius: 3px 3px 100px 100px;
     background: white;
     border: black solid 1px;
     padding: 3px;
+    background-image: url("Media/DirtGrass.jpg");
+    background-size: 50px;
+    background-repeat: repeat-x;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
 }
