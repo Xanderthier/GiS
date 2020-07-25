@@ -11,7 +11,7 @@ var AufgabeB;
     document.getElementById("Name").value = localStorage.getItem("Username"); //in value von Name Inputtag den username schreiben, Name inputtag hat "hidden" damit man nicht auf falsche ideen kommt :^)
     window.setInterval(function () {
         genMessages(); //Autorefresh für aktualisierung anderer nachrichten
-        var elem = document.getElementById("flexMessages");
+        let elem = document.getElementById("flexMessages");
         elem.scrollTop = elem.scrollHeight; // Autoscrolldown, 
     }, 30000);
     function handleClickLogOut() {

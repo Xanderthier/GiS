@@ -18,7 +18,7 @@ namespace AufgabeB {
 
     window.setInterval(function () {
         genMessages();//Autorefresh für aktualisierung anderer nachrichten
-        var elem = document.getElementById("flexMessages")!;
+        let elem = document.getElementById("flexMessages")!;
         elem.scrollTop = elem.scrollHeight; // Autoscrolldown, 
     }, 30000);
 
