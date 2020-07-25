@@ -13,6 +13,9 @@ namespace AufgabeB {
     let buttonLogOut: HTMLElement = document.getElementById("logOut")!;
     buttonLogOut.addEventListener("click", handleClickLogOut);
 
+    let buttonSwap: HTMLElement = document.getElementById("Swap")!;
+    buttonSwap.addEventListener("click", handleClickSwap);
+
 
     (<HTMLInputElement>document.getElementById("Name")).value = localStorage.getItem("Username")!; //in value von Name Inputtag den username schreiben, Name inputtag hat "hidden" damit man nicht auf falsche ideen kommt :^)
 
@@ -21,6 +24,19 @@ namespace AufgabeB {
         let elem = document.getElementById("flexMessages")!;
         elem.scrollTop = elem.scrollHeight; // Autoscrolldown, 
     }, 30000);
+
+    function handleClickSwap(): void{
+
+        if(localStorage.getItem("Chat") == "1"){
+        localStorage.setItem("Chat", "2");
+        location.reload();
+        }
+
+        else if(localStorage.getItem("Chat") == "2"){ //(localStorage.getItem("Chat") == "2")??
+        localStorage.setItem("Chat", "1");
+        location.reload();
+        }
+    }
 
     function handleClickLogOut(): void {
         localStorage.removeItem("Username");

@@ -8,12 +8,24 @@ var AufgabeB;
     buttonSend.addEventListener("click", handleClickRetrieve);
     let buttonLogOut = document.getElementById("logOut");
     buttonLogOut.addEventListener("click", handleClickLogOut);
+    let buttonSwap = document.getElementById("Swap");
+    buttonSwap.addEventListener("click", handleClickSwap);
     document.getElementById("Name").value = localStorage.getItem("Username"); //in value von Name Inputtag den username schreiben, Name inputtag hat "hidden" damit man nicht auf falsche ideen kommt :^)
     window.setInterval(function () {
         genMessages(); //Autorefresh für aktualisierung anderer nachrichten
         let elem = document.getElementById("flexMessages");
         elem.scrollTop = elem.scrollHeight; // Autoscrolldown, 
     }, 30000);
+    function handleClickSwap() {
+        if (localStorage.getItem("Chat") == "1") {
+            localStorage.setItem("Chat", "2");
+            location.reload();
+        }
+        else if (localStorage.getItem("Chat") == "2") { //(localStorage.getItem("Chat") == "2")??
+            localStorage.setItem("Chat", "1");
+            location.reload();
+        }
+    }
     function handleClickLogOut() {
         localStorage.removeItem("Username");
         localStorage.removeItem("Password");

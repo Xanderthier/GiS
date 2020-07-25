@@ -4,6 +4,21 @@ html{
     margin: auto;
 }
 
+header{
+    text-align: center;
+}
+
+header button{
+    margin-top: -8px;
+    width: 200px;
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    text-shadow: 0 0 5px black;
+    color: whitesmoke;
+    height: 50px;
+}
+
 h1{
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -247,10 +262,27 @@ footer:hover{
     cursor: context-menu;
 }
 }
+
 @media screen and (max-width: 1024px){
     html{
         display: table;
         margin: auto;
+    }
+
+    header{
+        text-align: center;
+    }
+    
+    header button{
+        margin-top: -8px;
+        width: 200px;
+        font-size: 30px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bolder;
+        text-shadow: 0 0 5px black;
+        color: whitesmoke;
+        height: 50px;
+        float: inherit;
     }
     
     h1{
@@ -505,6 +537,21 @@ footer:hover{
         display: table;
         margin: auto;
     }
+
+    header{
+        text-align: center;
+    }
+    
+    header button{
+        margin-top: -8px;
+        width: 200px;
+        font-size: 30px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bolder;
+        text-shadow: 0 0 5px black;
+        color: whitesmoke;
+        height: 50px;
+    }
     
     h1{
         text-align: center;
@@ -536,7 +583,8 @@ footer:hover{
         vertical-align:middle;
         z-index: 6;
     }
-    
+
+
     #Chat{
         text-align: center;
         margin-left: auto;
@@ -760,6 +808,22 @@ footer:hover{
         display: table;
         margin: auto;
     }
+
+    header{
+        text-align: center;
+    }
+    
+    header button{
+        margin-top: -8px;
+        width: 200px;
+        font-size: 30px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bolder;
+        text-shadow: 0 0 5px black;
+        color: whitesmoke;
+        height: 50px;
+        text-align: center;
+    }
     
     h1{
         text-align: center;
@@ -791,7 +855,7 @@ footer:hover{
         vertical-align:middle;
         z-index: 6;
     }
-    
+
     #Chat{
         text-align: center;
         margin-left: auto;
