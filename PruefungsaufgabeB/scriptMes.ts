@@ -20,21 +20,21 @@ namespace AufgabeB {
     (<HTMLInputElement>document.getElementById("Name")).value = localStorage.getItem("Username")!; //in value von Name Inputtag den username schreiben, Name inputtag hat "hidden" damit man nicht auf falsche ideen kommt :^)
 
     window.setInterval(function () {
-        genMessages();//Autorefresh für aktualisierung anderer nachrichten
-        let elem = document.getElementById("flexMessages")!;
-        elem.scrollTop = elem.scrollHeight; // Autoscrolldown, 
-    }, 30000);
+        genMessages();                      //Autorefresh für aktualisierung anderer nachrichten
+        let scrollbar = document.getElementById("flexMessages")!;
+        scrollbar.scrollTop = scrollbar.scrollHeight; // Autoscrolldown,  Quelle: https://stackoverflow.com/questions/7303948/how-to-auto-scroll-to-end-of-div-when-data-is-added by user
+    }, 30000);  //30s oder mehr weil sonst datenbank abstürzt
 
-    function handleClickSwap(): void{
+    function handleClickSwap(): void {
 
-        if(localStorage.getItem("Chat") == "1"){
-        localStorage.setItem("Chat", "2");
-        location.reload();
+        if (localStorage.getItem("Chat") == "1") {
+            localStorage.setItem("Chat", "2");
+            location.reload();
         }
 
-        else if(localStorage.getItem("Chat") == "2"){ //(localStorage.getItem("Chat") == "2")??
-        localStorage.setItem("Chat", "1");
-        location.reload();
+        else if (localStorage.getItem("Chat") == "2") { //(localStorage.getItem("Chat") == "2")
+            localStorage.setItem("Chat", "1");
+            location.reload();                          //lade aktuelles dokument neu
         }
     }
 
@@ -80,7 +80,7 @@ namespace AufgabeB {
         let divMessageContainer: HTMLElement = <HTMLElement>document.getElementById("flexMessages");
         divMessageContainer.innerHTML = "";
 
-        for (let i: number = 0; i < splittedString.length - 1; i++) {      //.split erschafft unnötiges extra obj.
+        for (let i: number = 0; i < splittedString.length - 1; i++) {      //.split erschafft unnötiges extra obj. //nvm
             splittedString[i] += "}";
             //splittedString[i] = splittedString[i] + "," + '"Name":"' + localStorage.getItem("Username")! + '"' + "}"; //Brainfuck aber generiert einfach n künstlichen Json abteil im stringified Json lol
 

@@ -1,0 +1,1074 @@
+@media screen and (min-width: 1024px){
+html{
+    display: table;
+    margin: auto;
+}
+
+header{
+    text-align: center;
+}
+
+header button{
+    margin-top: -8px;
+    width: 200px;
+    font-size: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    text-shadow: 0 0 5px black;
+    color: whitesmoke;
+    height: 50px;
+}
+
+h1{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    text-shadow: 0 0 5px black;
+    color: whitesmoke;
+    box-sizing: border-box;
+    border-radius: 3px 3px 3px 3px;
+    border: black solid 1px;
+    padding: 3px;
+    margin-top: 13px;
+    margin-bottom: 20px;
+    background-image: url("Media/DirtGrass.jpg");
+    background-size: 50px;
+    background-repeat: repeat-x;
+}
+h1:hover{
+    cursor: context-menu;
+}
+
+body { 
+    display: inline-block;
+    margin: 0px auto;
+    width: 1200px;
+    height: 900px;
+    display: table-cell; 
+    text-align: center; 
+    vertical-align: middle;
+    z-index: 6;
+}
+
+#Chat{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    height: 800px;
+    border: 1px solid black;
+    border-radius: 3px;
+    background-color:white;
+    margin-top: 10px;
+    z-index: 5;
+    background-image: url("Media/DirtGrass.jpg"), url("Media/DirtBlank.jpg");
+    background-size: 50px, 50px;
+    background-repeat: repeat-x, repeat;
+
+} 
+
+#flexMessages{
+    align-content: center;
+    height: 680px;
+    margin: 20px;
+    border: 2px solid black;
+    z-index: 4;
+    border: 1px solid black;
+    overflow: scroll;
+    overflow-x: hidden;
+    background: rgba(155, 118, 83, 0.6);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #9b7653; 
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgb(100, 100, 100); 
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgb(41, 41, 41); 
+  }
+
+.TxtBubble{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    clear: both;
+    z-index: 3;
+    color: whitesmoke;
+    text-shadow: 0 0 5px black;
+}
+
+.TxtBubble:hover{
+    cursor: context-menu;
+}
+
+
+#Write {
+    padding-left: 20px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.TxTName {
+    z-index: 2;
+}
+
+.TxtMes{
+    z-index: 1;
+}
+
+p{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    color: whitesmoke;
+    text-shadow: 0 0 5px black;
+    width: 150px;
+    height: 50px;
+    margin-top: 10px;
+    margin-left: 20px;
+    margin-right: 0px;
+    float: left;
+}
+
+p:hover{
+    cursor: context-menu;
+}
+
+#dText{
+    width: 100px;
+}
+
+input{
+    text-align: left;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+    margin: 10px;
+    margin-right: 30px;
+    width: 200px;
+    float: left;
+}
+
+#Name{
+    background-color: rgba(155, 118, 83, 0.0);
+    color: white;
+    text-shadow: 0 0 5px black;
+    font-size: 20px;
+    border-style: hidden;
+    margin: 5px;
+}
+
+#Name::selection{
+    border-style: hidden;
+}
+#Name:focus{
+    outline: none;
+}
+#Name:hover{
+    cursor: context-menu;
+}
+
+#text{
+    width: 400px;
+}
+
+button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: rgba(155, 118, 83, 0.8);
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    width: 100px;
+    height: 25px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    vertical-align:middle
+  }
+  
+  button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  button:hover span {
+    padding-right: 15px;
+  }
+  
+  button:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+#video_background {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	height: auto;
+	z-index: -1000;
+    overflow: hidden;
+    margin-bottom: -143px;
+}
+
+#video_pattern {
+	position: fixed;
+	opacity: 0.5;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+    z-index: -1;
+}
+
+footer{
+    margin-top: 18px;
+    text-align: center;
+    color: whitesmoke;
+    text-shadow: 0 0 5px black;
+    background-color: white;
+    box-sizing: border-box;
+    border-radius: 3px 3px 100px 100px;
+    background: white;
+    border: black solid 1px;
+    padding: 3px;
+    background-image: url("Media/DirtGrass.jpg");
+    background-size: 50px;
+    background-repeat: repeat-x;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
+}
+
+footer:hover{
+    cursor: context-menu;
+}
+}
+
+@media screen and (max-width: 1024px){
+    html{
+        display: table;
+        margin: auto;
+    }
+
+    header{
+        text-align: center;
+    }
+    
+    header button{
+        margin-top: -8px;
+        width: 200px;
+        font-size: 30px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bolder;
+        text-shadow: 0 0 5px black;
+        color: whitesmoke;
+        height: 50px;
+        float: inherit;
+    }
+    
+    h1{
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bolder;
+        text-shadow: 0 0 5px black;
+        color: whitesmoke;
+        box-sizing: border-box;
+        border-radius: 3px 3px 3px 3px;
+        border: black solid 1px;
+        padding: 3px;
+        margin-top: 13px;
+        margin-bottom: 20px;
+        background-image: url("Media/DirtGrass.jpg");
+        background-size: 50px;
+        background-repeat: repeat-x;
+    }
+    h1:hover{
+        cursor: context-menu;
+    }
+    
+    body { 
+        display: inline-block;
+        margin: 0px auto;
+        width: 900px;
+        height: 900px;
+        display: table-cell; 
+        text-align: center; 
+        vertical-align: middle;
+        z-index: 6;
+    }
+    
+    #Chat{
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        height: 800px;
+        border: 1px solid black;
+        border-radius: 3px;
+        background-color:white;
+        margin-top: 10px;
+        z-index: 5;
+        background-image: url("Media/DirtGrass.jpg"), url("Media/DirtBlank.jpg");
+        background-size: 50px, 50px;
+        background-repeat: repeat-x, repeat;
+    
+    } 
+    
+    #flexMessages{
+        align-content: center;
+        height: 680px;
+        margin: 20px;
+        border: 2px solid black;
+        z-index: 4;
+        border: 1px solid black;
+        overflow: scroll;
+        overflow-x: hidden;
+        background: rgba(155, 118, 83, 0.6);
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bolder;
+    }
+    
+    ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #9b7653; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgb(100, 100, 100); 
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgb(41, 41, 41); 
+      }
+    
+    .TxtBubble{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        clear:both;
+        z-index: 3;
+        color: whitesmoke;
+        text-shadow: 0 0 5px black;
+    }
+    
+    .TxtBubble:hover{
+        cursor: context-menu;
+    }
+    
+    
+    #Write {
+        padding-left: 20px;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        text-align: left;
+    }
+    
+    .TxTName {
+        z-index: 2;
+    }
+    
+    .TxtMes{
+        z-index: 1;
+    }
+    
+    p{
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bolder;
+        color: whitesmoke;
+        text-shadow: 0 0 5px black;
+        width: 150px;
+        height: 50px;
+        margin-top: 10px;
+        margin-left: 20px;
+        margin-right: 0px;
+        float: left;
+    }
+    
+    p:hover{
+        cursor: context-menu;
+    }
+    
+    #dText{
+        width: 100px;
+    }
+    
+    input{
+        text-align: left;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bolder;
+        margin: 10px;
+        margin-right: 30px;
+        width: 180px;
+        float: left;
+    }
+    
+    #Name{
+        background-color: rgba(155, 118, 83, 0.0);
+        color: white;
+        text-shadow: 0 0 5px black;
+        font-size: 20px;
+        border-style: hidden;
+        margin: 5px;
+    }
+    
+    #Name::selection{
+        border-style: hidden;
+    }
+    #Name:focus{
+        outline: none;
+    }
+    #Name:hover{
+        cursor: context-menu;
+    }
+    
+    #text{
+        width: 200px;
+    }
+    
+    button {
+        display: inline-block;
+        border-radius: 4px;
+        background-color: rgba(155, 118, 83, 0.8);
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        width: 100px;
+        height: 25px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+        vertical-align:middle
+      }
+      
+      button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+      }
+      
+      button span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+      }
+      
+      button:hover span {
+        padding-right: 15px;
+      }
+      
+      button:hover span:after {
+        opacity: 1;
+        right: 0;
+      }
+    
+    #video_background {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -1000;
+        overflow: hidden;
+        margin-bottom: -143px;
+    }
+    
+    #video_pattern {
+        position: fixed;
+        opacity: 0.5;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+    
+    footer{
+        margin-top: 18px;
+        text-align: center;
+        color: whitesmoke;
+        text-shadow: 0 0 5px black;
+        background-color: white;
+        box-sizing: border-box;
+        border-radius: 3px 3px 100px 100px;
+        background: white;
+        border: black solid 1px;
+        padding: 3px;
+        background-image: url("Media/DirtGrass.jpg");
+        background-size: 50px;
+        background-repeat: repeat-x;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bolder;
+    }
+    
+    footer:hover{
+        cursor: context-menu;
+    }
+    
+
+}
+
+@media screen and (max-width: 850px) {
+
+    html{
+        display: table;
+        margin: auto;
+    }
+
+    header{
+        text-align: center;
+    }
+    
+    header button{
+        margin-top: -8px;
+        width: 200px;
+        font-size: 30px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bolder;
+        text-shadow: 0 0 5px black;
+        color: whitesmoke;
+        height: 50px;
+    }
+    
+    h1{
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bolder;
+        text-shadow: 0 0 5px black;
+        color: whitesmoke;
+        box-sizing: border-box;
+        border-radius: 3px 3px 3px 3px;
+        border: black solid 1px;
+        padding: 3px;
+        margin-top: 13px;
+        margin-bottom: 20px;
+        background-image: url("Media/DirtGrass.jpg");
+        background-size: 50px;
+        background-repeat: repeat-x;
+    }
+    h1:hover{
+        cursor: context-menu;
+    }
+    
+    body { 
+        display: inline-block;
+        margin: 0px auto;
+        width: 500px;
+        height: 900px;
+        display:table-cell; 
+        text-align:center; 
+        vertical-align:middle;
+        z-index: 6;
+    }
+
+
+    #Chat{
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        height: 800px;
+        border: 1px solid black;
+        border-radius: 3px;
+        background-color:white;
+        margin-top: 10px;
+        z-index: 5;
+        background-image: url("Media/DirtGrass.jpg"), url("Media/DirtBlank.jpg");
+        background-size: 50px, 50px;
+        background-repeat: repeat-x, repeat;
+    
+    } 
+    
+    #flexMessages{
+        align-content: center;
+        height: 680px;
+        margin: 20px;
+        border: 2px solid black;
+        z-index: 4;
+        border: 1px solid black;
+        overflow: scroll;
+        overflow-x: hidden;
+        background: rgba(155, 118, 83, 0.6);
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bolder;
+    }
+    
+    ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #9b7653; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgb(100, 100, 100); 
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgb(41, 41, 41); 
+      }
+    
+    .TxtBubble{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        clear:both;
+        z-index: 3;
+        color: whitesmoke;
+        text-shadow: 0 0 5px black;
+    }
+    
+    .TxtBubble:hover{
+        cursor: context-menu;
+    }
+    
+    
+    #Write {
+        padding-left: 20px;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        text-align: left;
+    }
+    
+    .TxTName {
+        z-index: 2;
+    }
+    
+    .TxtMes{
+        z-index: 1;
+    }
+    
+    p{
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bolder;
+        color: whitesmoke;
+        text-shadow: 0 0 5px black;
+        width: 150px;
+        height: 50px;
+        margin-top: 10px;
+        margin-left: 20px;
+        margin-right: 0px;
+        float: left;
+        display: none;
+    }
+    
+    p:hover{
+        cursor: context-menu;
+    }
+    
+    #dText{
+        width: 100px;
+    }
+    
+    input{
+        
+        text-align: left;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bolder;
+        margin: 10px;
+        width: 200px;
+        float: left;
+    }
+    
+    #Name{
+        background-color: rgba(155, 118, 83, 0.0);
+        color: white;
+        text-shadow: 0 0 5px black;
+        font-size: 20px;
+        border-style: hidden;
+        margin: 5px;
+        text-align: center;
+    }
+    
+    #Name::selection{
+        border-style: hidden;
+    }
+    #Name:focus{
+        outline: none;
+    }
+    #Name:hover{
+        cursor: context-menu;
+    }
+    
+    #text{
+        width: 200px;
+    }
+    
+    button {
+        float: right;
+        display: inline-block;
+        border-radius: 4px;
+        background-color: rgba(155, 118, 83, 0.8);
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        width: 100px;
+        height: 25px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+        vertical-align:middle
+      }
+      
+      button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+      }
+      
+      button span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+      }
+      
+      button:hover span {
+        padding-right: 15px;
+      }
+      
+      button:hover span:after {
+        opacity: 1;
+        right: 0;
+      }
+    
+    #video_background {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -1000;
+        overflow: hidden;
+        margin-bottom: -143px;
+    }
+    
+    #video_pattern {
+        position: fixed;
+        opacity: 0.5;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+    
+    footer{
+        margin-top: 18px;
+        text-align: center;
+        color: whitesmoke;
+        text-shadow: 0 0 5px black;
+        background-color: white;
+        box-sizing: border-box;
+        border-radius: 3px 3px 100px 100px;
+        background: white;
+        border: black solid 1px;
+        padding: 3px;
+        background-image: url("Media/DirtGrass.jpg");
+        background-size: 50px;
+        background-repeat: repeat-x;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bolder;
+    }
+    
+    footer:hover{
+        cursor: context-menu;
+    }
+
+}
+
+
+@media screen and (max-width: 600px) {
+    html{
+        display: table;
+        margin: auto;
+    }
+
+    header{
+        text-align: center;
+    }
+    
+    header button{
+        margin-top: -8px;
+        width: 200px;
+        font-size: 30px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bolder;
+        text-shadow: 0 0 5px black;
+        color: whitesmoke;
+        height: 50px;
+        text-align: center;
+    }
+    
+    h1{
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bolder;
+        text-shadow: 0 0 5px black;
+        color: whitesmoke;
+        box-sizing: border-box;
+        border-radius: 3px 3px 3px 3px;
+        border: black solid 1px;
+        padding: 3px;
+        margin-top: 13px;
+        margin-bottom: 20px;
+        background-image: url("Media/DirtGrass.jpg");
+        background-size: 50px;
+        background-repeat: repeat-x;
+    }
+    h1:hover{
+        cursor: context-menu;
+    }
+    
+    body { 
+        display: inline-block;
+        margin: 0px auto;
+        width: 500px;
+        height: 900px;
+        display:table-cell; 
+        text-align:center; 
+        vertical-align:middle;
+        z-index: 6;
+    }
+
+    #Chat{
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        height: 800px;
+        border: 1px solid black;
+        border-radius: 3px;
+        background-color:white;
+        margin-top: 10px;
+        z-index: 5;
+        background-image: url("Media/DirtGrass.jpg"), url("Media/DirtBlank.jpg");
+        background-size: 50px, 50px;
+        background-repeat: repeat-x, repeat;
+    
+    } 
+    
+    #flexMessages{
+        align-content: center;
+        height: 680px;
+        margin: 20px;
+        border: 2px solid black;
+        z-index: 4;
+        border: 1px solid black;
+        overflow: scroll;
+        overflow-x: hidden;
+        background: rgba(155, 118, 83, 0.6);
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bolder;
+    }
+    
+    ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #9b7653; 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgb(100, 100, 100); 
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgb(41, 41, 41); 
+      }
+    
+    .TxtBubble{
+        padding-top: 10px;
+        padding-bottom: 10px;
+        clear:both;
+        z-index: 3;
+        color: whitesmoke;
+        text-shadow: 0 0 5px black;
+    }
+    
+    .TxtBubble:hover{
+        cursor: context-menu;
+    }
+    
+    
+    #Write {
+        padding-left: 20px;
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+        text-align: left;
+    }
+    
+    .TxTName {
+        z-index: 2;
+    }
+    
+    .TxtMes{
+        z-index: 1;
+    }
+    
+    p{
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bolder;
+        color: whitesmoke;
+        text-shadow: 0 0 5px black;
+        width: 150px;
+        height: 50px;
+        margin-top: 10px;
+        margin-left: 20px;
+        margin-right: 0px;
+        float: left;
+        display: none;
+    }
+    
+    p:hover{
+        cursor: context-menu;
+    }
+    
+    #dText{
+        width: 100px;
+    }
+    
+    input{
+        
+        text-align: left;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bolder;
+        margin: 10px;
+        width: 200px;
+        float: left;
+    }
+    
+    #Name{
+        background-color: rgba(155, 118, 83, 0.0);
+        color: white;
+        text-shadow: 0 0 5px black;
+        font-size: 20px;
+        border-style: hidden;
+        margin: 5px;
+        text-align: center;
+    }
+    
+    #Name::selection{
+        border-style: hidden;
+    }
+    #Name:focus{
+        outline: none;
+    }
+    #Name:hover{
+        cursor: context-menu;
+    }
+    
+    #text{
+        width: 200px;
+    }
+    
+    button {
+        float: right;
+        display: inline-block;
+        border-radius: 4px;
+        background-color: rgba(155, 118, 83, 0.8);
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        width: 100px;
+        height: 25px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+        vertical-align:middle
+      }
+      
+      button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+      }
+      
+      button span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+      }
+      
+      button:hover span {
+        padding-right: 15px;
+      }
+      
+      button:hover span:after {
+        opacity: 1;
+        right: 0;
+      }
+    
+    #video_background {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        min-width: 100%;
+        min-height: 100%;
+        width: auto;
+        height: auto;
+        z-index: -1000;
+        overflow: hidden;
+        margin-bottom: -143px;
+    }
+    
+    #video_pattern {
+        position: fixed;
+        opacity: 0.5;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+    
+    footer{
+        margin-top: 18px;
+        text-align: center;
+        color: whitesmoke;
+        text-shadow: 0 0 5px black;
+        background-color: white;
+        box-sizing: border-box;
+        border-radius: 3px 3px 100px 100px;
+        background: white;
+        border: black solid 1px;
+        padding: 3px;
+        background-image: url("Media/DirtGrass.jpg");
+        background-size: 50px;
+        background-repeat: repeat-x;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: bolder;
+    }
+    
+    footer:hover{
+        cursor: context-menu;
+    }
+
+}

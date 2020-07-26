@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="scriptLogIn.js" defer></script>
+    <link rel="icon" type="image/png" href="Media/GrassNew.png">
+
+</head>
+
+<body>
+    <video id="video_background" preload="auto" autoplay loop="loop" muted="muted"> 
+        <source src="Media/Nether.mp4" type="video/webm"> Video not supported </video>
+    <main>
+        <header>
+            <h1>Cool Minecraft Chat</h1>
+            <div id="ChatType"></div>
+        </header>        
+            <div id="LogInForm"><fieldset>
+                <legend>Log In</legend>
+                <br>
+            <form id="formular" action="https://soseeasypass.herokuapp.com" method="GET">
+                <input type="text" name="Username" placeholder="Username">
+                
+                <input type="text" name="Password" placeholder="Password">
+            </form>
+            <br>
+            <p>Chat Auswahl:</p>
+                <input class="button" type="button" id="coolkidz" name="chat" value="Cool">
+                <input class="button" type="button" id="nsckidz" name="chat" value="Not Cool">
+<br>
+                <button type="button" id="login"><span>Log in</span></button>
+                <button type="button" id="signin"><span>Sign in</span></button>
+            </fieldset></div>
+    </main>
+    <footer><a href="Meme.html"><h2>Mein</h2></a>
+        <a href="Meme2.html"><h2>_Me</h2></a>
+        <a href="Meme3.html"><h2>me</h2></a>
+    
+    </footer>
+</body>
+
+</html>

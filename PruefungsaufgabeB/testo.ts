@@ -105,7 +105,7 @@ export namespace AufgabeB {
 
 
         default: {
-          _response.write("Du bist dumm");
+          _response.write("Wie hast du das geschafft?");
           break;
         }
 
