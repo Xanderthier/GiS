@@ -1,0 +1,169 @@
+body{
+    margin: 0;
+    width: 800px;
+    background-color: antiquewhite;
+    font-family: sans-serif;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+header{
+    width: 800px;
+    border: transparent 5px;
+    border-radius: 0px 0px 400px 400px;
+    background-color: #BDBDFD ;
+    height: 400px;
+}
+head{
+    text-align: center;
+    margin-right: auto;
+}
+h1{
+    font-size: 130px;
+    padding-top: 50px;
+    color: #535EEB;
+    margin: 0;
+}
+h2{
+    font-size: 50px;
+    padding-top: 50px;
+    color: #535EEB;
+    margin: 0;
+}
+.menu li a:hover{
+    background-color: #535EEB;
+    opacity: 0.85;
+}
+.menu .used{
+    opacity: 0.85;
+    background-color: #535EEB;
+}
+.menu ul{
+    margin-top: 0px;
+    border: transparent 5px;
+    border-radius: 0px 0px 10px 10px;
+    list-style-type: none;
+    overflow: hidden;
+    position: fixed;
+    text-align: right;
+    top: 0;
+    padding-left: 0;
+    margin-left: 600px;
+    width: 280px;
+}
+.menu li a{
+    float: center;
+    color: #101220;
+    display: block;
+    text-decoration: none;
+    padding: 10px 16px;
+    background-color: #BDBDFD;
+    text-align: center;
+}
+video{
+    width: 800px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+textarea{
+    margin-bottom: 50px;
+    
+}
+#Send{
+    margin-top: 40px;
+    width: 50px;
+    height: 20px;
+    
+}
+.abstand{
+    align-items: center;
+    height: 30px;
+    width: 300px;
+    margin-bottom: 20px;
+}
+.iclass{
+    margin-left: 450px;
+    margin-bottom: 20px;
+}
+form{
+    margin-top: 50px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.IconLinks{
+    height: 5%;
+    width: 5%;
+    margin-left: 20px;
+    margin-right: 20px;
+    filter: grayscale(100%);
+}
+.IconLinks:hover{
+    filter: grayscale(0%);
+}
+footer{
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+audio{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/* Hier beginnt das Beispiel */
+
+main ul{
+    text-align: left;
+}
+
+main ul ul {
+    background: red;
+}
+
+main ul ul ol {
+    color: blue;
+}
+
+main ul ul ol li{
+    background: green;
+}
+
+#li2 {
+    color: yellow;
+}
+
+/* hier endet beispiel */
+
+@media screen and (max-width: 600px) {
+
+    header{
+        width: 600px;
+        border: transparent 5px;
+        border-radius: 0px 0px 300px 300px;
+        background-color: #BDBDFD ;
+        height: 200px;
+    }
+
+    body{
+        margin: 0;
+        width: 600px;
+        background-color: rgb(255, 172, 172);
+        font-family: sans-serif;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .menu ul{
+        margin-top: 0px;
+        border: transparent 5px;
+        border-radius: 0px 0px 10px 10px;
+        list-style-type: none;
+        overflow: hidden;
+        position: fixed;
+        text-align: right;
+        top: 0;
+        padding-left: 0;
+        margin-left: 300px;
+        width: 280px;
+    }
+}

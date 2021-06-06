@@ -51,7 +51,7 @@ p{
     text-shadow: 0 0 5px black;
 }
 
-button {
+button { /* Ursprüngliches Button Design von https://www.w3schools.com/css/tryit.asp?filename=trycss_buttons_animate1 genommen */
     display: inline-block;
     border-radius: 4px;
     background-color: rgba(155, 118, 83, 0.8);
