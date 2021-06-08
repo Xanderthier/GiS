@@ -8,17 +8,64 @@
         <link rel="stylesheet" href="Style.css">
     </Head>
 
-    <header>
+    <header class="header-main">
+        <div class="top-bar">
+            <div class="container block-group">
+                <nav class="top-bar--navigation block" role="menubar">
+                    <div class="top-bar--b2b navigation--entry">
+                        <a class="b2b--link" href="/b2b">
+                        <i class="jaecon-b2b"></i>Zum B2B Shop</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="container header--navigation">
+            <div class="logo-main block-group" role="banner">
+                <a class="jae-logo" href="https://shop.jaegermeister.de/" title="Jägermeister Shop - zur Startseite wechseln">
+                    <img class="logo" src="Logo.png" alt="Zur Startseite Wechseln">
+                    <span class="jae-logo--text">SHOP</span>
+                </a>
+            </div>
+            <nav class="navigation-main">
+                <div class="container" data-menu-scroller="false" data-listselector=".navigation--list.container" data-viewportselector=".navigation--list-wrapper">
+                    <div class="navigation--list-wrapper">
+                        <ul class="navigation--list container" role="menubar" itemtype="https://schema.org/SiteNavigationElement">
+                            <li class="navigation--entry" role="menuitem">
+                                <a class="navigation--link" href="https://shop.jaegermeister.de/grillen/" title="Grillen" aria-label="Grillen" itemprop="url">
+                                    <span itemprop="name">Grillen</span></a></li>
+                            <li class="navigation--entry is--active" role="menuitem">
+                                <a class="navigation--link is--active" href="https://shop.jaegermeister.de/jaegermeister/" title="Jägermeister" aria-label="Jägermeister" itemprop="url">
+                                    <span itemprop="name">Jägermeister</span></a></li>
+                            <li class="navigation--entry" role="menuitem">
+                                <a class="navigation--link" href="https://shop.jaegermeister.de/bar/" title="Bar" aria-label="Bar" itemprop="url">
+                                    <span itemprop="name">Bar</span></a></li>
+                            <li class="navigation--entry" role="menuitem">
+                                <a class="navigation--link" href="https://shop.jaegermeister.de/essentials/" title="Essentials" aria-label="Essentials" itemprop="url">
+                                    <span itemprop="name">Essentials</span></a></li>
+                            <li class="navigation--entry" role="menuitem">
+                                <a class="navigation--link" href="https://shop.jaegermeister.de/manifest/" title="Manifest" aria-label="Manifest" itemprop="url">
+                                    <span itemprop="name">Manifest</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <nav>
 
+            </nav>
+            <nav>
+
+            </nav>
+        </div>
     </header>
 
     <body>
         <div class="page-wrap">
+            <div class="pds-details">
             <div class="content--wrapper">
             <div class="product--details jae--product__details jae--product__details--with-no-images " itemscope itemtype="http://schema.org/Product" data-ajax-wishlist="true" data-compare-ajax="true" data-ajax-variants-container="true">
             <div class="product--detail-upper block-group jae--product__detail-upper">
 
-                <h1 class="jae--product__title">Coolpack</h1>
+                <h1 class="jae--product__title">Jägermeister Milch</h1>
                 <div class="jae--product__pricebox">
                     <meta itemprop="priceCurrency" content="EUR">
                     <div class="product--price price--default">
@@ -27,18 +74,17 @@
                         </span></div>
 
                     <div class="product__fineprint">
-                    <div class="product--price price--unit">22,83 € * pro 1 Liter / 35 % Vol. </div>
-                    <span class="product__fineprint-spacer">|</span>
-                    <p class="jae--product__tax jae--product__info--small" data-content data-modalbox="true" data-targetselector="a" data-mode="ajax">* inkl. MwSt. "<a title="Versandkosten" href="https://shop.jaegermeister.de/versandbedingungen" style="text-decoration:underline">zzgl. Versandkosten</a>
+                    <div class="product--price price--unit">22,83 € * pro 1 Liter / 35 % Vol. </div><span class="product__fineprint-spacer">|
+                    </span>
+                    
+                    <p class="jae--product__tax jae--product__info--small" data-content data-modalbox="true" data-targetselector="a" data-mode="ajax">* inkl. MwSt. <a title="Versandkosten" href="https://shop.jaegermeister.de/versandbedingungen" style="text-decoration:underline">zzgl. Versandkosten</a>
                     </div>
                         </p>
                         <div class="jae--product__delivery--tablet">
                             <div class="jae--product__delivery product--delivery">
                                 <p class="delivery--information">
                                     <span class="delivery--text delivery--text-available">
-                                        <i class="delivery--status-icon delivery--status-available"></i>
-                                        Lieferbar, Lieferzeit ca. 2-3 Werktage
-                                    </span>
+                                        <i class="delivery--status-icon delivery--status-available"></i>Lieferbar, Lieferzeit ca. 2-3 Werktage</span>
                                 </p>
                             </div></div>
                         </div>
@@ -69,12 +115,36 @@
                     </div>
                 </div>
             </div>
-                <div>
-                <button class="buybox--button block btn is--primary is--large" name="In den Warenkorb" >Jetz Bestellen</button></div>
 
-                </div></div></div>
+                <div class="jae--product__buybox">
+                    <form name="sAddToBasket" method="post" action="https://shop.jaegermeister.de/checkout/addArticle" class="buybox--form" data-add-article="true" data-eventname="submit" data-showmodal="false" data-addarticleurl="https://shop.jaegermeister.de/checkout/ajaxAddArticleCart">
+                <button class="buybox--button block btn is--primary is--large" name="In den Warenkorb" >Jetz Bestellen</button>
+            
+            </div>
+
+                </div></div></div></div>
 
             </div>
+            <div class="pds-subcontent" data-detail-type="standard">
+                <div class="pds-subcontent__wrapper">
+                    <div class="module module-desc">
+                        <div class="module__inner module-desc__inner">
+                            <div class="PLACEHOLDER"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero accusamus voluptatem adipisci quaerat ut veniam eum obcaecati possimus! Similique ex aspernatur sit quis reprehenderit nulla nobis sed numquam enim eveniet?</p>
+            <p>s</p>
+            <p>s</p>
+            <p>s</p>
+            <p>s</p>
+            <p>s</p>
+            <p>s</p>
+            <p>s</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla eaque delectus cumque molestiae fugit eius quibusdam quaerat, harum, fuga iusto sapiente. Iusto aperiam iure sunt vitae necessitatibus! Omnis, sunt explicabo!
+
+            </p>
     </body>
 
 </html>
