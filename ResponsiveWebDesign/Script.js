@@ -11,12 +11,16 @@ let count = 1;
 updateDisplay();
 
 counterPlusElem.addEventListener("click",()=>{
-    count++;
+    if(count == 3){}
+    else{
+    count++;}
     updateDisplay();
 }) ;
 
 counterMinusElem.addEventListener("click",()=>{
-    count--;
+    if(count == 1){}
+    else{
+    count--;}
     updateDisplay();
 });
 
