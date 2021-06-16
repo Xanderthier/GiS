@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Jägermeister</title>
         <link rel="stylesheet" href="Style.css">
+        <script src="Script.js" defer></script>
     </Head>
 
     <header class="header-main">
@@ -117,7 +118,13 @@
             </div>
 
                 <div class="jae--product__buybox">
-                    <form name="sAddToBasket" method="post" action="https://shop.jaegermeister.de/checkout/addArticle" class="buybox--form" data-add-article="true" data-eventname="submit" data-showmodal="false" data-addarticleurl="https://shop.jaegermeister.de/checkout/ajaxAddArticleCart">
+                    <div class="buybox--quantity" data-jae-plusminus="true"> 
+                        <span class="jae--quantity__button">
+                            <i class="jaecon-minus"></i></span>
+                            <h1 class="buybox--quantity__input" size="3" maxlength="3" min="1" max="9" autocomplete="off" type="number" value="1"></h1>
+                            <span class="jae--quantity__button"><i class="jaecon-plus">
+                            </i></span> </div>
+                    <form name="sAddToBasket" method="post" class="buybox--form">
                 <button class="buybox--button block btn is--primary is--large" name="In den Warenkorb" >Jetz Bestellen</button>
             
             </div>
