@@ -330,19 +330,22 @@ ul {
     background-size: cover;
     background-image: url("bg.jpg");
     padding: 4.6875rem 0rem 0rem 0rem;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .pds-subcontent {
     position: relative;
     display: block;
     margin: 0;
     padding: 0;
+    
 
 }
 .pds-subcontent__wrapper {
     margin: 0 auto;
     display: block;
     padding: 0;
-    background: #000;
+   /* background: #000;*/
 }
 .module {
     background: #000;
@@ -355,12 +358,16 @@ ul {
     max-width: 1440px; 
 }*/
 .PLACEHOLDER {
-    height: 3000px;
+    height: 2500px;
     background-position: 0 0;
     background-attachment: scroll;
     background-repeat: repeat-x;
     background-size: cover;
     background-image: url("Seitenbackground.png");
+    background-repeat: no-repeat;
+  background-position-x: center;
+    display: block;
+    position: relative;
 }
 
 @media screen and (min-width: 48em){
@@ -451,7 +458,7 @@ ul {
     padding: 7.8125rem 0rem 0rem 0rem;
 }
 .module-desc__inner {
-    padding: 0 0 40px 40px;
+    padding: 40px 0 0 0;
 }
 
 }
