@@ -30,7 +30,7 @@ body {
 .header-main {
     padding-bottom: 0;
     border-bottom: none;
-    background: rgba(0,0,0,0);
+    background: rgba(0,0,0,.7);
     z-index: 5000;
     position: absolute;
     top: 0;
@@ -317,9 +317,7 @@ ul {
     margin-inline-end: 0px;
     padding-inline-start: 40px;
 }
-.header-main.fixed {
-    background: rgba(0,0,0,0.7);
-}
+
 
 .pds-details {
     position: relative;
@@ -358,7 +356,7 @@ ul {
     max-width: 1440px; 
 }*/
 .PLACEHOLDER {
-    height: 2500px;
+    height: 3240px;
     background-position: 0 0;
     background-attachment: scroll;
     background-repeat: repeat-x;
@@ -368,6 +366,14 @@ ul {
   background-position-x: center;
     display: block;
     position: relative;
+}
+
+span:hover{
+    color: #dd5a12;
+}
+
+a:hover{
+    color: #dd5a12;
 }
 
 @media screen and (min-width: 48em){
