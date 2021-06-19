@@ -459,6 +459,13 @@ h1 {
     box-sizing: border-box;
 }
 
+.imgdown {
+    margin-top: 300px;
+    margin-left: 20px;
+    max-width: 200px;
+    align-self: self-start;
+}
+
 @media only screen and (min-width: 48em) {
     .block-group:before,
     .block-group:after {
@@ -748,5 +755,9 @@ h1 {
     }
     .jae--product__buybox .buybox--quantity__input {
         font-size: 3.5rem;
+    }
+    .module-desc__wrapperInner .module-desc__img-left {
+        margin-left: 180px;
+        top: 130px;
     }
 }
