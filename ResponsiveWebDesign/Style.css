@@ -448,6 +448,16 @@ a:hover {
     text-align: center;
 }
 
+h1 {
+    margin-left: 20px;
+}
+
+.product--details .jae--product__detail-upper .jae--product__description {
+    font-weight: 700;
+    text-transform: uppercase;
+    box-sizing: border-box;
+}
+
 @media only screen and (min-width: 48em) {
     .block-group:before,
     .block-group:after {
@@ -460,17 +470,19 @@ a:hover {
         content: none;
         line-height: 0;
     }
+    /*Bitte ignorieren, war verzweifelt*/
     h1 {
-        margin-left: -90px;
+        margin-left: -100px;
     }
-    /*kleiner Trick hier
-    /*.jae--product__buybox {
-        margin-right: -625px;
-        -ms-grid-row-align: right;
-    }*/
     .product--details .jae--product__detail-upper {
         grid-template-columns: 1fr 1fr;
         grid-template-areas: 'title title' 'img img' 'priceBox priceBox' 'voucher voucher' 'config config' 'buyBtn buyBtn' 'detailLeft detailLeft';
+    }
+    /*kleiner Trick hier*/
+    .jae--product__buybox {
+        margin-left: -131px;
+        grid-column: 2 / span 1;
+        justify-self: left;
     }
     .top-bar--b2b {
         visibility: visible;
@@ -586,6 +598,11 @@ a:hover {
 }
 
 @media only screen and (min-width: 78.75em) {
+    /* fixing problems i caused earlier oof */
+    .jae--product__buybox {
+        margin-left: 0px;
+        justify-self: center;
+    }
     .header-main .top-bar--navigation .navigation--entry:last-child {
         padding-right: 0;
     }
