@@ -122,6 +122,7 @@ body {
 
 .product--details .jae--product__detail-upper .jae--product__left {
     grid-area: detailLeft;
+    padding-left: 10px;
 }
 
 .block-group:after {
@@ -398,7 +399,7 @@ ul {
     max-width: 1440px; 
 }*/
 
-.PLACEHOLDER {
+.module-desc__wrapperOuter {
     height: 3240px;
     background-position: 0 0;
     background-attachment: scroll;
