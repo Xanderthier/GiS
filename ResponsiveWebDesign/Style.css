@@ -471,7 +471,7 @@ h2 {
 }
 
 .module-desc__text {
-    margin-top: 750px;
+    margin-top: 680px;
     margin-left: 40px;
     max-width: 400px;
     font-weight: 550;
@@ -479,7 +479,7 @@ h2 {
 }
 
 .module-desc__textTwo {
-    margin-top: 910px;
+    margin-top: 820px;
     margin-left: 40px;
     max-width: 300px;
     font-weight: 550;
@@ -487,7 +487,7 @@ h2 {
 }
 
 .module-desc__textThree {
-    margin-top: 950px;
+    margin-top: 850px;
     margin-left: 40px;
     max-width: 400px;
     font-weight: 550;
@@ -496,6 +496,29 @@ h2 {
 
 .pp {
     margin-bottom: 20px;
+}
+
+.placeholder__items {
+    margin: 10px 10px 10px 10px;
+}
+
+.placeh {
+    line-height: 1.3;
+    margin-left: 40px;
+}
+
+.placeh2 {
+    font-size: 0.6875rem;
+    line-height: 1.3;
+    margin-left: 60px;
+    padding-bottom: 10px;
+}
+
+.placeh3 {
+    font-size: 0.8rem;
+    line-height: 1.3;
+    text-align: center;
+    padding-bottom: 10px;
 }
 
 
@@ -805,6 +828,15 @@ h2 {
         margin-top: 800px;
         max-width: 250px;
     }
+    .placeh {
+        margin-left: 340px;
+    }
+    .placeh2 {
+        font-size: 0.6875rem;
+        line-height: 1.3;
+        margin-left: 360px;
+        padding-bottom: 10px;
+    }
 }
 
 
@@ -821,7 +853,7 @@ h2 {
     }
     .module-desc__textThree {
         text-align: right;
-        margin-top: 900px;
-        margin-left: 200px;
+        margin-top: 800px;
+        margin-left: 250px;
     }
 }
