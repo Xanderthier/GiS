@@ -453,6 +453,10 @@ h1 {
     margin-left: 20px;
 }
 
+h2 {
+    text-decoration: underline;
+}
+
 .product--details .jae--product__detail-upper .jae--product__description {
     font-weight: 700;
     text-transform: uppercase;
@@ -460,21 +464,22 @@ h1 {
 }
 
 .imgdown {
-    margin-top: 300px;
-    margin-left: 20px;
+    margin-top: 160px;
+    margin-left: 60px;
     max-width: 200px;
     align-self: self-start;
 }
 
 .module-desc__text {
-    margin-top: 630px;
+    margin-top: 750px;
     margin-left: 40px;
     max-width: 400px;
     font-weight: 550;
+    text-shadow: 0px 0px 3px #031b09, 0px 0px 3px #031b09, 0px 0px 3px #031b09, 0px 0px 3px #031b09;
 }
 
 .module-desc__textTwo {
-    margin-top: 750px;
+    margin-top: 910px;
     margin-left: 40px;
     max-width: 300px;
     font-weight: 550;
@@ -482,7 +487,7 @@ h1 {
 }
 
 .module-desc__textThree {
-    margin-top: 850px;
+    margin-top: 950px;
     margin-left: 40px;
     max-width: 400px;
     font-weight: 550;
@@ -490,7 +495,16 @@ h1 {
 }
 
 .pp {
-    margin-bottom: 40px;
+    margin-bottom: 20px;
+}
+
+
+/*Sonderregelung für workaround:*/
+
+@media only screen and (max-width: 950px) {
+    .imgdown {
+        visibility: hidden;
+    }
 }
 
 
@@ -504,11 +518,6 @@ h1 {
         margin-left: 100px;
     }
 }
-
-
-/*Sonderregelung für workaround:
-
-@media only screen and (max-width: 1380px) {}*/
 
 @media only screen and (min-width: 48em) {
     .block-group:before,
@@ -542,22 +551,6 @@ h1 {
     .navigation--list-wrapper {
         visibility: visible;
         height: auto;
-    }
-    .is--ctl-blog .sidebar-main+.content--wrapper,
-    .is--ctl-note .sidebar-main+.content--wrapper,
-    .is--ctl-note.is--user.is--one-time-account .sidebar-main+.content--wrapper,
-    .is--ctl-index .sidebar-main+.content--wrapper,
-    .is--ctl-detail .sidebar-main+.content--wrapper,
-    .is--ctl-search .sidebar-main+.content--wrapper,
-    .is--ctl-checkout .sidebar-main+.content--wrapper,
-    .is--ctl-register .sidebar-main+.content--wrapper,
-    .is--ctl-campaign .sidebar-main+.content--wrapper,
-    .is--ctl-account.is--act-logout .sidebar-main+.content--wrapper,
-    .is--ctl-account.is--act-abort .sidebar-main+.content--wrapper,
-    .is--ctl-account.is--act-password .sidebar-main+.content--wrapper,
-    .is--ctl-account.is--act-resetpassword .sidebar-main+.content--wrapper,
-    .is--ctl-listing.is--no-sidebar .sidebar-main+.content--wrapper {
-        margin: 0;
     }
     .header-main .top-bar--navigation .navigation--entry {
         padding: 0rem .9375rem 0rem .9375rem;
@@ -811,5 +804,24 @@ h1 {
     .module-desc__textThree {
         margin-top: 800px;
         max-width: 250px;
+    }
+}
+
+
+/*Sonderregelung für workaround:*/
+
+@media only screen and (min-width: 100em) {
+    .module-desc__text {
+        text-align: right;
+        margin-left: 250px;
+        margin-top: 400px;
+    }
+    .module-desc__textTwo {
+        margin-left: 180px;
+    }
+    .module-desc__textThree {
+        text-align: right;
+        margin-top: 900px;
+        margin-left: 200px;
     }
 }
