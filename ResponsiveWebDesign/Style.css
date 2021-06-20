@@ -84,7 +84,7 @@ body {
 }
 
 .jaecon-b2b::before {
-    content: '\e90d';
+    content: '';
 }
 
 .header-main .top-bar {
@@ -122,7 +122,7 @@ body {
 
 .product--details .jae--product__detail-upper .jae--product__left {
     grid-area: detailLeft;
-    padding-left: 10px;
+    padding-left: 40px;
 }
 
 .block-group:after {
@@ -366,7 +366,7 @@ ul {
     background-attachment: scroll;
     background-repeat: repeat-x;
     background-size: cover;
-    background-image: url("bg.jpg");
+    background-image: url("Media/bg.jpg");
     padding: 4.6875rem 0rem 0rem 0rem;
     background-repeat: no-repeat;
     background-position: center;
@@ -405,7 +405,7 @@ ul {
     background-attachment: scroll;
     background-repeat: repeat-x;
     background-size: cover;
-    background-image: url("Seitenbackground.png");
+    background-image: url("Media/Seitenbackground.png");
     background-repeat: no-repeat;
     background-position-x: center;
     display: block;
@@ -465,6 +465,50 @@ h1 {
     max-width: 200px;
     align-self: self-start;
 }
+
+.module-desc__text {
+    margin-top: 630px;
+    margin-left: 40px;
+    max-width: 400px;
+    font-weight: 550;
+}
+
+.module-desc__textTwo {
+    margin-top: 750px;
+    margin-left: 40px;
+    max-width: 300px;
+    font-weight: 550;
+    text-shadow: 0px 0px 3px #031b09, 0px 0px 3px #031b09, 0px 0px 3px #031b09, 0px 0px 3px #031b09;
+}
+
+.module-desc__textThree {
+    margin-top: 850px;
+    margin-left: 40px;
+    max-width: 400px;
+    font-weight: 550;
+    text-shadow: 0px 0px 3px #031b09, 0px 0px 3px #031b09, 0px 0px 3px #031b09, 0px 0px 3px #031b09;
+}
+
+.pp {
+    margin-bottom: 40px;
+}
+
+
+/*Sonderregelung für workaround:*/
+
+@media only screen and (min-width: 110em) {
+    .module-desc__textTwo {
+        margin-left: 100px;
+    }
+    .module-desc__textThree {
+        margin-left: 100px;
+    }
+}
+
+
+/*Sonderregelung für workaround:
+
+@media only screen and (max-width: 1380px) {}*/
 
 @media only screen and (min-width: 48em) {
     .block-group:before,
@@ -759,5 +803,13 @@ h1 {
     .module-desc__wrapperInner .module-desc__img-left {
         margin-left: 180px;
         top: 130px;
+    }
+    .module-desc__text {
+        margin-top: 100px;
+        text-shadow: 0px 0px 3px #031b09, 0px 0px 3px #031b09, 0px 0px 3px #031b09, 0px 0px 3px #031b09;
+    }
+    .module-desc__textThree {
+        margin-top: 800px;
+        max-width: 250px;
     }
 }
